@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  background-color: hsla(var(--accent-primary-hsl), 0.15);
+  color: var(--accent-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.loadBtn {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.loadBtn:hover {
+  background: var(--accent-primary);
+  color: hsl(222, 47%, 6%);
+  box-shadow: var(--glow-green);
+}
+
+.textarea {
+  min-height: 280px;
+  width: 100%;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.uploadArea {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  background-color: hsla(var(--bg-surface-card-hsl), 0.3);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.uploadArea:hover {
+  border-color: var(--accent-primary);
+  background-color: hsla(var(--bg-surface-card-hsl), 0.6);
+}
+
+.uploadIcon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.uploadText {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.uploadSubtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.fileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.fileName {
+  color: var(--text-secondary);
+}
+
+.removeFile {
+  background: transparent;
+  color: var(--danger);
+  font-size: 0.85rem;
+  padding: 2px 6px;
+}
+
+.removeFile:hover {
+  background-color: hsla(0, 84%, 60%, 0.15);
+  border-radius: 4px;
+}

@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  background-color: hsla(var(--accent-secondary-hsl), 0.15);
+  color: var(--accent-secondary);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.loadBtn {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+}
+
+.loadBtn:hover {
+  background: var(--accent-secondary);
+  color: hsl(222, 47%, 6%);
+  box-shadow: var(--glow-blue);
+}
+
+.textarea {
+  min-height: 418px; /* Slightly taller to align with Resume input + drag area combined height */
+  width: 100%;
+  resize: vertical;
+  line-height: 1.6;
+}

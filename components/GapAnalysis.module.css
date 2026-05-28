@@ -1,0 +1,160 @@
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countBadge {
+  font-size: 0.8rem;
+  background-color: hsla(var(--accent-secondary-hsl), 0.15);
+  color: var(--accent-secondary);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: hsla(var(--bg-surface-card-hsl), 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.th {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition-fast);
+}
+
+.tr:last-child {
+  border-bottom: none;
+}
+
+.tr:hover {
+  background-color: hsla(var(--bg-surface-card-hsl), 0.4);
+}
+
+.td {
+  padding: 16px;
+  vertical-align: top;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.gapName {
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.importanceTag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tagHigh {
+  background-color: hsla(0, 84%, 60%, 0.15);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.tagMedium {
+  background-color: hsla(38, 92%, 50%, 0.15);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+.tagLow {
+  background-color: hsla(215, 16%, 57%, 0.15);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.safetyTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.safeToAdd {
+  background-color: hsla(142, 70%, 45%, 0.15);
+  color: var(--success);
+}
+
+.unsafeToAdd {
+  background-color: hsla(38, 92%, 50%, 0.1);
+  color: var(--warning);
+}
+
+.evidenceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.evidenceBlock {
+  font-size: 0.85rem;
+  background-color: hsla(222, 47%, 9%, 0.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+}
+
+.evidenceLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.suggestedActionBox {
+  background-color: hsla(var(--accent-secondary-hsl), 0.05);
+  border-left: 3px solid var(--accent-secondary);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
