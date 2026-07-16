@@ -24,7 +24,7 @@ export default function PDFExportButton({ onExport, isLoading = false }: PDFExpo
     setExportType(null);
   };
 
-  const handleConfirmExport = () => {
+  const handleConfirmReview = () => {
     if (isChecked && exportType) {
       onExport(exportType);
       handleCloseModal();
@@ -33,54 +33,49 @@ export default function PDFExportButton({ onExport, isLoading = false }: PDFExpo
 
   return (
     <div className={styles.container}>
-      <button 
-        type="button" 
-        className="btn-secondary" 
+      <button
+        type="button"
+        className="btn-secondary"
         onClick={() => handleOpenModal("tailored")}
         disabled={isLoading}
       >
-        📥 Download Tailored Resume PDF
+        Complete Tailored Resume Review
       </button>
 
-      <button 
-        type="button" 
-        className="btn-primary" 
+      <button
+        type="button"
+        className="btn-primary"
         onClick={() => handleOpenModal("comparison")}
         disabled={isLoading}
       >
-        📄 Export Side-by-Side Proof PDF
+        Complete Side-by-Side Review
       </button>
 
       {isOpen && (
         <div className={styles.modalOverlay} onClick={handleCloseModal}>
-          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.modalTitle}>
-              ⚠️ Truthfulness Verification required
-            </div>
+          <div className={styles.modal} onClick={(event) => event.stopPropagation()}>
+            <div className={styles.modalTitle}>Truthfulness verification required</div>
 
             <p className={styles.modalDescription}>
-              Resume Shapeshifter is designed to help you communicate your authentic experience clearly.
-              Before downloading your generated resume documents, please review the rewritten content.
+              Resume Shapeshifter helps you communicate authentic experience clearly. Review every proposed change before marking this run complete.
             </p>
 
             <div className={styles.disclaimerBox}>
-              <strong>Important Disclaimer:</strong>
+              <strong>Verification boundary:</strong>
               <div style={{ marginTop: "4px" }}>
-                You are legally and professionally responsible for the accuracy of your resume.
-                Do not submit resumes containing fabricated employers, dates, qualifications, or metrics.
-                Ensure all technical skills match your actual capabilities.
+                You remain responsible for the accuracy of the final resume. Confirm employers, dates, qualifications, technical skills, and metrics against your source records.
               </div>
             </div>
 
             <label className={styles.checkboxContainer}>
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 className={styles.checkbox}
                 checked={isChecked}
-                onChange={(e) => setIsChecked(e.target.checked)}
+                onChange={(event) => setIsChecked(event.target.checked)}
               />
               <span className={styles.checkboxLabel}>
-                I have verified all tailored bullet points and confirm that they truthfully represent my actual experience.
+                I reviewed the proposed changes and confirmed that they accurately represent my experience.
               </span>
             </label>
 
@@ -88,13 +83,13 @@ export default function PDFExportButton({ onExport, isLoading = false }: PDFExpo
               <button type="button" className={styles.cancelBtn} onClick={handleCloseModal}>
                 Cancel
               </button>
-              <button 
-                type="button" 
-                className={styles.confirmBtn} 
-                onClick={handleConfirmExport}
+              <button
+                type="button"
+                className={styles.confirmBtn}
+                onClick={handleConfirmReview}
                 disabled={!isChecked}
               >
-                Verify & Export Document
+                Confirm Review
               </button>
             </div>
           </div>
