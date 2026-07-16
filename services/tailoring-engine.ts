@@ -1,5 +1,6 @@
 import { callGroq } from "./groq";
 import { bulletRewriterPrompt } from "@/prompts/bullet-rewriter";
+import { assertTruthfulTailoring } from "@/lib/truthfulness";
 import {
   ResumeProfile,
   JobDescriptionProfile,
@@ -27,5 +28,6 @@ export async function tailorResume(
     });
   }
 
+  assertTruthfulTailoring(resume, parsed.data);
   return parsed.data;
 }
