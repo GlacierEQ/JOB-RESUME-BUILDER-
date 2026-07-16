@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/truthfulness.test.js"
   },
   "dependencies": {
     "groq-sdk": "^1.2.0",
