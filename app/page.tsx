@@ -5,30 +5,35 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.container}>
-      {/* Navbar */}
       <nav className={styles.nav}>
         <div className={styles.logo}>
           <span>🦎</span> Resume Shapeshifter
         </div>
         <div className={styles.navLinks}>
           <a href="#features" className={styles.navLink}>Features</a>
-          <a href="https://github.com/alexmercer" target="_blank" rel="noopener noreferrer" className={styles.navLink}>GitHub</a>
+          <a
+            href="https://github.com/GlacierEQ/JOB-RESUME-BUILDER-"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.navLink}
+          >
+            GitHub
+          </a>
           <Link href="/tailor" className="btn-secondary" style={{ padding: "8px 16px", fontSize: "0.85rem" }}>
             Enter Workspace
           </Link>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <main className={styles.hero}>
         <div className={styles.badge} style={{ animation: "pulseGlow 2s infinite ease-in-out" }}>
-          Next-Gen JD-to-Resume Engine
+          Source-Grounded JD-to-Resume Prototype
         </div>
         <h1 className={styles.heroTitle}>
-          Tailor Your Resume <span className={styles.heroTitleHighlight}>With Absolute Truth</span>.
+          Tailor Your Resume <span className={styles.heroTitleHighlight}>Without Inventing Experience</span>.
         </h1>
         <p className={styles.heroSubtitle}>
-          Resume Shapeshifter aligns your experience with any job description, identifying gaps and rewriting bullets truthfully. No fabrication, just extreme relevance.
+          Resume Shapeshifter analyzes a job description, proposes source-grounded rewrites, and keeps every original bullet visible for review before export.
         </p>
         <div className={styles.heroActions}>
           <Link href="/tailor" className="btn-primary" style={{ fontSize: "1.1rem" }}>
@@ -37,44 +42,39 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Features Grid */}
       <section id="features" className={styles.featuresSection}>
-        <h2 className={styles.featuresTitle}>Built For Career Excellence</h2>
+        <h2 className={styles.featuresTitle}>Built For Verifiable Relevance</h2>
         <div className={styles.featuresGrid}>
-          {/* Feature 1 */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>🛡️</div>
-            <h3 className={styles.featureCardTitle}>Truthfulness-First Guardrails</h3>
+            <h3 className={styles.featureCardTitle}>Deterministic Truthfulness Guard</h3>
             <p className={styles.featureCardDesc}>
-              Strict semantic validations prevent experience inflation. The engine blocks hallucinated employers, fabricated titles, or metrics that were never in your original work history.
+              Generated output is rejected when it changes employers or titles, loses the source bullet, introduces unsupported skills, or adds numeric claims absent from the original resume.
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>⚖️</div>
-            <h3 className={styles.featureCardTitle}>Side-by-Side Review</h3>
+            <h3 className={styles.featureCardTitle}>Side-by-Side Human Review</h3>
             <p className={styles.featureCardDesc}>
-              Compare every single original bullet against the suggested rewrite in a scrollable parallel table. Interactively revert or tweak claims with real-time score impact calculation.
+              Every original bullet remains visible beside the proposed rewrite so the user can review, revert, or edit before using the result.
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className={styles.featureCard}>
             <div className={styles.featureIcon}>📊</div>
-            <h3 className={styles.featureCardTitle}>Explainable Match Score</h3>
+            <h3 className={styles.featureCardTitle}>Structured Match Analysis</h3>
             <p className={styles.featureCardDesc}>
-              Receive clear, categorized breakdowns of your JD match: skill coverage, responsibilities, seniority, and keywords. Opaque percentages are replaced with actionable, readable proof reports.
+              Match output is organized by skill coverage, responsibilities, seniority, keywords, and explicitly missing requirements rather than presented as an unexplained percentage alone.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <span>© {new Date().getFullYear()} Resume Shapeshifter. All rights reserved.</span>
-          <span>Designed with Vanilla CSS & Next.js</span>
+          <span>© {new Date().getFullYear()} Resume Shapeshifter.</span>
+          <span>Prototype: verify every suggestion before submission.</span>
         </div>
       </footer>
     </div>
