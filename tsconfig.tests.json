@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "outDir": ".test-dist",
+    "rootDir": ".",
+    "types": ["node"],
+    "isolatedModules": false,
+    "incremental": false,
+    "declaration": false,
+    "sourceMap": false
+  },
+  "include": [
+    "lib/schemas.ts",
+    "lib/truthfulness.ts",
+    "tests/truthfulness.test.ts"
+  ],
+  "exclude": ["node_modules", ".next", ".test-dist"]
+}
