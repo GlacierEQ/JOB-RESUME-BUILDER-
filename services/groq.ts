@@ -2,18 +2,28 @@ import Groq from "groq-sdk";
 
 const apiKey = process.env.GROQ_API_KEY;
 
-// Create client only if API key is provided to prevent runtime load exceptions
+export class ModelServiceUnavailableError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "ModelServiceUnavailableError";
+  }
+}
+
+// Create the client only when configuration is present. Runtime calls fail
+// explicitly rather than substituting sample data for a real user request.
 export const groqClient = apiKey ? new Groq({ apiKey }) : null;
 
 /**
- * Helper to call the Groq LLM API with structured instructions and fallback resilience.
- * @param prompt The complete structured prompt containing formatting schemas.
- * @param temperature Value between 0.0 and 1.0.
+ * Call the Groq API and return parsed JSON.
+ *
+ * This boundary is intentionally fail-closed: missing configuration, an empty
+ * response, malformed JSON, or an upstream error must be visible to the caller.
  */
-export async function callGroq(prompt: string, temperature = 0.1): Promise<any> {
+export async function callGroq(prompt: string, temperature = 0.1): Promise<unknown> {
   if (!groqClient) {
-    console.warn("Groq SDK: GROQ_API_KEY is not configured. Falling back to structured mock data.");
-    return null;
+    throw new ModelServiceUnavailableError(
+      "Resume Shapeshifter is not configured for model-backed analysis. Set GROQ_API_KEY in the deployment environment.",
+    );
   }
 
   try {
@@ -21,46 +31,48 @@ export async function callGroq(prompt: string, temperature = 0.1): Promise<any> 
       model: "llama-3.3-70b-versatile",
       messages: [{ role: "user", content: prompt }],
       temperature,
-      // request strict JSON mode where compatible
-      response_format: { type: "json_object" }
+      response_format: { type: "json_object" },
     });
 
-    const rawContent = response.choices[0]?.message?.content || "";
-    
-    // Process response to extract JSON cleanly
+    const rawContent = response.choices[0]?.message?.content?.trim();
+    if (!rawContent) {
+      throw new Error("The model service returned an empty response.");
+    }
+
     return cleanAndParseJson(rawContent);
   } catch (error) {
-    console.error("Groq SDK execution failed:", error);
-    throw new Error(`LLM Service Error: ${error instanceof Error ? error.message : "Unknown failure"}`);
+    if (error instanceof ModelServiceUnavailableError) {
+      throw error;
+    }
+
+    throw new Error(
+      `Model service request failed: ${error instanceof Error ? error.message : "Unknown failure"}`,
+      { cause: error },
+    );
   }
 }
 
-/**
- * Helper to clean and parse raw LLM output strings that may contain conversational text or markdown code wraps.
- */
-function cleanAndParseJson(rawText: string): any {
+/** Parse JSON content while tolerating a surrounding Markdown code fence. */
+export function cleanAndParseJson(rawText: string): unknown {
   let cleanedText = rawText.trim();
-  
-  // Extract content inside outer brackets if markdown blocks exist
+
   if (cleanedText.includes("```")) {
     const jsonMatch = cleanedText.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (jsonMatch && jsonMatch[1]) {
+    if (jsonMatch?.[1]) {
       cleanedText = jsonMatch[1].trim();
     }
   }
 
-  // Double check braces balance
   const startBraceIdx = cleanedText.indexOf("{");
   const endBraceIdx = cleanedText.lastIndexOf("}");
-  
+
   if (startBraceIdx !== -1 && endBraceIdx !== -1) {
     cleanedText = cleanedText.substring(startBraceIdx, endBraceIdx + 1);
   }
 
   try {
     return JSON.parse(cleanedText);
-  } catch (e) {
-    console.error("JSON syntax parse exception on LLM output. Raw string was:\n", rawText);
-    throw new Error("Malformed JSON received from LLM service. Failed to parse.");
+  } catch (error) {
+    throw new Error("Malformed JSON received from the model service.", { cause: error });
   }
 }
