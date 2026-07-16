@@ -1,28 +1,30 @@
 import { callGroq } from "./groq";
 import { bulletRewriterPrompt } from "@/prompts/bullet-rewriter";
-import { ResumeProfile, JobDescriptionProfile, GapAnalysis, TailoredResume, TailoredResumeSchema } from "@/lib/schemas";
-import { mockTailoredResume } from "@/lib/mockData";
+import {
+  ResumeProfile,
+  JobDescriptionProfile,
+  GapAnalysis,
+  TailoredResume,
+  TailoredResumeSchema,
+} from "@/lib/schemas";
 
 export async function tailorResume(
-  resume: ResumeProfile, 
+  resume: ResumeProfile,
   jd: JobDescriptionProfile,
-  gaps: GapAnalysis
+  gaps: GapAnalysis,
 ): Promise<TailoredResume> {
   const prompt = bulletRewriterPrompt
     .replace("{JD_PROFILE_JSON}", JSON.stringify(jd, null, 2))
     .replace("{GAPS_JSON}", JSON.stringify(gaps, null, 2))
     .replace("{RESUME_PROFILE_JSON}", JSON.stringify(resume, null, 2));
 
-  const result = await callGroq(prompt, 0.3); // Moderate temperature for natural tailoring phrasing
-
-  if (!result) {
-    return mockTailoredResume;
-  }
-
+  const result = await callGroq(prompt, 0.3);
   const parsed = TailoredResumeSchema.safeParse(result);
+
   if (!parsed.success) {
-    console.error("Zod Schema Validation Failure on tailored resume:", parsed.error);
-    return mockTailoredResume;
+    throw new Error("The model returned an invalid tailored resume.", {
+      cause: parsed.error,
+    });
   }
 
   return parsed.data;
