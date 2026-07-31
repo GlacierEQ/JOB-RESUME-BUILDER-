@@ -3,6 +3,10 @@ import { tailorResume } from "@/services/tailoring-engine";
 import { scoreMatch } from "@/services/match-engine";
 import { ResumeProfile, JobDescriptionProfile } from "@/lib/schemas";
 
+function errorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error && error.message ? error.message : fallback;
+}
+
 export async function POST(request: Request) {
   try {
     const { resume, jobDescription, gapAnalysis } = await request.json();
@@ -10,48 +14,52 @@ export async function POST(request: Request) {
     if (!resume || !jobDescription || !gapAnalysis) {
       return NextResponse.json(
         { error: "Missing required inputs: resume, jobDescription, and gapAnalysis must be provided." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const typedResume = resume as ResumeProfile;
     const typedJobDescription = jobDescription as JobDescriptionProfile;
+    const tailoredResume = await tailorResume(
+      typedResume,
+      typedJobDescription,
+      gapAnalysis,
+    );
 
-    // Run the tailoring engine
-    const tailoredResume = await tailorResume(typedResume, typedJobDescription, gapAnalysis);
-
-    // Prepare a mock ResumeProfile from tailored output to pass into the scoring engine
     const tailoredResumeProfile: ResumeProfile = {
       ...typedResume,
       summary: tailoredResume.tailoredSummary,
       skills: tailoredResume.tailoredSkills,
-      experience: typedResume.experience.map((exp, companyIdx) => {
-        const tailoredExp = tailoredResume.tailoredExperience.find(
-          (te) => te.company.toLowerCase() === exp.company.toLowerCase()
+      experience: typedResume.experience.map((experience) => {
+        const tailoredExperience = tailoredResume.tailoredExperience.find(
+          (candidate) =>
+            candidate.company.toLowerCase() === experience.company.toLowerCase(),
         );
         return {
-          ...exp,
-          bullets: exp.bullets.map((b: string, bulletIdx: number) => {
-            const tb = tailoredExp?.bullets[bulletIdx];
-            return tb ? tb.tailored : b;
-          })
+          ...experience,
+          bullets: experience.bullets.map((bullet: string, bulletIndex: number) => {
+            const tailoredBullet = tailoredExperience?.bullets[bulletIndex];
+            return tailoredBullet ? tailoredBullet.tailored : bullet;
+          }),
         };
-      })
+      }),
     };
 
-    // Calculate the post-tailored match score
-    const tailoredScore = await scoreMatch(tailoredResumeProfile, jobDescription);
+    const tailoredScore = await scoreMatch(
+      tailoredResumeProfile,
+      typedJobDescription,
+    );
 
     return NextResponse.json({
-      tailoredResume: tailoredResume,
+      tailoredResume,
       tailoredMatch: tailoredScore,
-      status: "tailored"
+      status: "tailored",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("API Tailor handler failed:", error);
     return NextResponse.json(
-      { error: error.message || "An unexpected error occurred during tailoring." },
-      { status: 500 }
+      { error: errorMessage(error, "An unexpected error occurred during tailoring.") },
+      { status: 500 },
     );
   }
 }
