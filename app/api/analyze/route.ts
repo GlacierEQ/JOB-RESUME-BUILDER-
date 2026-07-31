@@ -4,6 +4,10 @@ import { parseJobDescription } from "@/services/jd-parser";
 import { scoreMatch } from "@/services/match-engine";
 import { analyzeGaps } from "@/services/gap-engine";
 
+function errorMessage(error: unknown, fallback: string): string {
+  return error instanceof Error && error.message ? error.message : fallback;
+}
+
 export async function POST(request: Request) {
   try {
     const { resumeText, jdText } = await request.json();
@@ -11,31 +15,30 @@ export async function POST(request: Request) {
     if (!resumeText || !jdText) {
       return NextResponse.json(
         { error: "Missing required inputs: resumeText and jdText must be provided." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    // Sequentially orchestrate parsing, scoring, and gap services
     const resumeProfile = await parseResume(resumeText);
     const jdProfile = await parseJobDescription(jdText);
-    
+
     const [originalScore, gapAnalysis] = await Promise.all([
       scoreMatch(resumeProfile, jdProfile),
-      analyzeGaps(resumeProfile, jdProfile)
+      analyzeGaps(resumeProfile, jdProfile),
     ]);
 
     return NextResponse.json({
       resume: resumeProfile,
       jobDescription: jdProfile,
       originalMatch: originalScore,
-      gapAnalysis: gapAnalysis,
-      status: "analyzed"
+      gapAnalysis,
+      status: "analyzed",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("API Analyze handler failed:", error);
     return NextResponse.json(
-      { error: error.message || "An unexpected error occurred during analysis." },
-      { status: 500 }
+      { error: errorMessage(error, "An unexpected error occurred during analysis.") },
+      { status: 500 },
     );
   }
 }

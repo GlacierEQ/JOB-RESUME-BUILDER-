@@ -15,19 +15,18 @@ export default function ResumeInput({ value, onChange, onFileParsed }: ResumeInp
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleLoadDemo = () => {
-    // Convert mockResume into readable text representation to paste into textarea
     const summaryText = `SUMMARY:\n${mockResume.summary}\n\n`;
     const skillsText = `SKILLS:\n${mockResume.skills.join(", ")}\n\n`;
-    const experienceText = `EXPERIENCE:\n` + mockResume.experience.map(exp => 
+    const experienceText = `EXPERIENCE:\n` + mockResume.experience.map(exp =>
       `${exp.company} - ${exp.title} (${exp.startDate} - ${exp.endDate})\n` +
       exp.bullets.map(b => `• ${b}`).join("\n")
     ).join("\n\n") + "\n\n";
-    
+
     const projectsText = `PROJECTS:\n` + mockResume.projects.map(proj =>
       `${proj.name}\n${proj.description}\n` +
       proj.bullets.map(b => `• ${b}`).join("\n")
     ).join("\n\n") + "\n\n";
-    
+
     const educationText = `EDUCATION:\n` + mockResume.education.map(edu =>
       `${edu.degree} in ${edu.fieldOfStudy}, ${edu.institution} (${edu.graduationDate})`
     ).join("\n");
@@ -37,36 +36,31 @@ export default function ResumeInput({ value, onChange, onFileParsed }: ResumeInp
     setFileName(null);
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
+  const handleDragOver = (event: React.DragEvent) => {
+    event.preventDefault();
   };
 
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      const file = e.dataTransfer.files[0];
-      handleFileSelection(file);
+  const handleDrop = (event: React.DragEvent) => {
+    event.preventDefault();
+    if (event.dataTransfer.files && event.dataTransfer.files[0]) {
+      handleFileSelection(event.dataTransfer.files[0]);
     }
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      handleFileSelection(e.target.files[0]);
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      handleFileSelection(event.target.files[0]);
     }
   };
 
   const handleFileSelection = (file: File) => {
     setFileName(file.name);
-    // In mock Mode, we simulate file parsing after a tiny load state
     if (onFileParsed) {
-      // Simulate reading the file contents
       const reader = new FileReader();
-      reader.onload = (e) => {
-        // Here we just notify about the file being added, and load mock data
-        // to represent the parsed result for visual fidelity
+      reader.onload = () => {
         const summaryText = `SUMMARY:\n${mockResume.summary}\n\n`;
         const skillsText = `SKILLS:\n${mockResume.skills.join(", ")}\n\n`;
-        const experienceText = `EXPERIENCE:\n` + mockResume.experience.map(exp => 
+        const experienceText = `EXPERIENCE:\n` + mockResume.experience.map(exp =>
           `${exp.company} - ${exp.title} (${exp.startDate} - ${exp.endDate})\n` +
           exp.bullets.map(b => `• ${b}`).join("\n")
         ).join("\n\n");
@@ -94,16 +88,16 @@ export default function ResumeInput({ value, onChange, onFileParsed }: ResumeInp
         </button>
       </div>
 
-      <div 
+      <div
         className={styles.uploadArea}
         onDragOver={handleDragOver}
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
       >
-        <input 
-          type="file" 
-          ref={fileInputRef} 
-          style={{ display: "none" }} 
+        <input
+          type="file"
+          ref={fileInputRef}
+          style={{ display: "none" }}
           accept=".pdf,.docx,.txt"
           onChange={handleFileChange}
         />
@@ -134,7 +128,7 @@ Experience:
 - Software Engineer at TechNova...
 - Junior Developer at PixelCraft..."
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(event) => onChange(event.target.value)}
       />
     </div>
   );
