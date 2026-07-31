@@ -41,7 +41,6 @@ export default function GapAnalysisView({ gapAnalysis }: GapAnalysisProps) {
           <tbody>
             {gapAnalysis.gaps.map((gap, idx) => (
               <tr key={idx} className={styles.tr}>
-                {/* Gap Details */}
                 <td className={styles.td}>
                   <div className={styles.gapName}>
                     <span>{gap.name}</span>
@@ -54,21 +53,25 @@ export default function GapAnalysisView({ gapAnalysis }: GapAnalysisProps) {
                   </div>
                 </td>
 
-                {/* Evidence */}
                 <td className={styles.td}>
                   <div className={styles.evidenceSection}>
                     <div className={styles.evidenceBlock}>
                       <div className={styles.evidenceLabel}>Required in Job Description</div>
-                      <div>"{gap.jdEvidence}"</div>
+                      <div>&ldquo;{gap.jdEvidence}&rdquo;</div>
                     </div>
                     <div className={styles.evidenceBlock}>
                       <div className={styles.evidenceLabel}>Represented in Your Resume</div>
-                      <div>{gap.resumeEvidence ? `"${gap.resumeEvidence}"` : "No evidence or mention found."}</div>
+                      <div>
+                        {gap.resumeEvidence ? (
+                          <>&ldquo;{gap.resumeEvidence}&rdquo;</>
+                        ) : (
+                          "No evidence or mention found."
+                        )}
+                      </div>
                     </div>
                   </div>
                 </td>
 
-                {/* Suggested Action */}
                 <td className={styles.td}>
                   <div className={styles.suggestedActionBox}>
                     {gap.suggestedAction}
