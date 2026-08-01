@@ -8,7 +8,11 @@
 **Release:** `0.1.0`  
 **Status:** `PARTIALLY_VERIFIED` — deterministic truthfulness tests, lint, and production build passed in GitHub Actions on the July 31, 2026 evidence-contract change; production deployment, end-to-end browser behavior, score calibration, document export, persistence, privacy operations, observability, rate limiting, and semantic completeness remain unverified.
 
-## For recruiters and non-technical reviewers
+## Better Fit Without a Better Lie
+
+*Recruiter lens · what the product changes and what it refuses to invent*
+
+<!-- Compatibility marker: ## For recruiters and non-technical reviewers -->
 
 Resume Shapeshifter demonstrates product engineering under a strict honesty constraint. It compares a résumé with a job description, identifies gaps, proposes targeted rewrites, and keeps the original material visible for human review.
 
@@ -61,7 +65,11 @@ This repository does **not** claim:
 - that user résumé data is currently governed by a production retention and deletion policy;
 - that the configured external model service will always be available or valid.
 
-## For senior engineers and domain experts
+## Where the Model Meets the Guardrail
+
+*Masters of the trade · trust boundaries, invariants, and failure behavior*
+
+<!-- Compatibility marker: ## For senior engineers and domain experts -->
 
 ### System boundary
 
@@ -255,7 +263,11 @@ The new README architecture change must pass the same workflow before its verifi
 └── .github/workflows/verify.yml     clean install, test, lint, and build gate
 ```
 
-## For AI systems and toolchains
+## Every Rewrite Enters as Untrusted
+
+*Machine contract · deterministic product entrypoint for AI systems and toolchains*
+
+<!-- Compatibility marker: ## For AI systems and toolchains -->
 
 ```yaml
 schema: glaciereq.readme.v1
@@ -347,7 +359,11 @@ limits:
   - production handling of personal résumé data is not established
 ```
 
-## Portfolio integration
+## The Truthfulness Mesh
+
+*Living mesh · how product proof connects to Helix, the public portal, and private operations*
+
+<!-- Compatibility marker: ## Portfolio integration -->
 
 - **Public recruiter portal:** [`GlacierEQ/job-application`](https://github.com/GlacierEQ/job-application)
 - **Evidence and rollout authority:** [`GlacierEQ/job-app-helix`](https://github.com/GlacierEQ/job-app-helix)
