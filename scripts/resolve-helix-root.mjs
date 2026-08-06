@@ -2,6 +2,7 @@
 
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import process from "node:process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -25,14 +26,19 @@ async function main() {
     fail("unexpected commit API URL");
   }
 
+  const headers = {
+    Accept: "application/vnd.github+json",
+    "User-Agent": "GlacierEQ-resume-shapeshifter",
+  };
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15_000);
   try {
     const response = await fetch(pointer.authority.commit_api_url, {
-      headers: {
-        Accept: "application/vnd.github+json",
-        "User-Agent": "GlacierEQ-resume-shapeshifter",
-      },
+      headers,
       signal: controller.signal,
     });
     if (!response.ok) fail(`commit API returned ${response.status}`);
