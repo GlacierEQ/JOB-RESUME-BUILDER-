@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "eslint",
     "pretest": "npm run sync:helix && npm run validate:helix",
-    "test": "rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/truthfulness.test.js"
+    "test": "rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js"
   },
   "dependencies": {
     "groq-sdk": "^1.2.0",
