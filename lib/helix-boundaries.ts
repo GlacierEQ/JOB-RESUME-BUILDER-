@@ -193,14 +193,12 @@ export function inspectHelixBoundaries(
       }
 
       if (!establishedEmployer) {
-        const affiliationClaim = AFFILIATION_CLAIMS.find((claim) =>
-          containsPhrase(normalizedText, claim),
-        );
+        const affiliationClaim = findAffiliationClaim(normalizedText, aliases);
         if (affiliationClaim) {
           violations.push({
             code: "TARGET_COMPANY_AFFILIATION_CLAIM",
             path: field.path,
-            message: `Independent alignment with "${company.display_name}" cannot be described using affiliation phrase "${affiliationClaim}".`,
+            message: `Independent alignment with "${company.display_name}" cannot be described using affiliation relationship "${affiliationClaim}".`,
           });
         }
       }
@@ -281,10 +279,53 @@ function containsPhrase(corpus: string, phrase: string): boolean {
   return ` ${corpus} `.includes(` ${normalize(phrase)} `);
 }
 
+function findAffiliationClaim(corpus: string, aliases: readonly string[]): string | undefined {
+  const exactClaim = AFFILIATION_CLAIMS.find((claim) => containsPhrase(corpus, claim));
+  if (exactClaim) return exactClaim;
+
+  for (const alias of aliases) {
+    const company = escapeRegExp(alias).replaceAll("\\ ", "\\s+");
+    const boundedPatterns: Array<[string, RegExp]> = [
+      [
+        "work or employment relationship",
+        new RegExp(`\\b(?:worked|employed|employee)\\b(?:\\s+[a-z0-9+#]+){0,5}\\s+(?:at|for|by|of)\\s+${company}\\b`),
+      ],
+      [
+        "built, delivered, or deployed for company",
+        new RegExp(`\\b(?:built|developed|created|designed|engineered|implemented|delivered|deployed)\\b(?:\\s+[a-z0-9+#]+){0,10}\\s+(?:for|at|with)\\s+${company}\\b`),
+      ],
+      [
+        "partnership or collaboration relationship",
+        new RegExp(`\\b(?:partnered|collaborated)\\b(?:\\s+[a-z0-9+#]+){0,6}\\s+with\\s+${company}\\b`),
+      ],
+      [
+        "company adoption or use",
+        new RegExp(`\\b(?:used|adopted|deployed)\\b(?:\\s+[a-z0-9+#]+){0,6}\\s+by\\s+${company}\\b`),
+      ],
+      [
+        "proprietary or internal access",
+        new RegExp(`\\b(?:proprietary|internal)\\s+access\\b(?:\\s+[a-z0-9+#]+){0,4}\\s+(?:to|at|for)\\s+${company}\\b`),
+      ],
+      [
+        "production relationship",
+        new RegExp(`\\bproduction\\b(?:\\s+[a-z0-9+#]+){0,5}\\s+(?:at|for|with)\\s+${company}\\b`),
+      ],
+    ];
+    const match = boundedPatterns.find(([, pattern]) => pattern.test(corpus));
+    if (match) return match[0];
+  }
+
+  return undefined;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function normalize(value: string): string {
   return value
     .toLowerCase()
-    .replace(/[^a-z0-9+#.%$€£]+/g, " ")
+    .replace(/[^a-z0-9+#]+/g, " ")
     .trim()
     .replace(/\s+/g, " ");
 }
