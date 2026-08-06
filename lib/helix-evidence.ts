@@ -1,4 +1,4 @@
-import helixEvidence from "@/data/helix-resume-evidence.json";
+import helixEvidence from "../data/helix-resume-evidence.json";
 import { z } from "zod";
 
 const Sha40Schema = z.string().regex(/^[a-f0-9]{40}$/);
