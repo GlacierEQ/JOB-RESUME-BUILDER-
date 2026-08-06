@@ -1,5 +1,7 @@
 import { callGroq } from "./groq";
 import { bulletRewriterPrompt } from "@/prompts/bullet-rewriter";
+import { assertHelixBoundaries } from "@/lib/helix-boundaries";
+import { getHelixEvidenceContext } from "@/lib/helix-evidence";
 import { assertTruthfulTailoring } from "@/lib/truthfulness";
 import {
   ResumeProfile,
@@ -14,9 +16,11 @@ export async function tailorResume(
   jd: JobDescriptionProfile,
   gaps: GapAnalysis,
 ): Promise<TailoredResume> {
+  const helixEvidence = getHelixEvidenceContext();
   const prompt = bulletRewriterPrompt
     .replace("{JD_PROFILE_JSON}", JSON.stringify(jd, null, 2))
     .replace("{GAPS_JSON}", JSON.stringify(gaps, null, 2))
+    .replace("{HELIX_EVIDENCE_JSON}", JSON.stringify(helixEvidence, null, 2))
     .replace("{RESUME_PROFILE_JSON}", JSON.stringify(resume, null, 2));
 
   const result = await callGroq(prompt, 0.3);
@@ -29,5 +33,6 @@ export async function tailorResume(
   }
 
   assertTruthfulTailoring(resume, parsed.data);
+  assertHelixBoundaries(resume, parsed.data, helixEvidence);
   return parsed.data;
 }
