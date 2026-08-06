@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/ensure-helix-resume-evidence.mjs",
     "dev": "next dev",
+    "resolve:helix": "node scripts/resolve-helix-root.mjs",
     "sync:helix": "node scripts/sync-helix-resume-evidence.mjs",
     "validate:helix": "node scripts/validate-helix-resume-evidence.mjs",
-    "prebuild": "npm run sync:helix && npm run validate:helix",
+    "prepare:helix": "node scripts/ensure-helix-resume-evidence.mjs",
+    "prebuild": "npm run prepare:helix",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pretest": "npm run sync:helix && npm run validate:helix",
+    "pretest": "npm run prepare:helix",
     "test": "rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js"
   },
   "dependencies": {
