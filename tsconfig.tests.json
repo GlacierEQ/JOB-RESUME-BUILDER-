@@ -16,9 +16,11 @@
   },
   "include": [
     "data/helix-resume-evidence.json",
+    "lib/helix-boundaries.ts",
     "lib/helix-evidence.ts",
     "lib/schemas.ts",
     "lib/truthfulness.ts",
+    "tests/helix-boundaries.test.ts",
     "tests/helix-evidence.test.ts",
     "tests/truthfulness.test.ts"
   ],
