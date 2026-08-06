@@ -1,7 +1,8 @@
 import { callGroq } from "./groq";
 import { bulletRewriterPrompt } from "@/prompts/bullet-rewriter";
-import { assertTruthfulTailoring } from "@/lib/truthfulness";
+import { assertHelixBoundaries } from "@/lib/helix-boundaries";
 import { getHelixEvidenceContext } from "@/lib/helix-evidence";
+import { assertTruthfulTailoring } from "@/lib/truthfulness";
 import {
   ResumeProfile,
   JobDescriptionProfile,
@@ -32,5 +33,6 @@ export async function tailorResume(
   }
 
   assertTruthfulTailoring(resume, parsed.data);
+  assertHelixBoundaries(resume, parsed.data, helixEvidence);
   return parsed.data;
 }
