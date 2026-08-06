@@ -11,11 +11,15 @@
     "isolatedModules": false,
     "incremental": false,
     "declaration": false,
-    "sourceMap": false
+    "sourceMap": false,
+    "resolveJsonModule": true
   },
   "include": [
+    "data/helix-resume-evidence.json",
+    "lib/helix-evidence.ts",
     "lib/schemas.ts",
     "lib/truthfulness.ts",
+    "tests/helix-evidence.test.ts",
     "tests/truthfulness.test.ts"
   ],
   "exclude": ["node_modules", ".next", ".test-dist"]
