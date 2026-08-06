@@ -20,6 +20,8 @@ jobs:
   verify:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
 
     steps:
       - name: Checkout exact source
