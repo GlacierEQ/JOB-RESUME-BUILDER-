@@ -20,8 +20,6 @@ jobs:
   verify:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    env:
-      HELIX_ROOT_REF: ${{ github.event_name == 'pull_request' && 'feature/portfolio-root-truth-v1' || 'main' }}
 
     steps:
       - name: Checkout exact source
@@ -38,8 +36,14 @@ jobs:
       - name: Install locked dependencies
         run: npm ci
 
+      - name: Resolve one immutable Helix source commit
+        run: node scripts/resolve-helix-root.mjs >> "$GITHUB_ENV"
+
       - name: Compile and validate Helix résumé evidence
         run: npm run sync:helix && npm run validate:helix
+
+      - name: Freeze prepared evidence for remaining steps
+        run: echo "HELIX_EVIDENCE_PREPARED=1" >> "$GITHUB_ENV"
 
       - name: Run deterministic truthfulness and evidence tests
         run: npm test
@@ -50,10 +54,12 @@ jobs:
       - name: Build production application
         run: npm run build
 
-      - name: Upload Helix evidence projection
+      - name: Upload Helix evidence projection and receipt
         uses: actions/upload-artifact@v4
         with:
           name: helix-resume-evidence-${{ github.sha }}
-          path: data/helix-resume-evidence.json
+          path: |
+            data/helix-resume-evidence.json
+            data/helix-resume-evidence.receipt.json
           if-no-files-found: error
           retention-days: 30
