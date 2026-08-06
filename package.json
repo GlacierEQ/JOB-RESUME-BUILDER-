@@ -12,6 +12,7 @@
     "prebuild": "npm run prepare:helix",
     "build": "next build",
     "start": "next start",
+    "prelint": "npm run prepare:helix",
     "lint": "eslint",
     "pretest": "npm run prepare:helix",
     "test": "rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js"
