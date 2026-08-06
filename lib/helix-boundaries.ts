@@ -284,7 +284,7 @@ function containsPhrase(corpus: string, phrase: string): boolean {
 function normalize(value: string): string {
   return value
     .toLowerCase()
-    .replace(/[^a-z0-9+#.%$€£]+/g, " ")
+    .replace(/[^a-z0-9+#]+/g, " ")
     .trim()
     .replace(/\s+/g, " ");
 }
