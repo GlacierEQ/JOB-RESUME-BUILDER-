@@ -3,6 +3,11 @@ import { parseResume } from "@/services/resume-parser";
 import { parseJobDescription } from "@/services/jd-parser";
 import { scoreMatch } from "@/services/match-engine";
 import { analyzeGaps } from "@/services/gap-engine";
+import {
+  readBoundedRequestJson,
+  requireBoundedText,
+  requestBoundaryStatus,
+} from "@/lib/request-guards";
 
 function errorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
@@ -10,14 +15,9 @@ function errorMessage(error: unknown, fallback: string): string {
 
 export async function POST(request: Request) {
   try {
-    const { resumeText, jdText } = await request.json();
-
-    if (!resumeText || !jdText) {
-      return NextResponse.json(
-        { error: "Missing required inputs: resumeText and jdText must be provided." },
-        { status: 400 },
-      );
-    }
+    const body = await readBoundedRequestJson(request);
+    const resumeText = requireBoundedText(body.resumeText, "resumeText");
+    const jdText = requireBoundedText(body.jdText, "jdText");
 
     const resumeProfile = await parseResume(resumeText);
     const jdProfile = await parseJobDescription(jdText);
@@ -33,12 +33,17 @@ export async function POST(request: Request) {
       originalMatch: originalScore,
       gapAnalysis,
       status: "analyzed",
+      boundary: {
+        serverPersistence: false,
+        externalSubmission: false,
+      },
     });
   } catch (error: unknown) {
-    console.error("API Analyze handler failed:", error);
+    const status = requestBoundaryStatus(error);
+    if (status >= 500) console.error("API Analyze handler failed:", error);
     return NextResponse.json(
       { error: errorMessage(error, "An unexpected error occurred during analysis.") },
-      { status: 500 },
+      { status },
     );
   }
 }
