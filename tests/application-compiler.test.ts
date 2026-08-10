@@ -39,8 +39,21 @@ const source: ResumeProfile = {
       technologies: ["Python"],
     },
   ],
-  education: [],
-  certifications: [],
+  education: [
+    {
+      institution: "Example University",
+      degree: "B.S.",
+      fieldOfStudy: "Systems Engineering",
+      graduationDate: "2020",
+    },
+  ],
+  certifications: [
+    {
+      name: "Example Certification",
+      issuer: "Example Institute",
+      date: "2021",
+    },
+  ],
 };
 
 const tailored: TailoredResume = {
@@ -93,6 +106,79 @@ test("materialization preserves source identity and applies only proposal fields
   assert.equal(compiled.experience[0]?.bullets[0], "Built deterministic agent workflows.");
 });
 
+test("same-employer roles bind proposals by source identity rather than employer name", () => {
+  const multiRoleSource: ResumeProfile = {
+    ...source,
+    experience: [
+      {
+        company: "Example Systems",
+        title: "Engineer",
+        startDate: "2022",
+        endDate: "2024",
+        bullets: ["Built deployment tooling."],
+      },
+      {
+        company: "Example Systems",
+        title: "Architect",
+        startDate: "2024",
+        endDate: "Present",
+        bullets: ["Designed agent controls."],
+      },
+    ],
+  };
+  const multiRoleTailored: TailoredResume = {
+    tailoredSummary: source.summary,
+    tailoredSkills: source.skills,
+    tailoredExperience: [
+      {
+        company: "Example Systems",
+        title: "Architect",
+        bullets: [
+          {
+            original: "Designed agent controls.",
+            tailored: "Designed bounded agent controls.",
+            changeReason: "precision",
+            keywordsAddressed: ["bounded"],
+            confidence: "high",
+          },
+        ],
+      },
+      {
+        company: "Example Systems",
+        title: "Engineer",
+        bullets: [
+          {
+            original: "Built deployment tooling.",
+            tailored: "Built deterministic deployment tooling.",
+            changeReason: "precision",
+            keywordsAddressed: ["deterministic"],
+            confidence: "high",
+          },
+        ],
+      },
+    ],
+  };
+
+  const compiled = materializeTailoredResume(multiRoleSource, multiRoleTailored);
+  assert.equal(compiled.experience[0]?.bullets[0], "Built deterministic deployment tooling.");
+  assert.equal(compiled.experience[1]?.bullets[0], "Designed bounded agent controls.");
+});
+
+test("unmatched experience proposals fail closed by preserving source bullets", () => {
+  const incompatible: TailoredResume = {
+    ...tailored,
+    tailoredExperience: [
+      {
+        company: "Example Systems",
+        title: "Wrong title",
+        bullets: tailored.tailoredExperience[0]!.bullets,
+      },
+    ],
+  };
+  const compiled = materializeTailoredResume(source, incompatible);
+  assert.deepEqual(compiled.experience[0]?.bullets, source.experience[0]?.bullets);
+});
+
 test("change summary is explicit and bounded", () => {
   const compiled = materializeTailoredResume(source, tailored);
   const changes = summarizeChanges(source, compiled);
@@ -103,7 +189,7 @@ test("change summary is explicit and bounded", () => {
   assert.equal(changes.experienceBulletsChanged[0]?.index, 0);
 });
 
-test("application compiler emits real ATS, JSON, and printable HTML artifacts", () => {
+test("application compiler emits complete ATS, JSON, and printable HTML artifacts", () => {
   const result = compileApplicationArtifacts(
     source,
     target,
@@ -116,8 +202,9 @@ test("application compiler emits real ATS, JSON, and printable HTML artifacts", 
   assert.equal(result.boundary.externalSubmissionPerformed, false);
 
   const ats = result.artifacts.find((artifact) => artifact.kind === "ats");
-  assert.ok(ats?.content.includes("PRINCIPAL") === false);
   assert.ok(ats?.content.includes("Built deterministic agent workflows."));
+  assert.ok(ats?.content.includes("Example University"));
+  assert.ok(ats?.content.includes("Example Certification"));
 
   const jsonArtifact = result.artifacts.find((artifact) => artifact.kind === "json");
   const manifest = JSON.parse(jsonArtifact?.content ?? "null");
@@ -127,6 +214,12 @@ test("application compiler emits real ATS, JSON, and printable HTML artifacts", 
 
   const html = result.artifacts.find((artifact) => artifact.kind === "html");
   assert.ok(html?.content.includes("Casey &lt;Barton&gt;"));
+  assert.ok(html?.content.includes("Example University"));
+  assert.ok(html?.content.includes("Systems Engineering"));
+  assert.ok(html?.content.includes("Example Certification"));
+  assert.ok(html?.content.includes("Example Institute"));
+  assert.ok(html?.content.includes("Technologies:"));
+  assert.ok(html?.content.includes("Python"));
   assert.ok(!html?.content.includes("<script>"));
 });
 
