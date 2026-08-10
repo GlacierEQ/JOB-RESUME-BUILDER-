@@ -1,0 +1,73 @@
+{
+  "schema": "glaciereq.capability-manifest.v1",
+  "repository": "GlacierEQ/JOB-RESUME-BUILDER-",
+  "capabilities": [
+    {
+      "capability_id": "truth-constrained-tailoring",
+      "summary": "Treat external model output as untrusted and reject represented unsupported employers, titles, skills, numbers, and source-bullet mutations before a tailored result is accepted.",
+      "implementation_refs": [
+        "lib/truthfulness.ts",
+        "services/tailoring-engine.ts",
+        "app/api/tailor/route.ts"
+      ],
+      "verification_refs": [
+        "tests/truthfulness.test.ts"
+      ],
+      "claim_ceiling": "Deterministic represented fabrication modes are tested; semantic completeness and hiring-outcome correctness are not established."
+    },
+    {
+      "capability_id": "bounded-application-api",
+      "summary": "Read API request bodies incrementally, enforce encoded byte limits, validate JSON/schema boundaries, and separate expected client failures from internal server failures.",
+      "implementation_refs": [
+        "lib/request-guards.ts",
+        "app/api/analyze/route.ts",
+        "app/api/tailor/route.ts"
+      ],
+      "verification_refs": [
+        "tests/request-guards.test.ts"
+      ],
+      "claim_ceiling": "Repository-level request boundary behavior is implemented and tested; production rate limiting and abuse protection are not established."
+    },
+    {
+      "capability_id": "deterministic-application-artifact-compilation",
+      "summary": "Materialize a human-reviewed tailored résumé into deterministic ATS text, auditable JSON, and complete printable HTML while preserving explicit non-submission and non-PDF boundaries.",
+      "implementation_refs": [
+        "lib/application-compiler.ts",
+        "app/tailor/page.tsx"
+      ],
+      "verification_refs": [
+        "tests/application-compiler.test.ts"
+      ],
+      "claim_ceiling": "ATS/JSON/HTML compilation is tested; browser E2E and production deployment are not established."
+    },
+    {
+      "capability_id": "source-identity-resume-materialization",
+      "summary": "Bind tailored experience proposals back to company, title, and original bullet identity so multiple roles at one employer remain distinct and ambiguous proposals preserve source content.",
+      "implementation_refs": [
+        "lib/application-compiler.ts"
+      ],
+      "verification_refs": [
+        "tests/application-compiler.test.ts"
+      ],
+      "claim_ceiling": "The represented experience identity contract is tested; complete semantic equivalence is not claimed."
+    },
+    {
+      "capability_id": "private-versioned-run-persistence",
+      "summary": "Persist private tailoring runs in browser-local IndexedDB with revision checks, serialized writes, bounded retention, restore/delete/clear operations, and explicit failure reporting.",
+      "implementation_refs": [
+        "lib/run-store.ts",
+        "components/PrivateRunHistory.tsx",
+        "app/tailor/page.tsx"
+      ],
+      "verification_refs": [
+        "tests/run-store.test.ts"
+      ],
+      "claim_ceiling": "Local browser persistence mechanics are implemented; server-side identity, cross-device sync, encryption policy, and production retention governance are not established."
+    }
+  ],
+  "truth_boundary": {
+    "manifest_describes_repository_owned_mechanisms_only": true,
+    "verification_refs_are_not_deployment_receipts": true,
+    "capabilities_do_not_imply_external_adoption_or_company_affiliation": true
+  }
+}
