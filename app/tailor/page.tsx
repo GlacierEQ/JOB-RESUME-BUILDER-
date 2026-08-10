@@ -141,7 +141,7 @@ export default function TailorWorkspace() {
       setTailoredScore(null);
 
       const run = createRun({
-        id: globalThis.crypto.randomUUID(),
+        id: createRunId(),
         stage: "ANALYZED",
         resumeText,
         jobDescriptionText: jdText,
@@ -259,20 +259,25 @@ export default function TailorWorkspace() {
     setGapAnalysis(run.gapAnalysis);
     setTailoredResume(run.tailoredResume ?? null);
     setTailoredScore(run.tailoredMatch ?? null);
-    setCompilation(
-      run.tailoredResume && (run.stage === "REVIEWED" || run.stage === "EXPORTED")
+
+    const restoredCompilation =
+      run.tailoredResume &&
+      (run.stage === "REVIEWED" || run.stage === "EXPORTED")
         ? compileApplicationArtifacts(
             run.resume,
             run.jobDescription,
             run.tailoredResume,
             run.reviewedAt ?? run.updatedAt,
           )
-        : null,
-    );
+        : null;
+    setCompilation(restoredCompilation);
     setPersistenceStatus(`Restored private run revision ${run.revision}.`);
+
     if (run.stage === "ANALYZED") setCurrentStep("analysis_results");
     else if (run.stage === "TAILORED") setCurrentStep("review");
-    else setCurrentStep("review_complete");
+    else if (restoredCompilation) setCurrentStep("review_complete");
+    else if (run.tailoredResume) setCurrentStep("review");
+    else setCurrentStep("analysis_results");
   };
 
   const resetRun = () => {
@@ -343,7 +348,10 @@ export default function TailorWorkspace() {
       </div>
 
       {currentStep === "ingest" && (
-        <div className="animate-scale" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div
+          className="animate-scale"
+          style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+        >
           <div className={styles.workspaceGrid}>
             <ResumeInput
               value={resumeText}
@@ -353,7 +361,11 @@ export default function TailorWorkspace() {
             <JDInput value={jdText} onChange={setJdText} />
           </div>
           <div className={styles.btnActionsRow}>
-            <button type="button" className="btn-primary" onClick={handleStartAnalysis}>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={handleStartAnalysis}
+            >
               Analyze Match & Find Gaps ➜
             </button>
           </div>
@@ -398,7 +410,11 @@ export default function TailorWorkspace() {
               >
                 ⬅ Adjust Inputs
               </button>
-              <button type="button" className="btn-primary" onClick={handleStartTailoring}>
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={handleStartTailoring}
+              >
                 Generate Validated Suggestions ➜
               </button>
             </div>
@@ -432,7 +448,9 @@ export default function TailorWorkspace() {
               >
                 ⬅ Back to Gaps
               </button>
-              <ReviewCompletionControls onExport={(type) => void handleReviewComplete(type)} />
+              <ReviewCompletionControls
+                onExport={(type) => void handleReviewComplete(type)}
+              />
             </div>
           </div>
         )}
@@ -441,13 +459,24 @@ export default function TailorWorkspace() {
         <div className={`${styles.exportPanel} card-glass animate-scale`}>
           <h2>Application artifacts compiled</h2>
           <p style={{ maxWidth: "720px" }}>
-            The reviewed source has been materialized into real downloadable artifacts. The JSON artifact contains the source resume, compiled resume, target identity, and exact change summary; ATS text is linearized for application systems; printable HTML is a document surface that can be printed to PDF without claiming an automatically generated PDF.
+            The reviewed source has been materialized into real downloadable
+            artifacts. The JSON artifact contains the source resume, compiled
+            resume, target identity, and exact change summary; ATS text is
+            linearized for application systems; printable HTML is a document
+            surface that can be printed to PDF without claiming an automatically
+            generated PDF.
           </p>
           <div style={{ display: "grid", gap: "10px", margin: "18px 0" }}>
             {compilation.artifacts.map((artifact) => (
               <div
                 key={artifact.kind}
-                style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px", flexWrap: "wrap" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
               >
                 <div>
                   <strong>{artifact.filename}</strong>
@@ -463,11 +492,22 @@ export default function TailorWorkspace() {
               </div>
             ))}
           </div>
-          <div style={{ display: "grid", gap: "6px", marginBottom: "18px", opacity: 0.82 }}>
-            <span>Summary changed: {compilation.changes.summaryChanged ? "yes" : "no"}</span>
+          <div
+            style={{
+              display: "grid",
+              gap: "6px",
+              marginBottom: "18px",
+              opacity: 0.82,
+            }}
+          >
+            <span>
+              Summary changed: {compilation.changes.summaryChanged ? "yes" : "no"}
+            </span>
             <span>Skills added: {compilation.changes.skillsAdded.length}</span>
             <span>Skills removed: {compilation.changes.skillsRemoved.length}</span>
-            <span>Experience bullets changed: {compilation.changes.experienceBulletsChanged.length}</span>
+            <span>
+              Experience bullets changed: {compilation.changes.experienceBulletsChanged.length}
+            </span>
             <span>No external submission has been performed.</span>
           </div>
           <div className={styles.btnActionsRow}>
@@ -512,6 +552,14 @@ async function postJson<T>(url: string, body: unknown): Promise<T> {
   return payload as T;
 }
 
+function createRunId(): string {
+  const cryptoApi = globalThis.crypto;
+  if (typeof cryptoApi?.randomUUID === "function") {
+    return cryptoApi.randomUUID();
+  }
+  return `run-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
 function downloadArtifact(artifact: CompiledArtifact): void {
   const blob = new Blob([artifact.content], { type: artifact.mimeType });
   const url = URL.createObjectURL(blob);
@@ -544,5 +592,7 @@ function startCueSequence(
 }
 
 function readErrorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : "The request could not be completed.";
+  return error instanceof Error
+    ? error.message
+    : "The request could not be completed.";
 }
