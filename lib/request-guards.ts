@@ -76,5 +76,7 @@ export function requireBoundedJsonObject<T extends Record<string, unknown>>(
 }
 
 export function requestBoundaryStatus(error: unknown): number {
-  return error instanceof RequestBoundaryError ? error.status : 500;
+  if (error instanceof RequestBoundaryError) return error.status;
+  if (error instanceof Error && error.name === "ZodError") return 400;
+  return 500;
 }
