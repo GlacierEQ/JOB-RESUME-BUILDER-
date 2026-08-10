@@ -21,11 +21,19 @@ export async function POST(request: Request) {
   try {
     const body = await readBoundedRequestJson(request);
     const rawResume = requireBoundedJsonObject(body.resume, "resume");
-    const rawJobDescription = requireBoundedJsonObject(body.jobDescription, "jobDescription");
-    const rawGapAnalysis = requireBoundedJsonObject(body.gapAnalysis, "gapAnalysis");
+    const rawJobDescription = requireBoundedJsonObject(
+      body.jobDescription,
+      "jobDescription",
+    );
+    const rawGapAnalysis = requireBoundedJsonObject(
+      body.gapAnalysis,
+      "gapAnalysis",
+    );
 
     const typedResume = ResumeProfileSchema.parse(rawResume);
-    const typedJobDescription = JobDescriptionProfileSchema.parse(rawJobDescription);
+    const typedJobDescription = JobDescriptionProfileSchema.parse(
+      rawJobDescription,
+    );
     const gapAnalysis = GapAnalysisSchema.parse(rawGapAnalysis);
 
     const tailoredResume = await tailorResume(
@@ -45,10 +53,12 @@ export async function POST(request: Request) {
         );
         return {
           ...experience,
-          bullets: experience.bullets.map((bullet: string, bulletIndex: number) => {
-            const tailoredBullet = tailoredExperience?.bullets[bulletIndex];
-            return tailoredBullet ? tailoredBullet.tailored : bullet;
-          }),
+          bullets: experience.bullets.map(
+            (bullet: string, bulletIndex: number) => {
+              const tailoredBullet = tailoredExperience?.bullets[bulletIndex];
+              return tailoredBullet ? tailoredBullet.tailored : bullet;
+            },
+          ),
         };
       }),
     };
@@ -71,9 +81,10 @@ export async function POST(request: Request) {
   } catch (error: unknown) {
     const status = requestBoundaryStatus(error);
     if (status >= 500) console.error("API Tailor handler failed:", error);
-    return NextResponse.json(
-      { error: errorMessage(error, "An unexpected error occurred during tailoring.") },
-      { status },
-    );
+    const message =
+      status >= 500
+        ? "An unexpected error occurred during tailoring."
+        : errorMessage(error, "The tailoring request is invalid.");
+    return NextResponse.json({ error: message }, { status });
   }
 }
