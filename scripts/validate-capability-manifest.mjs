@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { access, readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,7 +25,8 @@ async function requirePath(ref, capabilityId) {
   assert(safeRelative(ref), `${capabilityId}: unsafe repository ref ${String(ref)}`);
   const resolved = path.resolve(ROOT, ref);
   assert(resolved.startsWith(`${ROOT}${path.sep}`), `${capabilityId}: ref escapes repository`);
-  await access(resolved);
+  const metadata = await stat(resolved);
+  assert(metadata.isFile(), `${capabilityId}: ref must resolve to a regular file: ${ref}`);
 }
 
 const payload = JSON.parse(await readFile(MANIFEST, "utf8"));
