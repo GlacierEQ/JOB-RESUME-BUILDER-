@@ -11,12 +11,26 @@ export interface CompiledArtifact {
   readonly content: string;
 }
 
+export interface ChangeSummary {
+  readonly summaryChanged: boolean;
+  readonly skillsAdded: readonly string[];
+  readonly skillsRemoved: readonly string[];
+  readonly experienceBulletsChanged: readonly {
+    readonly company: string;
+    readonly title: string;
+    readonly index: number;
+    readonly before: string;
+    readonly after: string;
+  }[];
+}
+
 export interface ApplicationCompilation {
   readonly schema: "glaciereq.application-compilation.v1";
   readonly compiledAt: string;
   readonly source: ResumeProfile;
   readonly target: JobDescriptionProfile;
   readonly resume: ResumeProfile;
+  readonly changes: ChangeSummary;
   readonly artifacts: readonly CompiledArtifact[];
   readonly boundary: {
     readonly humanReviewRequired: true;
@@ -65,6 +79,45 @@ export function materializeTailoredResume(
   };
 }
 
+export function summarizeChanges(
+  source: ResumeProfile,
+  compiled: ResumeProfile,
+): ChangeSummary {
+  const sourceSkills = new Set(source.skills.map((value) => normalize(value).toLowerCase()));
+  const compiledSkills = new Set(compiled.skills.map((value) => normalize(value).toLowerCase()));
+  const skillsAdded = compiled.skills.filter(
+    (value) => !sourceSkills.has(normalize(value).toLowerCase()),
+  );
+  const skillsRemoved = source.skills.filter(
+    (value) => !compiledSkills.has(normalize(value).toLowerCase()),
+  );
+  const experienceBulletsChanged: ChangeSummary["experienceBulletsChanged"][number][] = [];
+
+  source.experience.forEach((entry, entryIndex) => {
+    const after = compiled.experience[entryIndex];
+    if (!after) return;
+    entry.bullets.forEach((before, index) => {
+      const next = after.bullets[index];
+      if (next !== undefined && normalize(before) !== normalize(next)) {
+        experienceBulletsChanged.push({
+          company: entry.company,
+          title: entry.title,
+          index,
+          before,
+          after: next,
+        });
+      }
+    });
+  });
+
+  return {
+    summaryChanged: normalize(source.summary) !== normalize(compiled.summary),
+    skillsAdded,
+    skillsRemoved,
+    experienceBulletsChanged,
+  };
+}
+
 export function renderAtsText(resume: ResumeProfile): string {
   const lines: string[] = [];
   const contact = resume.contact;
@@ -85,7 +138,9 @@ export function renderAtsText(resume: ResumeProfile): string {
       lines.push(
         [normalize(entry.title), normalize(entry.company)].filter(Boolean).join(" — "),
       );
-      const dates = [entry.startDate, entry.endDate].map((value) => normalize(value || "")).filter(Boolean);
+      const dates = [entry.startDate, entry.endDate]
+        .map((value) => normalize(value || ""))
+        .filter(Boolean);
       if (dates.length) lines.push(dates.join(" – "));
       for (const bullet of entry.bullets) lines.push(`- ${normalize(bullet)}`);
     }
@@ -128,7 +183,10 @@ export function renderAtsText(resume: ResumeProfile): string {
     }
   }
 
-  return `${lines.filter((line, index) => line !== "" || lines[index - 1] !== "").join("\n").trim()}\n`;
+  return `${lines
+    .filter((line, index) => line !== "" || lines[index - 1] !== "")
+    .join("\n")
+    .trim()}\n`;
 }
 
 function escapeHtml(value: string): string {
@@ -145,14 +203,20 @@ export function renderPrintableHtml(resume: ResumeProfile): string {
     body ? `<section><h2>${escapeHtml(title)}</h2>${body}</section>` : "";
   const experience = resume.experience
     .map(
-      (entry) => `<article><h3>${escapeHtml(entry.title)} · ${escapeHtml(entry.company)}</h3><p>${escapeHtml(
+      (entry) => `<article><h3>${escapeHtml(entry.title)} · ${escapeHtml(
+        entry.company,
+      )}</h3><p>${escapeHtml(
         [entry.startDate, entry.endDate].filter(Boolean).join(" – "),
-      )}</p><ul>${entry.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul></article>`,
+      )}</p><ul>${entry.bullets
+        .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
+        .join("")}</ul></article>`,
     )
     .join("");
   const projects = resume.projects
     .map(
-      (entry) => `<article><h3>${escapeHtml(entry.name)}</h3><p>${escapeHtml(entry.description)}</p><ul>${entry.bullets
+      (entry) => `<article><h3>${escapeHtml(entry.name)}</h3><p>${escapeHtml(
+        entry.description,
+      )}</p><ul>${entry.bullets
         .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
         .join("")}</ul></article>`,
     )
@@ -180,6 +244,7 @@ export function compileApplicationArtifacts(
   compiledAt = new Date().toISOString(),
 ): ApplicationCompilation {
   const resume = materializeTailoredResume(source, tailored);
+  const changes = summarizeChanges(source, resume);
   const slug = safeFilename(`${target.company}-${target.jobTitle}`);
   const manifest = {
     schema: "glaciereq.tailored-resume.v1",
@@ -188,10 +253,13 @@ export function compileApplicationArtifacts(
       company: target.company,
       jobTitle: target.jobTitle,
     },
-    resume,
+    sourceResume: source,
+    compiledResume: resume,
+    changes,
     boundary: {
       humanReviewRequired: true,
       hiringOutcomePrediction: false,
+      pdfGenerated: false,
       externalSubmissionPerformed: false,
     },
   };
@@ -202,6 +270,7 @@ export function compileApplicationArtifacts(
     source,
     target,
     resume,
+    changes,
     artifacts: [
       {
         kind: "ats",
