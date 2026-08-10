@@ -1,6 +1,7 @@
 import type {
   JobDescriptionProfile,
   ResumeProfile,
+  TailoredExperienceEntry,
   TailoredResume,
 } from "./schemas";
 
@@ -44,6 +45,10 @@ function normalize(value: string): string {
   return value.trim().replace(/\s+/g, " ");
 }
 
+function sameText(left: string, right: string): boolean {
+  return normalize(left).toLowerCase() === normalize(right).toLowerCase();
+}
+
 function safeFilename(value: string): string {
   const normalized = value
     .normalize("NFKD")
@@ -53,20 +58,58 @@ function safeFilename(value: string): string {
   return normalized || "target-role";
 }
 
+function proposalMatchesSource(
+  source: ResumeProfile["experience"][number],
+  proposal: TailoredExperienceEntry,
+): boolean {
+  if (!sameText(source.company, proposal.company) || !sameText(source.title, proposal.title)) {
+    return false;
+  }
+  if (source.bullets.length !== proposal.bullets.length) return false;
+  return source.bullets.every((bullet, index) => {
+    const candidate = proposal.bullets[index];
+    return candidate !== undefined && sameText(candidate.original, bullet);
+  });
+}
+
 export function materializeTailoredResume(
   source: ResumeProfile,
   tailored: TailoredResume,
 ): ResumeProfile {
-  const byEmployer = new Map(
-    tailored.tailoredExperience.map((entry) => [entry.company.toLowerCase(), entry]),
-  );
+  const usedProposalIndexes = new Set<number>();
+
+  const findProposal = (
+    experience: ResumeProfile["experience"][number],
+    sourceIndex: number,
+  ): TailoredExperienceEntry | undefined => {
+    const samePosition = tailored.tailoredExperience[sourceIndex];
+    if (
+      samePosition &&
+      !usedProposalIndexes.has(sourceIndex) &&
+      proposalMatchesSource(experience, samePosition)
+    ) {
+      usedProposalIndexes.add(sourceIndex);
+      return samePosition;
+    }
+
+    const matches = tailored.tailoredExperience
+      .map((proposal, index) => ({ proposal, index }))
+      .filter(
+        ({ proposal, index }) =>
+          !usedProposalIndexes.has(index) && proposalMatchesSource(experience, proposal),
+      );
+
+    if (matches.length !== 1) return undefined;
+    usedProposalIndexes.add(matches[0]!.index);
+    return matches[0]!.proposal;
+  };
 
   return {
     ...source,
     summary: normalize(tailored.tailoredSummary),
     skills: tailored.tailoredSkills.map(normalize).filter(Boolean),
-    experience: source.experience.map((experience) => {
-      const candidate = byEmployer.get(experience.company.toLowerCase());
+    experience: source.experience.map((experience, sourceIndex) => {
+      const candidate = findProposal(experience, sourceIndex);
       if (!candidate) return experience;
       return {
         ...experience,
@@ -201,6 +244,7 @@ function escapeHtml(value: string): string {
 export function renderPrintableHtml(resume: ResumeProfile): string {
   const section = (title: string, body: string) =>
     body ? `<section><h2>${escapeHtml(title)}</h2>${body}</section>` : "";
+
   const experience = resume.experience
     .map(
       (entry) => `<article><h3>${escapeHtml(entry.title)} · ${escapeHtml(
@@ -212,15 +256,37 @@ export function renderPrintableHtml(resume: ResumeProfile): string {
         .join("")}</ul></article>`,
     )
     .join("");
+
   const projects = resume.projects
-    .map(
-      (entry) => `<article><h3>${escapeHtml(entry.name)}</h3><p>${escapeHtml(
-        entry.description,
-      )}</p><ul>${entry.bullets
+    .map((entry) => {
+      const technologies = entry.technologies.length
+        ? `<p><strong>Technologies:</strong> ${entry.technologies.map(escapeHtml).join(" · ")}</p>`
+        : "";
+      return `<article><h3>${escapeHtml(entry.name)}</h3>${
+        entry.description ? `<p>${escapeHtml(entry.description)}</p>` : ""
+      }<ul>${entry.bullets
         .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
-        .join("")}</ul></article>`,
+        .join("")}</ul>${technologies}</article>`;
+    })
+    .join("");
+
+  const education = resume.education
+    .map(
+      (entry) => `<article><h3>${escapeHtml(entry.institution)}</h3><p>${escapeHtml(
+        [entry.degree, entry.fieldOfStudy].filter(Boolean).join(" · "),
+      )}</p>${entry.graduationDate ? `<p>${escapeHtml(entry.graduationDate)}</p>` : ""}</article>`,
     )
     .join("");
+
+  const certifications = resume.certifications.length
+    ? `<ul>${resume.certifications
+        .map(
+          (entry) => `<li>${escapeHtml(
+            [entry.name, entry.issuer, entry.date].filter(Boolean).join(" · "),
+          )}</li>`,
+        )
+        .join("")}</ul>`
+    : "";
 
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(
@@ -234,7 +300,10 @@ export function renderPrintableHtml(resume: ResumeProfile): string {
   )}</p></header>${section("Summary", `<p>${escapeHtml(resume.summary)}</p>`)}${section(
     "Skills",
     resume.skills.length ? `<p>${resume.skills.map(escapeHtml).join(" · ")}</p>` : "",
-  )}${section("Experience", experience)}${section("Projects", projects)}</body></html>\n`;
+  )}${section("Experience", experience)}${section("Projects", projects)}${section(
+    "Education",
+    education,
+  )}${section("Certifications", certifications)}</body></html>\n`;
 }
 
 export function compileApplicationArtifacts(
