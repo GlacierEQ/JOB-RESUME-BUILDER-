@@ -41,9 +41,10 @@ export async function POST(request: Request) {
   } catch (error: unknown) {
     const status = requestBoundaryStatus(error);
     if (status >= 500) console.error("API Analyze handler failed:", error);
-    return NextResponse.json(
-      { error: errorMessage(error, "An unexpected error occurred during analysis.") },
-      { status },
-    );
+    const message =
+      status >= 500
+        ? "An unexpected error occurred during analysis."
+        : errorMessage(error, "The analysis request is invalid.");
+    return NextResponse.json({ error: message }, { status });
   }
 }
