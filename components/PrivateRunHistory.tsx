@@ -41,7 +41,10 @@ export default function PrivateRunHistory({
   }, []);
 
   useEffect(() => {
-    void refresh();
+    const timer = window.setTimeout(() => {
+      void refresh();
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, [refresh, refreshToken]);
 
   const remove = async (id: string) => {
@@ -103,7 +106,7 @@ export default function PrivateRunHistory({
       )}
 
       <p style={{ margin: "14px 0 0", fontSize: ".9rem", opacity: 0.7 }}>
-        Resume and job-description contents are stored in this browser&apos;s IndexedDB only, expire after seven days by default, and are never uploaded by the persistence layer. Clearing browser storage deletes them.
+        Resume and job-description contents are stored in this browser&apos;s IndexedDB only. Runs older than seven days are purged on the next workspace load; the persistence layer never uploads them. Clearing browser storage deletes them immediately.
       </p>
     </section>
   );
