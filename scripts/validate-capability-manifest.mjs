@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readFile, stat } from "node:fs/promises";
+import { readFile, realpath, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -21,11 +21,15 @@ function safeRelative(value) {
   );
 }
 
+const CANONICAL_ROOT = await realpath(ROOT);
+
 async function requirePath(ref, capabilityId) {
   assert(safeRelative(ref), `${capabilityId}: unsafe repository ref ${String(ref)}`);
   const resolved = path.resolve(ROOT, ref);
   assert(resolved.startsWith(`${ROOT}${path.sep}`), `${capabilityId}: ref escapes repository`);
-  const metadata = await stat(resolved);
+  const canonical = await realpath(resolved);
+  assert(canonical.startsWith(`${CANONICAL_ROOT}${path.sep}`), `${capabilityId}: ref escapes repository`);
+  const metadata = await stat(canonical);
   assert(metadata.isFile(), `${capabilityId}: ref must resolve to a regular file: ${ref}`);
 }
 
