@@ -20,6 +20,14 @@ export default function PrivateRunHistory({
   const [runs, setRuns] = useState<readonly StoredTailoringRun[]>([]);
   const [status, setStatus] = useState("Loading private runs…");
 
+  const reportFailure = useCallback((error: unknown) => {
+    setStatus(
+      error instanceof Error
+        ? `Private browser persistence unavailable: ${error.message}`
+        : "Private browser persistence unavailable.",
+    );
+  }, []);
+
   const refresh = useCallback(async () => {
     try {
       const purged = await store.purgeExpired();
@@ -32,13 +40,9 @@ export default function PrivateRunHistory({
       );
     } catch (error) {
       setRuns([]);
-      setStatus(
-        error instanceof Error
-          ? `Private browser persistence unavailable: ${error.message}`
-          : "Private browser persistence unavailable.",
-      );
+      reportFailure(error);
     }
-  }, []);
+  }, [reportFailure]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -48,13 +52,21 @@ export default function PrivateRunHistory({
   }, [refresh, refreshToken]);
 
   const remove = async (id: string) => {
-    await store.delete(id);
-    await refresh();
+    try {
+      await store.delete(id);
+      await refresh();
+    } catch (error) {
+      reportFailure(error);
+    }
   };
 
   const clear = async () => {
-    await store.clear();
-    await refresh();
+    try {
+      await store.clear();
+      await refresh();
+    } catch (error) {
+      reportFailure(error);
+    }
   };
 
   return (
