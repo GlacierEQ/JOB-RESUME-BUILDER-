@@ -87,10 +87,18 @@ function validateRun(value: unknown): StoredTailoringRun {
     throw new Error("stored run is not an object");
   }
   const run = value as Partial<StoredTailoringRun>;
-  if (run.schema !== "glaciereq.local-tailoring-run.v1") throw new Error("unsupported stored run schema");
-  if (typeof run.id !== "string" || !run.id) throw new Error("stored run id is invalid");
-  if (!Number.isInteger(run.revision) || (run.revision ?? -1) < 0) throw new Error("stored run revision is invalid");
-  if (!run.createdAt || !run.updatedAt || !run.expiresAt) throw new Error("stored run timestamps are incomplete");
+  if (run.schema !== "glaciereq.local-tailoring-run.v1") {
+    throw new Error("unsupported stored run schema");
+  }
+  if (typeof run.id !== "string" || !run.id) {
+    throw new Error("stored run id is invalid");
+  }
+  if (!Number.isInteger(run.revision) || (run.revision ?? -1) < 0) {
+    throw new Error("stored run revision is invalid");
+  }
+  if (!run.createdAt || !run.updatedAt || !run.expiresAt) {
+    throw new Error("stored run timestamps are incomplete");
+  }
   return value as StoredTailoringRun;
 }
 
@@ -100,7 +108,8 @@ function openDatabase(): Promise<IDBDatabase> {
   }
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
-    request.onerror = () => reject(request.error ?? new Error("failed to open private run database"));
+    request.onerror = () =>
+      reject(request.error ?? new Error("failed to open private run database"));
     request.onupgradeneeded = () => {
       const database = request.result;
       if (!database.objectStoreNames.contains(STORE_NAME)) {
@@ -116,36 +125,74 @@ function openDatabase(): Promise<IDBDatabase> {
 function requestResult<T>(request: IDBRequest<T>): Promise<T> {
   return new Promise((resolve, reject) => {
     request.onsuccess = () => resolve(request.result);
-    request.onerror = () => reject(request.error ?? new Error("IndexedDB request failed"));
+    request.onerror = () =>
+      reject(request.error ?? new Error("IndexedDB request failed"));
   });
 }
 
 function transactionDone(transaction: IDBTransaction): Promise<void> {
   return new Promise((resolve, reject) => {
     transaction.oncomplete = () => resolve();
-    transaction.onerror = () => reject(transaction.error ?? new Error("IndexedDB transaction failed"));
-    transaction.onabort = () => reject(transaction.error ?? new Error("IndexedDB transaction aborted"));
+    transaction.onerror = () =>
+      reject(transaction.error ?? new Error("IndexedDB transaction failed"));
+    transaction.onabort = () =>
+      reject(transaction.error ?? new Error("IndexedDB transaction aborted"));
   });
 }
 
 export class IndexedDbRunStore implements RunStore {
-  async put(run: StoredTailoringRun, expectedRevision?: number): Promise<StoredTailoringRun> {
+  async put(
+    run: StoredTailoringRun,
+    expectedRevision?: number,
+  ): Promise<StoredTailoringRun> {
     const validated = validateRun(run);
     const database = await openDatabase();
+    let callbackError: Error | null = null;
     try {
       const transaction = database.transaction(STORE_NAME, "readwrite");
       const store = transaction.objectStore(STORE_NAME);
-      const existing = await requestResult(store.get(validated.id)) as StoredTailoringRun | undefined;
-      if (existing && expectedRevision !== undefined && existing.revision !== expectedRevision) {
+      const getRequest = store.get(validated.id);
+
+      getRequest.onsuccess = () => {
+        try {
+          const existing = getRequest.result as StoredTailoringRun | undefined;
+          if (
+            existing &&
+            expectedRevision !== undefined &&
+            existing.revision !== expectedRevision
+          ) {
+            throw new Error(
+              `stale run revision: expected ${expectedRevision}, current ${existing.revision}`,
+            );
+          }
+          if (
+            !existing &&
+            expectedRevision !== undefined &&
+            expectedRevision !== -1
+          ) {
+            throw new Error("stale run revision: run does not exist");
+          }
+          store.put(validated);
+        } catch (error) {
+          callbackError =
+            error instanceof Error ? error : new Error("private run write failed");
+          transaction.abort();
+        }
+      };
+
+      getRequest.onerror = () => {
+        callbackError =
+          getRequest.error ?? new Error("failed to read existing private run");
         transaction.abort();
-        throw new Error(`stale run revision: expected ${expectedRevision}, current ${existing.revision}`);
+      };
+
+      try {
+        await transactionDone(transaction);
+      } catch (transactionError) {
+        if (callbackError) throw callbackError;
+        throw transactionError;
       }
-      if (!existing && expectedRevision !== undefined && expectedRevision !== -1) {
-        transaction.abort();
-        throw new Error("stale run revision: run does not exist");
-      }
-      store.put(validated);
-      await transactionDone(transaction);
+      if (callbackError) throw callbackError;
       return validated;
     } finally {
       database.close();
@@ -156,7 +203,9 @@ export class IndexedDbRunStore implements RunStore {
     const database = await openDatabase();
     try {
       const transaction = database.transaction(STORE_NAME, "readonly");
-      const value = await requestResult(transaction.objectStore(STORE_NAME).get(id));
+      const value = await requestResult(
+        transaction.objectStore(STORE_NAME).get(id),
+      );
       await transactionDone(transaction);
       if (value === undefined) return null;
       return validateRun(value);
@@ -169,7 +218,9 @@ export class IndexedDbRunStore implements RunStore {
     const database = await openDatabase();
     try {
       const transaction = database.transaction(STORE_NAME, "readonly");
-      const values = await requestResult(transaction.objectStore(STORE_NAME).getAll());
+      const values = await requestResult(
+        transaction.objectStore(STORE_NAME).getAll(),
+      );
       await transactionDone(transaction);
       return (values as unknown[])
         .map(validateRun)
@@ -192,7 +243,9 @@ export class IndexedDbRunStore implements RunStore {
 
   async purgeExpired(now = new Date()): Promise<number> {
     const runs = await this.list();
-    const expired = runs.filter((run) => Date.parse(run.expiresAt) <= now.getTime());
+    const expired = runs.filter(
+      (run) => Date.parse(run.expiresAt) <= now.getTime(),
+    );
     for (const run of expired) await this.delete(run.id);
     return expired.length;
   }
