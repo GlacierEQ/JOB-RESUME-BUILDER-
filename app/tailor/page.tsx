@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./page.module.css";
 import ResumeInput from "@/components/ResumeInput";
 import JDInput from "@/components/JDInput";
@@ -9,6 +9,18 @@ import GapAnalysisView from "@/components/GapAnalysis";
 import SideBySideDiff from "@/components/SideBySideDiff";
 import ReviewCompletionControls from "@/components/PDFExportButton";
 import JDRequirementsSummary from "@/components/JDRequirementsSummary";
+import PrivateRunHistory from "@/components/PrivateRunHistory";
+import {
+  compileApplicationArtifacts,
+  type ApplicationCompilation,
+  type CompiledArtifact,
+} from "@/lib/application-compiler";
+import {
+  advanceRun,
+  createRun,
+  IndexedDbRunStore,
+  type StoredTailoringRun,
+} from "@/lib/run-store";
 import type {
   GapAnalysis as GapAnalysisType,
   JobDescriptionProfile,
@@ -37,6 +49,8 @@ interface TailorResponse {
   readonly tailoredMatch: MatchScore;
 }
 
+const privateRunStore = new IndexedDbRunStore();
+
 export default function TailorWorkspace() {
   const [currentStep, setCurrentStep] = useState<WorkflowStep>("ingest");
   const [resumeText, setResumeText] = useState("");
@@ -48,6 +62,51 @@ export default function TailorWorkspace() {
   const [tailoredResume, setTailoredResume] = useState<TailoredResumeType | null>(null);
   const [tailoredScore, setTailoredScore] = useState<MatchScore | null>(null);
   const [loadingCue, setLoadingCue] = useState("");
+  const [persistenceStatus, setPersistenceStatus] = useState("");
+  const [historyRefreshToken, setHistoryRefreshToken] = useState(0);
+  const [compilation, setCompilation] = useState<ApplicationCompilation | null>(null);
+
+  const currentRunRef = useRef<StoredTailoringRun | null>(null);
+  const persistedRevisionRef = useRef<number | null>(null);
+  const persistenceQueueRef = useRef<Promise<void>>(Promise.resolve());
+
+  const replaceCurrentRun = (run: StoredTailoringRun | null) => {
+    currentRunRef.current = run;
+  };
+
+  const persistRun = async (run: StoredTailoringRun): Promise<void> => {
+    const task = persistenceQueueRef.current.then(async () => {
+      const expectedRevision = persistedRevisionRef.current ?? -1;
+      try {
+        await privateRunStore.put(run, expectedRevision);
+        persistedRevisionRef.current = run.revision;
+        setPersistenceStatus(
+          `Private run saved locally · revision ${run.revision} · expires ${new Date(run.expiresAt).toLocaleString()}`,
+        );
+        setHistoryRefreshToken((value) => value + 1);
+      } catch (error) {
+        setPersistenceStatus(
+          error instanceof Error
+            ? `Private persistence unavailable; workflow remains usable: ${error.message}`
+            : "Private persistence unavailable; workflow remains usable.",
+        );
+      }
+    });
+    persistenceQueueRef.current = task;
+    await task;
+  };
+
+  const advanceCurrentRun = async (
+    patch: Parameters<typeof advanceRun>[1],
+    now = new Date(),
+  ): Promise<StoredTailoringRun | null> => {
+    const current = currentRunRef.current;
+    if (!current) return null;
+    const next = advanceRun(current, patch, now);
+    replaceCurrentRun(next);
+    await persistRun(next);
+    return next;
+  };
 
   const handleStartAnalysis = async () => {
     if (!resumeText.trim() || !jdText.trim()) {
@@ -56,6 +115,7 @@ export default function TailorWorkspace() {
     }
 
     setCurrentStep("analyzing");
+    setCompilation(null);
     const stopCues = startCueSequence(
       [
         "Ingesting documents...",
@@ -77,6 +137,22 @@ export default function TailorWorkspace() {
       setJdProfile(data.jobDescription);
       setOriginalScore(data.originalMatch);
       setGapAnalysis(data.gapAnalysis);
+      setTailoredResume(null);
+      setTailoredScore(null);
+
+      const run = createRun({
+        id: createRunId(),
+        stage: "ANALYZED",
+        resumeText,
+        jobDescriptionText: jdText,
+        resume: data.resume,
+        jobDescription: data.jobDescription,
+        originalMatch: data.originalMatch,
+        gapAnalysis: data.gapAnalysis,
+      });
+      persistedRevisionRef.current = null;
+      replaceCurrentRun(run);
+      await persistRun(run);
       setCurrentStep("analysis_results");
     } catch (error) {
       console.error("Analysis request failed:", error);
@@ -88,9 +164,7 @@ export default function TailorWorkspace() {
   };
 
   const handleStartTailoring = async () => {
-    if (!resumeProfile || !jdProfile || !gapAnalysis) {
-      return;
-    }
+    if (!resumeProfile || !jdProfile || !gapAnalysis) return;
 
     setCurrentStep("tailoring");
     const stopCues = startCueSequence(
@@ -113,6 +187,11 @@ export default function TailorWorkspace() {
 
       setTailoredResume(data.tailoredResume);
       setTailoredScore(data.tailoredMatch);
+      await advanceCurrentRun({
+        stage: "TAILORED",
+        tailoredResume: data.tailoredResume,
+        tailoredMatch: data.tailoredMatch,
+      });
       setCurrentStep("review");
     } catch (error) {
       console.error("Tailoring request failed:", error);
@@ -123,8 +202,82 @@ export default function TailorWorkspace() {
     }
   };
 
-  const handleReviewComplete = () => {
+  const handleReviewComplete = async (
+    reviewType: "tailored" | "comparison",
+  ) => {
+    if (!resumeProfile || !jdProfile || !tailoredResume) {
+      alert("The reviewed run is incomplete and cannot be compiled.");
+      return;
+    }
+
+    const compiled = compileApplicationArtifacts(
+      resumeProfile,
+      jdProfile,
+      tailoredResume,
+    );
+    setCompilation(compiled);
+
+    const now = new Date();
+    await advanceCurrentRun(
+      {
+        stage: "REVIEWED",
+        reviewedAt: now.toISOString(),
+      },
+      now,
+    );
+    setPersistenceStatus((status) =>
+      status
+        ? `${status} · ${reviewType === "comparison" ? "side-by-side" : "tailored"} review confirmed`
+        : `${reviewType === "comparison" ? "Side-by-side" : "Tailored"} review confirmed`,
+    );
     setCurrentStep("review_complete");
+  };
+
+  const handleArtifactDownload = async (artifact: CompiledArtifact) => {
+    downloadArtifact(artifact);
+    const current = currentRunRef.current;
+    if (current && current.stage !== "EXPORTED") {
+      const now = new Date();
+      await advanceCurrentRun(
+        {
+          stage: "EXPORTED",
+          exportedAt: now.toISOString(),
+        },
+        now,
+      );
+    }
+  };
+
+  const restoreRun = (run: StoredTailoringRun) => {
+    replaceCurrentRun(run);
+    persistedRevisionRef.current = run.revision;
+    setResumeText(run.resumeText);
+    setJdText(run.jobDescriptionText);
+    setResumeProfile(run.resume);
+    setJdProfile(run.jobDescription);
+    setOriginalScore(run.originalMatch);
+    setGapAnalysis(run.gapAnalysis);
+    setTailoredResume(run.tailoredResume ?? null);
+    setTailoredScore(run.tailoredMatch ?? null);
+
+    const restoredCompilation =
+      run.tailoredResume &&
+      (run.stage === "REVIEWED" || run.stage === "EXPORTED")
+        ? compileApplicationArtifacts(
+            run.resume,
+            run.jobDescription,
+            run.tailoredResume,
+            run.reviewedAt ?? run.updatedAt,
+          )
+        : null;
+    setCompilation(restoredCompilation);
+    setPersistenceStatus(`Restored private run revision ${run.revision}.`);
+
+    if (run.stage === "ANALYZED") setCurrentStep("analysis_results");
+    else if (run.stage === "TAILORED") setCurrentStep("review");
+    else if (restoredCompilation) setCurrentStep("review_complete");
+    else if (run.tailoredResume) setCurrentStep("review");
+    else setCurrentStep("analysis_results");
   };
 
   const resetRun = () => {
@@ -137,6 +290,10 @@ export default function TailorWorkspace() {
     setTailoredResume(null);
     setTailoredScore(null);
     setLoadingCue("");
+    replaceCurrentRun(null);
+    persistedRevisionRef.current = null;
+    setCompilation(null);
+    setPersistenceStatus("");
     setCurrentStep("ingest");
   };
 
@@ -161,8 +318,11 @@ export default function TailorWorkspace() {
       <header className={styles.header}>
         <h1 className={styles.title}>Resume Shapeshifter Workspace</h1>
         <p className={styles.subtitle}>
-          Analyze and tailor source experience for a target role without inventing qualifications.
+          Analyze, tailor, preserve, review, and compile source-grounded application artifacts without inventing qualifications.
         </p>
+        {persistenceStatus && (
+          <p style={{ marginTop: "8px", opacity: 0.76 }}>{persistenceStatus}</p>
+        )}
       </header>
 
       <div className={styles.stepper}>
@@ -183,12 +343,15 @@ export default function TailorWorkspace() {
         <div className={styles.stepConnector} />
         <div className={getStepClass("review_complete")}>
           <span className={styles.stepNumber}>4</span>
-          <span>Review Complete</span>
+          <span>Compile Artifacts</span>
         </div>
       </div>
 
       {currentStep === "ingest" && (
-        <div className="animate-scale" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+        <div
+          className="animate-scale"
+          style={{ display: "flex", flexDirection: "column", gap: "24px" }}
+        >
           <div className={styles.workspaceGrid}>
             <ResumeInput
               value={resumeText}
@@ -198,10 +361,18 @@ export default function TailorWorkspace() {
             <JDInput value={jdText} onChange={setJdText} />
           </div>
           <div className={styles.btnActionsRow}>
-            <button type="button" className="btn-primary" onClick={handleStartAnalysis}>
+            <button
+              type="button"
+              className="btn-primary"
+              onClick={handleStartAnalysis}
+            >
               Analyze Match & Find Gaps ➜
             </button>
           </div>
+          <PrivateRunHistory
+            refreshToken={historyRefreshToken}
+            onRestore={restoreRun}
+          />
         </div>
       )}
 
@@ -239,7 +410,11 @@ export default function TailorWorkspace() {
               >
                 ⬅ Adjust Inputs
               </button>
-              <button type="button" className="btn-primary" onClick={handleStartTailoring}>
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={handleStartTailoring}
+              >
                 Generate Validated Suggestions ➜
               </button>
             </div>
@@ -273,18 +448,69 @@ export default function TailorWorkspace() {
               >
                 ⬅ Back to Gaps
               </button>
-              <ReviewCompletionControls onExport={handleReviewComplete} />
+              <ReviewCompletionControls
+                onExport={(type) => void handleReviewComplete(type)}
+              />
             </div>
           </div>
         )}
 
-      {currentStep === "review_complete" && (
+      {currentStep === "review_complete" && compilation && (
         <div className={`${styles.exportPanel} card-glass animate-scale`}>
-          <h2>Review marked complete</h2>
-          <p style={{ maxWidth: "600px" }}>
-            This prototype records only the local workflow state. It has not generated or downloaded a document. Return to the comparison to continue reviewing, or start a new run.
+          <h2>Application artifacts compiled</h2>
+          <p style={{ maxWidth: "720px" }}>
+            The reviewed source has been materialized into real downloadable
+            artifacts. The JSON artifact contains the source resume, compiled
+            resume, target identity, and exact change summary; ATS text is
+            linearized for application systems; printable HTML is a document
+            surface that can be printed to PDF without claiming an automatically
+            generated PDF.
           </p>
-          <div className={styles.btnActionsRow} style={{ marginTop: "16px" }}>
+          <div style={{ display: "grid", gap: "10px", margin: "18px 0" }}>
+            {compilation.artifacts.map((artifact) => (
+              <div
+                key={artifact.kind}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <div>
+                  <strong>{artifact.filename}</strong>
+                  <div style={{ opacity: 0.72 }}>{artifact.mimeType}</div>
+                </div>
+                <button
+                  type="button"
+                  className="btn-primary"
+                  onClick={() => void handleArtifactDownload(artifact)}
+                >
+                  Download {artifact.kind.toUpperCase()}
+                </button>
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gap: "6px",
+              marginBottom: "18px",
+              opacity: 0.82,
+            }}
+          >
+            <span>
+              Summary changed: {compilation.changes.summaryChanged ? "yes" : "no"}
+            </span>
+            <span>Skills added: {compilation.changes.skillsAdded.length}</span>
+            <span>Skills removed: {compilation.changes.skillsRemoved.length}</span>
+            <span>
+              Experience bullets changed: {compilation.changes.experienceBulletsChanged.length}
+            </span>
+            <span>No external submission has been performed.</span>
+          </div>
+          <div className={styles.btnActionsRow}>
             <button
               type="button"
               className="btn-secondary"
@@ -322,11 +548,32 @@ async function postJson<T>(url: string, body: unknown): Promise<T> {
     throw new Error(message);
   }
 
-  if (!payload) {
-    throw new Error("The server returned an empty response.");
-  }
-
+  if (!payload) throw new Error("The server returned an empty response.");
   return payload as T;
+}
+
+function createRunId(): string {
+  const cryptoApi = globalThis.crypto;
+  if (typeof cryptoApi?.randomUUID === "function") {
+    return cryptoApi.randomUUID();
+  }
+  return `run-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function downloadArtifact(artifact: CompiledArtifact): void {
+  const blob = new Blob([artifact.content], { type: artifact.mimeType });
+  const url = URL.createObjectURL(blob);
+  try {
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = artifact.filename;
+    anchor.rel = "noopener";
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+  } finally {
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
 }
 
 function startCueSequence(
@@ -338,14 +585,14 @@ function startCueSequence(
 
   const interval = window.setInterval(() => {
     index += 1;
-    if (index < cues.length) {
-      setCue(cues[index] ?? "Working...");
-    }
+    if (index < cues.length) setCue(cues[index] ?? "Working...");
   }, 700);
 
   return () => window.clearInterval(interval);
 }
 
 function readErrorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : "The request could not be completed.";
+  return error instanceof Error
+    ? error.message
+    : "The request could not be completed.";
 }

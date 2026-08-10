@@ -1,7 +1,17 @@
 import { NextResponse } from "next/server";
 import { tailorResume } from "@/services/tailoring-engine";
 import { scoreMatch } from "@/services/match-engine";
-import { ResumeProfile, JobDescriptionProfile } from "@/lib/schemas";
+import { materializeTailoredResume } from "@/lib/application-compiler";
+import {
+  GapAnalysisSchema,
+  JobDescriptionProfileSchema,
+  ResumeProfileSchema,
+} from "@/lib/schemas";
+import {
+  readBoundedRequestJson,
+  requireBoundedJsonObject,
+  requestBoundaryStatus,
+} from "@/lib/request-guards";
 
 function errorMessage(error: unknown, fallback: string): string {
   return error instanceof Error && error.message ? error.message : fallback;
@@ -9,42 +19,32 @@ function errorMessage(error: unknown, fallback: string): string {
 
 export async function POST(request: Request) {
   try {
-    const { resume, jobDescription, gapAnalysis } = await request.json();
+    const body = await readBoundedRequestJson(request);
+    const rawResume = requireBoundedJsonObject(body.resume, "resume");
+    const rawJobDescription = requireBoundedJsonObject(
+      body.jobDescription,
+      "jobDescription",
+    );
+    const rawGapAnalysis = requireBoundedJsonObject(
+      body.gapAnalysis,
+      "gapAnalysis",
+    );
 
-    if (!resume || !jobDescription || !gapAnalysis) {
-      return NextResponse.json(
-        { error: "Missing required inputs: resume, jobDescription, and gapAnalysis must be provided." },
-        { status: 400 },
-      );
-    }
+    const typedResume = ResumeProfileSchema.parse(rawResume);
+    const typedJobDescription = JobDescriptionProfileSchema.parse(
+      rawJobDescription,
+    );
+    const gapAnalysis = GapAnalysisSchema.parse(rawGapAnalysis);
 
-    const typedResume = resume as ResumeProfile;
-    const typedJobDescription = jobDescription as JobDescriptionProfile;
     const tailoredResume = await tailorResume(
       typedResume,
       typedJobDescription,
       gapAnalysis,
     );
-
-    const tailoredResumeProfile: ResumeProfile = {
-      ...typedResume,
-      summary: tailoredResume.tailoredSummary,
-      skills: tailoredResume.tailoredSkills,
-      experience: typedResume.experience.map((experience) => {
-        const tailoredExperience = tailoredResume.tailoredExperience.find(
-          (candidate) =>
-            candidate.company.toLowerCase() === experience.company.toLowerCase(),
-        );
-        return {
-          ...experience,
-          bullets: experience.bullets.map((bullet: string, bulletIndex: number) => {
-            const tailoredBullet = tailoredExperience?.bullets[bulletIndex];
-            return tailoredBullet ? tailoredBullet.tailored : bullet;
-          }),
-        };
-      }),
-    };
-
+    const tailoredResumeProfile = materializeTailoredResume(
+      typedResume,
+      tailoredResume,
+    );
     const tailoredScore = await scoreMatch(
       tailoredResumeProfile,
       typedJobDescription,
@@ -54,12 +54,19 @@ export async function POST(request: Request) {
       tailoredResume,
       tailoredMatch: tailoredScore,
       status: "tailored",
+      boundary: {
+        modelOutputTrustedWithoutValidation: false,
+        serverPersistence: false,
+        externalSubmission: false,
+      },
     });
   } catch (error: unknown) {
-    console.error("API Tailor handler failed:", error);
-    return NextResponse.json(
-      { error: errorMessage(error, "An unexpected error occurred during tailoring.") },
-      { status: 500 },
-    );
+    const status = requestBoundaryStatus(error);
+    if (status >= 500) console.error("API Tailor handler failed:", error);
+    const message =
+      status >= 500
+        ? "An unexpected error occurred during tailoring."
+        : errorMessage(error, "The tailoring request is invalid.");
+    return NextResponse.json({ error: message }, { status });
   }
 }

@@ -16,12 +16,18 @@
   },
   "include": [
     "data/helix-resume-evidence.json",
+    "lib/application-compiler.ts",
     "lib/helix-boundaries.ts",
     "lib/helix-evidence.ts",
+    "lib/request-guards.ts",
+    "lib/run-store.ts",
     "lib/schemas.ts",
     "lib/truthfulness.ts",
+    "tests/application-compiler.test.ts",
     "tests/helix-boundaries.test.ts",
     "tests/helix-evidence.test.ts",
+    "tests/request-guards.test.ts",
+    "tests/run-store.test.ts",
     "tests/truthfulness.test.ts"
   ],
   "exclude": ["node_modules", ".next", ".test-dist"]
