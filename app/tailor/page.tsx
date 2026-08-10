@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./page.module.css";
 import ResumeInput from "@/components/ResumeInput";
 import JDInput from "@/components/JDInput";
@@ -62,28 +62,50 @@ export default function TailorWorkspace() {
   const [tailoredResume, setTailoredResume] = useState<TailoredResumeType | null>(null);
   const [tailoredScore, setTailoredScore] = useState<MatchScore | null>(null);
   const [loadingCue, setLoadingCue] = useState("");
-  const [currentRun, setCurrentRun] = useState<StoredTailoringRun | null>(null);
   const [persistenceStatus, setPersistenceStatus] = useState("");
   const [historyRefreshToken, setHistoryRefreshToken] = useState(0);
   const [compilation, setCompilation] = useState<ApplicationCompilation | null>(null);
 
-  const persistRun = async (
-    run: StoredTailoringRun,
-    expectedRevision: number,
-  ): Promise<void> => {
-    try {
-      await privateRunStore.put(run, expectedRevision);
-      setPersistenceStatus(
-        `Private run saved locally · revision ${run.revision} · expires ${new Date(run.expiresAt).toLocaleString()}`,
-      );
-      setHistoryRefreshToken((value) => value + 1);
-    } catch (error) {
-      setPersistenceStatus(
-        error instanceof Error
-          ? `Private persistence unavailable; workflow remains usable: ${error.message}`
-          : "Private persistence unavailable; workflow remains usable.",
-      );
-    }
+  const currentRunRef = useRef<StoredTailoringRun | null>(null);
+  const persistedRevisionRef = useRef<number | null>(null);
+  const persistenceQueueRef = useRef<Promise<void>>(Promise.resolve());
+
+  const replaceCurrentRun = (run: StoredTailoringRun | null) => {
+    currentRunRef.current = run;
+  };
+
+  const persistRun = async (run: StoredTailoringRun): Promise<void> => {
+    const task = persistenceQueueRef.current.then(async () => {
+      const expectedRevision = persistedRevisionRef.current ?? -1;
+      try {
+        await privateRunStore.put(run, expectedRevision);
+        persistedRevisionRef.current = run.revision;
+        setPersistenceStatus(
+          `Private run saved locally · revision ${run.revision} · expires ${new Date(run.expiresAt).toLocaleString()}`,
+        );
+        setHistoryRefreshToken((value) => value + 1);
+      } catch (error) {
+        setPersistenceStatus(
+          error instanceof Error
+            ? `Private persistence unavailable; workflow remains usable: ${error.message}`
+            : "Private persistence unavailable; workflow remains usable.",
+        );
+      }
+    });
+    persistenceQueueRef.current = task;
+    await task;
+  };
+
+  const advanceCurrentRun = async (
+    patch: Parameters<typeof advanceRun>[1],
+    now = new Date(),
+  ): Promise<StoredTailoringRun | null> => {
+    const current = currentRunRef.current;
+    if (!current) return null;
+    const next = advanceRun(current, patch, now);
+    replaceCurrentRun(next);
+    await persistRun(next);
+    return next;
   };
 
   const handleStartAnalysis = async () => {
@@ -128,8 +150,9 @@ export default function TailorWorkspace() {
         originalMatch: data.originalMatch,
         gapAnalysis: data.gapAnalysis,
       });
-      setCurrentRun(run);
-      void persistRun(run, -1);
+      persistedRevisionRef.current = null;
+      replaceCurrentRun(run);
+      await persistRun(run);
       setCurrentStep("analysis_results");
     } catch (error) {
       console.error("Analysis request failed:", error);
@@ -141,9 +164,7 @@ export default function TailorWorkspace() {
   };
 
   const handleStartTailoring = async () => {
-    if (!resumeProfile || !jdProfile || !gapAnalysis) {
-      return;
-    }
+    if (!resumeProfile || !jdProfile || !gapAnalysis) return;
 
     setCurrentStep("tailoring");
     const stopCues = startCueSequence(
@@ -166,15 +187,11 @@ export default function TailorWorkspace() {
 
       setTailoredResume(data.tailoredResume);
       setTailoredScore(data.tailoredMatch);
-      if (currentRun) {
-        const nextRun = advanceRun(currentRun, {
-          stage: "TAILORED",
-          tailoredResume: data.tailoredResume,
-          tailoredMatch: data.tailoredMatch,
-        });
-        setCurrentRun(nextRun);
-        void persistRun(nextRun, currentRun.revision);
-      }
+      await advanceCurrentRun({
+        stage: "TAILORED",
+        tailoredResume: data.tailoredResume,
+        tailoredMatch: data.tailoredMatch,
+      });
       setCurrentStep("review");
     } catch (error) {
       console.error("Tailoring request failed:", error);
@@ -185,53 +202,55 @@ export default function TailorWorkspace() {
     }
   };
 
-  const handleReviewComplete = (_reviewType: "tailored" | "comparison") => {
+  const handleReviewComplete = async (
+    reviewType: "tailored" | "comparison",
+  ) => {
     if (!resumeProfile || !jdProfile || !tailoredResume) {
       alert("The reviewed run is incomplete and cannot be compiled.");
       return;
     }
+
     const compiled = compileApplicationArtifacts(
       resumeProfile,
       jdProfile,
       tailoredResume,
     );
     setCompilation(compiled);
-    setCurrentStep("review_complete");
 
-    if (currentRun) {
-      const now = new Date();
-      const nextRun = advanceRun(
-        currentRun,
-        {
-          stage: "REVIEWED",
-          reviewedAt: now.toISOString(),
-        },
-        now,
-      );
-      setCurrentRun(nextRun);
-      void persistRun(nextRun, currentRun.revision);
-    }
+    const now = new Date();
+    await advanceCurrentRun(
+      {
+        stage: "REVIEWED",
+        reviewedAt: now.toISOString(),
+      },
+      now,
+    );
+    setPersistenceStatus((status) =>
+      status
+        ? `${status} · ${reviewType === "comparison" ? "side-by-side" : "tailored"} review confirmed`
+        : `${reviewType === "comparison" ? "Side-by-side" : "Tailored"} review confirmed`,
+    );
+    setCurrentStep("review_complete");
   };
 
-  const handleArtifactDownload = (artifact: CompiledArtifact) => {
+  const handleArtifactDownload = async (artifact: CompiledArtifact) => {
     downloadArtifact(artifact);
-    if (currentRun && currentRun.stage !== "EXPORTED") {
+    const current = currentRunRef.current;
+    if (current && current.stage !== "EXPORTED") {
       const now = new Date();
-      const nextRun = advanceRun(
-        currentRun,
+      await advanceCurrentRun(
         {
           stage: "EXPORTED",
           exportedAt: now.toISOString(),
         },
         now,
       );
-      setCurrentRun(nextRun);
-      void persistRun(nextRun, currentRun.revision);
     }
   };
 
   const restoreRun = (run: StoredTailoringRun) => {
-    setCurrentRun(run);
+    replaceCurrentRun(run);
+    persistedRevisionRef.current = run.revision;
     setResumeText(run.resumeText);
     setJdText(run.jobDescriptionText);
     setResumeProfile(run.resume);
@@ -266,7 +285,8 @@ export default function TailorWorkspace() {
     setTailoredResume(null);
     setTailoredScore(null);
     setLoadingCue("");
-    setCurrentRun(null);
+    replaceCurrentRun(null);
+    persistedRevisionRef.current = null;
     setCompilation(null);
     setPersistenceStatus("");
     setCurrentStep("ingest");
@@ -412,7 +432,7 @@ export default function TailorWorkspace() {
               >
                 ⬅ Back to Gaps
               </button>
-              <ReviewCompletionControls onExport={handleReviewComplete} />
+              <ReviewCompletionControls onExport={(type) => void handleReviewComplete(type)} />
             </div>
           </div>
         )}
@@ -436,7 +456,7 @@ export default function TailorWorkspace() {
                 <button
                   type="button"
                   className="btn-primary"
-                  onClick={() => handleArtifactDownload(artifact)}
+                  onClick={() => void handleArtifactDownload(artifact)}
                 >
                   Download {artifact.kind.toUpperCase()}
                 </button>
@@ -488,10 +508,7 @@ async function postJson<T>(url: string, body: unknown): Promise<T> {
     throw new Error(message);
   }
 
-  if (!payload) {
-    throw new Error("The server returned an empty response.");
-  }
-
+  if (!payload) throw new Error("The server returned an empty response.");
   return payload as T;
 }
 
@@ -520,9 +537,7 @@ function startCueSequence(
 
   const interval = window.setInterval(() => {
     index += 1;
-    if (index < cues.length) {
-      setCue(cues[index] ?? "Working...");
-    }
+    if (index < cues.length) setCue(cues[index] ?? "Working...");
   }, 700);
 
   return () => window.clearInterval(interval);
