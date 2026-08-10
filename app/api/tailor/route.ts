@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { tailorResume } from "@/services/tailoring-engine";
 import { scoreMatch } from "@/services/match-engine";
+import { materializeTailoredResume } from "@/lib/application-compiler";
 import {
   GapAnalysisSchema,
   JobDescriptionProfileSchema,
   ResumeProfileSchema,
-  type ResumeProfile,
 } from "@/lib/schemas";
 import {
   readBoundedRequestJson,
@@ -41,28 +41,10 @@ export async function POST(request: Request) {
       typedJobDescription,
       gapAnalysis,
     );
-
-    const tailoredResumeProfile: ResumeProfile = {
-      ...typedResume,
-      summary: tailoredResume.tailoredSummary,
-      skills: tailoredResume.tailoredSkills,
-      experience: typedResume.experience.map((experience) => {
-        const tailoredExperience = tailoredResume.tailoredExperience.find(
-          (candidate) =>
-            candidate.company.toLowerCase() === experience.company.toLowerCase(),
-        );
-        return {
-          ...experience,
-          bullets: experience.bullets.map(
-            (bullet: string, bulletIndex: number) => {
-              const tailoredBullet = tailoredExperience?.bullets[bulletIndex];
-              return tailoredBullet ? tailoredBullet.tailored : bullet;
-            },
-          ),
-        };
-      }),
-    };
-
+    const tailoredResumeProfile = materializeTailoredResume(
+      typedResume,
+      tailoredResume,
+    );
     const tailoredScore = await scoreMatch(
       tailoredResumeProfile,
       typedJobDescription,
