@@ -22,6 +22,7 @@ function run(script) {
 try {
   if (process.env.HELIX_EVIDENCE_PREPARED !== "1") {
     run("sync-helix-resume-evidence.mjs");
+    run("sync-helix-application-intelligence.mjs");
   }
   run("validate-helix-resume-evidence.mjs");
 } catch (error) {
