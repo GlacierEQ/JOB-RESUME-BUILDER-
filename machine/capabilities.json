@@ -41,6 +41,18 @@
       "claim_ceiling": "ATS/JSON/HTML compilation is tested; browser E2E and production deployment are not established."
     },
     {
+      "capability_id": "application-evidence-brief",
+      "summary": "Compile a deterministic target-requirement evidence brief from structured resume and job-description inputs, preserving exact source references while separating supported, partial, and unsupported lexical evidence.",
+      "implementation_refs": [
+        "lib/application-evidence-brief.ts",
+        "app/api/application-brief/route.ts"
+      ],
+      "verification_refs": [
+        "tests/application-evidence-brief.test.ts"
+      ],
+      "claim_ceiling": "Lexical source evidence and target coverage are computed deterministically; semantic qualification, recruiter judgment, and hiring outcomes are not inferred."
+    },
+    {
       "capability_id": "source-identity-resume-materialization",
       "summary": "Bind tailored experience proposals back to company, title, and original bullet identity so multiple roles at one employer remain distinct and ambiguous proposals preserve source content.",
       "implementation_refs": [
