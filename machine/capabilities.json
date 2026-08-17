@@ -63,6 +63,20 @@
         "tests/run-store.test.ts"
       ],
       "claim_ceiling": "Local browser persistence mechanics are implemented; server-side identity, cross-device sync, encryption policy, and production retention governance are not established."
+    },
+    {
+      "capability_id": "sha-pinned-company-application-intelligence",
+      "summary": "Resolve one Helix revision per build, verify external-intelligence shard hashes, merge public-safe company second-depth state, and feed stage, claim ceiling, blockers, application strategy, and bounded company intelligence into the tailoring context.",
+      "implementation_refs": [
+        "scripts/ensure-helix-resume-evidence.mjs",
+        "scripts/sync-helix-application-intelligence.mjs",
+        "lib/helix-evidence.ts",
+        "services/tailoring-engine.ts"
+      ],
+      "verification_refs": [
+        "tests/helix-application-intelligence.test.ts"
+      ],
+      "claim_ceiling": "The compiler consumes dated public-safe Helix application intelligence and preserves its inference/freshness boundaries; this does not establish current job availability or employer-confirmed internal conditions."
     }
   ],
   "truth_boundary": {
