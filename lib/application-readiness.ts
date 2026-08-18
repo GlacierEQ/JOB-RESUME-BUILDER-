@@ -73,8 +73,8 @@ export function compileApplicationReadiness(
   const before = compileApplicationEvidenceBrief(source, target);
   const after = compileApplicationEvidenceBrief(compiled, target);
 
-  const beforeByKey = new Map(
-    before.requirements.map((row) => [`${row.tier}\u0000${row.requirement}`, row] as const),
+  const beforeByKey = new Map<string, (typeof before.requirements)[number]>(
+    before.requirements.map((row) => [`${row.tier}\u0000${row.requirement}`, row]),
   );
 
   const requirements: RequirementDelta[] = after.requirements.map((row) => {
