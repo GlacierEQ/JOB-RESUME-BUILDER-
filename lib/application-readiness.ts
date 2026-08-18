@@ -49,6 +49,13 @@ export interface ApplicationReadinessReport {
   };
 }
 
+export interface ReadinessDossierArtifact {
+  readonly kind: "readiness";
+  readonly filename: string;
+  readonly mimeType: "application/json;charset=utf-8";
+  readonly content: string;
+}
+
 function classifyDelta(
   before: RequirementDelta["before"],
   after: RequirementDelta["after"],
@@ -62,6 +69,15 @@ function classifyDelta(
 
 function coverageDelta(before: number, after: number): number {
   return Number((after - before).toFixed(4));
+}
+
+function safeFilename(value: string): string {
+  const normalized = value
+    .normalize("NFKD")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .toLowerCase();
+  return normalized || "target-role";
 }
 
 export function compileApplicationReadiness(
@@ -128,5 +144,35 @@ export function compileApplicationReadiness(
       hiringOutcomePredicted: false,
       humanReviewRequired: true,
     },
+  };
+}
+
+export function compileReadinessDossierArtifact(
+  report: ApplicationReadinessReport,
+  compiledAt = new Date().toISOString(),
+): ReadinessDossierArtifact {
+  const slug = safeFilename(`${report.target.company}-${report.target.jobTitle}`);
+  const dossier = {
+    schema: "glaciereq.application-readiness-dossier.v1",
+    compiledAt,
+    target: report.target,
+    readiness: report.readiness,
+    coverageDelta: report.coverageDelta,
+    gainedSupport: report.gainedSupport,
+    retainedSupport: report.retainedSupport,
+    unresolvedRequired: report.unresolvedRequired,
+    regressions: report.regressions,
+    requirements: report.requirements,
+    boundary: {
+      ...report.boundary,
+      externalSubmissionPerformed: false,
+    },
+  } as const;
+
+  return {
+    kind: "readiness",
+    filename: `${slug}-readiness-dossier.json`,
+    mimeType: "application/json;charset=utf-8",
+    content: `${JSON.stringify(dossier, null, 2)}\n`,
   };
 }
