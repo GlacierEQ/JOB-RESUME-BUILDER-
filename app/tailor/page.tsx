@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import styles from "./page.module.css";
 import ResumeInput from "@/components/ResumeInput";
 import JDInput from "@/components/JDInput";
@@ -10,11 +10,13 @@ import SideBySideDiff from "@/components/SideBySideDiff";
 import ReviewCompletionControls from "@/components/PDFExportButton";
 import JDRequirementsSummary from "@/components/JDRequirementsSummary";
 import PrivateRunHistory from "@/components/PrivateRunHistory";
+import ApplicationReadinessPanel from "@/components/ApplicationReadinessPanel";
 import {
   compileApplicationArtifacts,
   type ApplicationCompilation,
   type CompiledArtifact,
 } from "@/lib/application-compiler";
+import { compileApplicationReadiness } from "@/lib/application-readiness";
 import {
   advanceRun,
   createRun,
@@ -65,6 +67,11 @@ export default function TailorWorkspace() {
   const [persistenceStatus, setPersistenceStatus] = useState("");
   const [historyRefreshToken, setHistoryRefreshToken] = useState(0);
   const [compilation, setCompilation] = useState<ApplicationCompilation | null>(null);
+
+  const readinessReport = useMemo(() => {
+    if (!resumeProfile || !jdProfile || !tailoredResume) return null;
+    return compileApplicationReadiness(resumeProfile, jdProfile, tailoredResume);
+  }, [resumeProfile, jdProfile, tailoredResume]);
 
   const currentRunRef = useRef<StoredTailoringRun | null>(null);
   const persistedRevisionRef = useRef<number | null>(null);
@@ -437,6 +444,11 @@ export default function TailorWorkspace() {
             <div className={styles.sectionGroup}>
               <JDRequirementsSummary jobDescription={jdProfile} />
             </div>
+            {readinessReport && (
+              <div className={styles.sectionGroup}>
+                <ApplicationReadinessPanel report={readinessReport} />
+              </div>
+            )}
             <div className={styles.sectionGroup}>
               <SideBySideDiff tailoredResume={tailoredResume} />
             </div>
@@ -466,6 +478,7 @@ export default function TailorWorkspace() {
             surface that can be printed to PDF without claiming an automatically
             generated PDF.
           </p>
+          {readinessReport && <ApplicationReadinessPanel report={readinessReport} />}
           <div style={{ display: "grid", gap: "10px", margin: "18px 0" }}>
             {compilation.artifacts.map((artifact) => (
               <div

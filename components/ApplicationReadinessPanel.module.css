@@ -1,0 +1,147 @@
+.panel {
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(12, 18, 32, 0.72);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.68;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.explanation {
+  max-width: 760px;
+  margin: 8px 0 0;
+  line-height: 1.55;
+  opacity: 0.84;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metrics div {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.metrics span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.64;
+}
+
+.metrics strong {
+  font-size: 1.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.requirementSection {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.requirementSection h4 {
+  margin: 0 0 12px;
+}
+
+.requirementList {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.requirementList li {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.requirementList li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.requirementHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.requirementHeading span {
+  flex: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.requirementMeta,
+.empty,
+.boundary {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  opacity: 0.72;
+}
+
+.requirementMeta {
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+
+.empty {
+  margin: 0;
+}
+
+.boundary {
+  margin: 0;
+  padding-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .metrics,
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .metrics,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
