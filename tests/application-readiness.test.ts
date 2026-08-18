@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { compileApplicationReadiness } from "../lib/application-readiness";
+import {
+  compileApplicationReadiness,
+  compileReadinessDossierArtifact,
+} from "../lib/application-readiness";
 import type {
   JobDescriptionProfile,
   ResumeProfile,
@@ -102,4 +105,24 @@ test("requirement identities remain stable across before/after comparison", () =
   const identities = report.requirements.map((row) => `${row.tier}:${row.requirement}`);
   assert.equal(new Set(identities).size, identities.length);
   assert.equal(report.requirements.length, 6);
+});
+
+test("readiness dossier is deterministic for a fixed compilation time and preserves evidence boundaries", () => {
+  const report = compileApplicationReadiness(source, target, tailored);
+  const compiledAt = "2026-08-18T02:00:00.000Z";
+  const first = compileReadinessDossierArtifact(report, compiledAt);
+  const second = compileReadinessDossierArtifact(report, compiledAt);
+
+  assert.deepEqual(first, second);
+  assert.equal(first.kind, "readiness");
+  assert.equal(first.filename, "example-ai-principal-agentic-systems-architect-readiness-dossier.json");
+
+  const payload = JSON.parse(first.content);
+  assert.equal(payload.schema, "glaciereq.application-readiness-dossier.v1");
+  assert.equal(payload.compiledAt, compiledAt);
+  assert.equal(payload.readiness, report.readiness);
+  assert.deepEqual(payload.requirements, report.requirements);
+  assert.equal(payload.boundary.qualificationsInvented, false);
+  assert.equal(payload.boundary.hiringOutcomePredicted, false);
+  assert.equal(payload.boundary.externalSubmissionPerformed, false);
 });
