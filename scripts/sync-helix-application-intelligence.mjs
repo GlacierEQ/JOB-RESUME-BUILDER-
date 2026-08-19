@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const POINTER_PATH = path.join(ROOT, "portfolio-source.json");
 const SHA40 = /^[a-f0-9]{40}$/;
+const SHA64 = /^[a-f0-9]{64}$/;
 
 function fail(message) {
   throw new Error(`Helix application-intelligence sync failed: ${message}`);
@@ -146,11 +147,25 @@ async function main() {
   const seen = new Set();
   for (const shard of externalIndex.shards ?? []) {
     requireValue(typeof shard?.path === "string", "external intelligence shard path missing");
+    requireValue(SHA64.test(String(shard?.shard_sha256 ?? "")), `${shard.path} index digest invalid`);
     const text = await fetchText(`${rawBase}/${shard.path}`);
-    requireValue(sha256(text) === shard.shard_sha256, `${shard.path} hash mismatch`);
     sourceTexts.set(shard.path, text);
     const parsed = parse(text, shard.path);
-    for (const row of parsed.records ?? []) {
+
+    // The atlas shard digest is a logical generator digest embedded in both the
+    // index and shard. It is not the SHA-256 of the serialized shard bytes, because
+    // the shard contains that digest itself. Exact byte provenance is already bound
+    // by the immutable Git commit and is separately captured in source_hashes below.
+    requireValue(
+      parsed.shard_sha256 === shard.shard_sha256,
+      `${shard.path} logical digest disagrees with atlas index`,
+    );
+    requireValue(
+      Array.isArray(parsed.records) && parsed.records.length === shard.record_count,
+      `${shard.path} record count mismatch`,
+    );
+
+    for (const row of parsed.records) {
       requireValue(typeof row?.company_id === "string" && row.company_id.length > 0, `${shard.path}: company_id missing`);
       requireValue(!seen.has(row.company_id), `duplicate company intelligence ${row.company_id}`);
       seen.add(row.company_id);
