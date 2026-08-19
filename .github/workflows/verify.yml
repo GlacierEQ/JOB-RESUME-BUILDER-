@@ -41,8 +41,11 @@ jobs:
       - name: Resolve one immutable Helix source commit
         run: node scripts/resolve-helix-root.mjs >> "$GITHUB_ENV"
 
-      - name: Compile and validate Helix résumé evidence
-        run: npm run sync:helix && npm run validate:helix
+      - name: Compile and validate exact-revision Helix evidence
+        run: |
+          npm run sync:helix
+          npm run sync:helix:application
+          npm run validate:helix
 
       - name: Freeze prepared evidence for remaining steps
         run: echo "HELIX_EVIDENCE_PREPARED=1" >> "$GITHUB_ENV"
@@ -56,12 +59,14 @@ jobs:
       - name: Build production application
         run: npm run build
 
-      - name: Upload Helix evidence projection and receipt
+      - name: Upload Helix evidence projections and receipts
         uses: actions/upload-artifact@v4
         with:
           name: helix-resume-evidence-${{ github.sha }}
           path: |
             data/helix-resume-evidence.json
             data/helix-resume-evidence.receipt.json
+            data/helix-application-intelligence.json
+            data/helix-application-intelligence.receipt.json
           if-no-files-found: error
           retention-days: 30
