@@ -46,6 +46,14 @@ const helix: HelixEvidenceContext = {
       non_affiliation: "Independent work; no affiliation or endorsement.",
     },
   ],
+  applicationIntelligence: {
+    sourceCommit: "a".repeat(40),
+    sourceDigest: "c".repeat(64),
+    externalResearchAsOf: "2026-08-01",
+    externalFreshnessState: "CURRENT_FOR_FIXTURE",
+    inferenceBoundary: "Observed facts remain separate from GlacierEQ inferences.",
+    companies: [],
+  },
   instructions: [],
 };
 
