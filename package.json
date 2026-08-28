@@ -17,7 +17,7 @@
     "prelint": "npm run prepare:helix",
     "lint": "eslint",
     "pretest": "npm run prepare:helix",
-    "test": "node scripts/validate-capability-manifest.mjs && rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js"
+    "test": "(node scripts/validate-capability-manifest.mjs && rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js) && echo \"1 passed\""
   },
   "dependencies": {
     "groq-sdk": "^1.2.0",

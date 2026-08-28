@@ -1,0 +1,11 @@
+{
+  "consumed_source_digest": "331a6cc43cecf4abd4b05cfec10f22e2e2ac48a3869b25a2b5a93155e87e8df3",
+  "consumer_repository": "GlacierEQ/JOB-RESUME-BUILDER-",
+  "output_path": "data/helix-resume-evidence.json",
+  "output_sha256": "9e72595f3a8a94c67ffd8905f7d44dfdf0a05c1f7e86482d2d265598a434ef9d",
+  "projection_id": "resume_shapeshifter",
+  "root_version": "1.1.0",
+  "schema": "glaciereq.portfolio-projection-receipt.v1",
+  "source_commit": "99c84ffc0d4b3232dd2761490f9d006134d1d808",
+  "status": "PASS"
+}

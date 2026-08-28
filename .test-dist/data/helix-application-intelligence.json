@@ -1,0 +1,1723 @@
+{
+    "boundary": {
+        "company_intelligence_may_rank_but_not_invent_experience": true,
+        "inference_boundary": "Observed current pressure and official-source signals are source-backed snapshot facts; bottlenecks, brick walls, leverage mechanisms, expected impact, and application moves are GlacierEQ inferences and must not be presented as employer-confirmed internal conditions.",
+        "may_publish_private_records": false,
+        "source_resume_remains_authoritative": true
+    },
+    "companies": [
+        {
+            "application_move": "Build a recruiter-package creative pipeline with editable artifacts and provenance.",
+            "company_id": "adobe",
+            "display_name": "Adobe",
+            "inferred_bottleneck": "Orchestrating workflows across creative applications and models while retaining editable structure, provenance, and brand control.",
+            "inferred_brick_wall": "Scaling automation without flattening human judgment, losing asset lineage, or creating unauthorized transformations.",
+            "leverage": {
+                "expected_impact": "Improves creative workflow continuity and artifact trust.",
+                "glaciereq_systems": [
+                    "MegaPDF",
+                    "Job-App Helix",
+                    "Make-It-Heavy",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Preserve source-to-artifact lineage, editable intermediate states, specialized review lanes, and release receipts."
+            },
+            "next_deep_dive": "Generate one controlled multi-format package and validate every source and transformation.",
+            "observed_current_pressure": "Creative work is becoming agentic across ideation, generation, editing, collaboration, and production tools.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Present a vendor-neutral workload and topology analysis rather than brand-specific claims.",
+            "company_id": "amd",
+            "display_name": "AMD",
+            "inferred_bottleneck": "Data movement, network synchronization, memory hierarchy, and software integration.",
+            "inferred_brick_wall": "Supporting synchronized training, low-latency inference, and persistent agent workloads without utilization or power collapse.",
+            "leverage": {
+                "expected_impact": "Improves utilization and cross-vendor infrastructure reasoning.",
+                "glaciereq_systems": [
+                    "Colossus Gateway",
+                    "Token Saver",
+                    "GPU Health",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Model workload phases, compress context, monitor health, and route work around topology bottlenecks."
+            },
+            "next_deep_dive": "Create reproducible performance tests on available hardware or clearly simulated models.",
+            "observed_current_pressure": "AI workloads require coordinated CPU, GPU, networking, memory, and open software across training and inference.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Present federation and bounded-agent work as mission-orchestration infrastructure, not weapons capability.",
+            "company_id": "anduril",
+            "display_name": "Anduril",
+            "inferred_bottleneck": "Distributed mission planning, sensor fusion, resource allocation, and degraded-communications operation.",
+            "inferred_brick_wall": "Maintaining safe human authority and mission effectiveness under uncertainty, adversarial conditions, and partial connectivity.",
+            "leverage": {
+                "expected_impact": "Makes distributed autonomy more inspectable and resilient to incomplete communication.",
+                "glaciereq_systems": [
+                    "Sigma Federation",
+                    "Make-It-Heavy",
+                    "Job-App Helix",
+                    "Robotics VLA Sentinel"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use command-intent decomposition, decentralized state packets, invariant checks, and human escalation."
+            },
+            "next_deep_dive": "Build a non-weapon logistics simulation with degraded links and auditable command authority.",
+            "observed_current_pressure": "Autonomous systems must coordinate sensors, vehicles, missions, and human intent in contested environments.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Present the coordinator and safety monitor as bounded systems, with counter-analysis and explicit non-claims.",
+            "company_id": "anthropic",
+            "display_name": "Anthropic",
+            "inferred_bottleneck": "Increasing useful autonomy while retaining honest uncertainty, safety boundaries, and measurable behavior.",
+            "inferred_brick_wall": "Preventing higher-capability agents from becoming opaque, reward-hacking, unsafe, or operationally unreliable in open-ended environments.",
+            "leverage": {
+                "expected_impact": "Improves safety-case clarity and makes agent limitations visible before deployment.",
+                "glaciereq_systems": [
+                    "anthropic-agent-coordinator",
+                    "anthropic-safety-monitor",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "HIGH",
+                "mechanism": "Combine deterministic coordination, contradiction-preserving review, escalation gates, and proof-weighted evaluation."
+            },
+            "next_deep_dive": "Deep-read current safety, evals, and agent-infrastructure postings and produce requirement-level evidence matrices.",
+            "observed_current_pressure": "Capability, inference performance, safeguards, evaluations, interpretability, and computer-use reliability are advancing simultaneously.",
+            "second_depth": {
+                "blockers": [
+                    "company_specific_remedy_not_bounded",
+                    "implementation_receipt_not_bound_to_anthropic_problem",
+                    "proof_not_reproduced",
+                    "claim_not_promoted"
+                ],
+                "claim_ceiling": "inspected_implementation_alignment",
+                "next_gate": "Bound one company-specific reliability remedy against the verified Staff Software Engineer, AI Reliability problem using the inspected coordinator and safety-monitor mechanisms; preserve the non-deployment and non-semantic-safety boundaries before any IMPLEMENTED or reproduced-proof claim.",
+                "stage": "CODE_INSPECTED"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Agent Infrastructure Engineer",
+                "Evaluation / Reliability Engineer"
+            ]
+        },
+        {
+            "application_move": "Build an on-device/private-cloud architecture story around quantization, compact memory packets, and explicit data boundaries.",
+            "company_id": "apple",
+            "display_name": "Apple",
+            "inferred_bottleneck": "Delivering useful personalized context and multimodal inference under strict on-device and privacy constraints.",
+            "inferred_brick_wall": "Learning and acting from personal context without centralizing sensitive data or sacrificing responsiveness and energy efficiency.",
+            "leverage": {
+                "expected_impact": "Extends useful context while respecting device, privacy, and latency budgets.",
+                "glaciereq_systems": [
+                    "apple-ane-kv-quantizer",
+                    "Token Saver",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use compact local context, quantization-aware state, privacy-separated memory, and proof-bound cloud escalation."
+            },
+            "next_deep_dive": "Run device-realistic benchmarks and document what is measured versus simulated.",
+            "observed_current_pressure": "Personal intelligence must run across device and private cloud while preserving privacy, latency, battery, and product quality.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Translate Helix evidence semantics into an AWS-style agent reliability reference architecture.",
+            "company_id": "aws",
+            "display_name": "AWS",
+            "inferred_bottleneck": "Designing reliable agent architectures with memory, isolation, capacity planning, shared-fate control, and cost governance.",
+            "inferred_brick_wall": "Managing stochastic recursive workloads whose failures can amplify across tools, accounts, regions, and memory layers.",
+            "leverage": {
+                "expected_impact": "Improves cloud-agent reliability while reducing context and operational cost.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Make-It-Heavy",
+                    "Colossus Gateway"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use bounded worker lanes, durable compact state, explicit failure semantics, and provider-neutral receipts."
+            },
+            "next_deep_dive": "Produce a Well-Architected mapping across reliability, security, operational excellence, performance, cost, and sustainability.",
+            "observed_current_pressure": "Customers need long-running, secure, persistent, cost-controlled agents operating across managed cloud services.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Translate aerospace repos into a neutral launch-and-mission systems portfolio.",
+            "company_id": "blue_origin",
+            "display_name": "Blue Origin",
+            "inferred_bottleneck": "Production, integration, test, quality, and software coordination across complex physical programs.",
+            "inferred_brick_wall": "Meeting reliability and schedule while hardware, facilities, suppliers, and mission requirements evolve together.",
+            "leverage": {
+                "expected_impact": "Improves program visibility and reduces integration ambiguity.",
+                "glaciereq_systems": [
+                    "Aerospace mission-control suite",
+                    "Tower of Babel",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use program dependency maps, test evidence, change-impact analysis, and cross-discipline artifact contracts."
+            },
+            "next_deep_dive": "Map current software and systems roles to public proof and identify missing physical-test boundaries.",
+            "observed_current_pressure": "Launch vehicles, engines, lunar systems, manufacturing, test, and mission software are scaling in parallel.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Design a provider comparison that tests whether lower latency enables better iterative reasoning.",
+            "company_id": "cerebras",
+            "display_name": "Cerebras",
+            "inferred_bottleneck": "Integrating extreme-speed inference into reliable, broadly available production systems.",
+            "inferred_brick_wall": "Maintaining model breadth, availability, distributed-system efficiency, and quality as demand grows.",
+            "leverage": {
+                "expected_impact": "Shows where speed materially changes agent design rather than merely benchmark numbers.",
+                "glaciereq_systems": [
+                    "Pro-DOCTOR-STRANGE",
+                    "Token Saver",
+                    "Colossus Gateway",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Measure latency-quality tradeoffs, route tasks by model behavior, and preserve exact response receipts."
+            },
+            "next_deep_dive": "Run with real access and record model, version, and request identifiers.",
+            "observed_current_pressure": "Ultra-fast inference is being used to improve interactive reasoning and agent quality.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Package Gatling Tsunami as a durable, bounded dispatch reference architecture.",
+            "company_id": "cloudflare",
+            "display_name": "Cloudflare",
+            "inferred_bottleneck": "Durable low-latency agent runtime and secure state across the edge.",
+            "inferred_brick_wall": "Isolating long-running agents and credentials while maintaining global availability, cost, and content and tool safety.",
+            "leverage": {
+                "expected_impact": "Improves agent availability and containment at high concurrency.",
+                "glaciereq_systems": [
+                    "Colossus Gateway",
+                    "Unified Memory MCP",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use state-machine receipts, scoped credentials, durable memory packets, and edge-safe tool dispatch."
+            },
+            "next_deep_dive": "Deploy a small Workers and Durable Objects proof when credentials and scope are available.",
+            "observed_current_pressure": "Millions of agents need globally distributed compute, durable state, identity, networking, and security.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Build a multilingual application dossier benchmark with retrieval and token-cost evidence.",
+            "company_id": "cohere",
+            "display_name": "Cohere",
+            "inferred_bottleneck": "Secure retrieval, multilingual grounding, serving efficiency, and production operations.",
+            "inferred_brick_wall": "Crossing the prototype-to-production gap without retrieval failure, access leakage, unfair serving, or runaway TCO.",
+            "leverage": {
+                "expected_impact": "Improves enterprise readiness and makes TCO and retrieval quality measurable.",
+                "glaciereq_systems": [
+                    "Unified Memory MCP",
+                    "Token Saver",
+                    "Job-App Helix",
+                    "Tower of Babel"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Combine compact retrieval packets, multilingual evidence labels, private deployment boundaries, and cost receipts."
+            },
+            "next_deep_dive": "Evaluate current Cohere models on retrieval quality, multilingual fidelity, and deployment constraints.",
+            "observed_current_pressure": "Private multilingual enterprise AI must move from prototype to production with predictable performance and total cost.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Build a failure-and-recovery topology case study around the GPU health system.",
+            "company_id": "coreweave",
+            "display_name": "CoreWeave",
+            "inferred_bottleneck": "Power, hardware reliability, scheduling, checkpointing, recovery, and utilization at cluster scale.",
+            "inferred_brick_wall": "Maintaining economic and operational reliability amid component failures and huge infrastructure expansion.",
+            "leverage": {
+                "expected_impact": "Improves infrastructure resilience and communicates operational depth.",
+                "glaciereq_systems": [
+                    "nvidia-gpu-health",
+                    "Colossus Gateway",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use health-driven scheduling, dependency graphs, checkpoint receipts, and failure-injection review."
+            },
+            "next_deep_dive": "Create a simulated cluster failure benchmark with clearly bounded claims.",
+            "observed_current_pressure": "AI clouds must operate mega-clusters across training, inference, observability, and rapidly expanding data-center capacity.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Map Helix artifacts directly to an agent lifecycle: source, build, eval, deployment, observation.",
+            "company_id": "databricks",
+            "display_name": "Databricks",
+            "inferred_bottleneck": "Unifying structured and unstructured data, permissions, evaluation, and observability for production agents.",
+            "inferred_brick_wall": "Maintaining data governance and product quality when agents operate over changing enterprise data and tools.",
+            "leverage": {
+                "expected_impact": "Improves traceability from source data to production agent behavior.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Sigma Federation",
+                    "Pro-DOCTOR-STRANGE"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Represent evidence, data lineage, evaluation, deployment, and provider receipts in one governed graph."
+            },
+            "next_deep_dive": "Prototype the 48-track atlas as a lineage graph and measure incremental update behavior.",
+            "observed_current_pressure": "Organizations need one lifecycle for proprietary data, agent development, evaluation, deployment, and monitoring.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Show a version-resilient long-context harness with measured compression and explicit semantic-loss tests.",
+            "company_id": "deepseek",
+            "display_name": "DeepSeek",
+            "inferred_bottleneck": "Maintaining quality, latency, cost, and compatibility across million-token context and evolving model interfaces.",
+            "inferred_brick_wall": "Preventing context growth and version churn from erasing reliability or making agent behavior economically impractical.",
+            "leverage": {
+                "expected_impact": "Reduces context cost and migration risk for long-horizon agent workflows.",
+                "glaciereq_systems": [
+                    "DeepSeek MLA/MoE Sentinel",
+                    "Token Saver",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use context compaction, compatibility contracts, retrieval receipts, and provider-version test matrices."
+            },
+            "next_deep_dive": "Benchmark against the current API and document deprecations and provider-specific behavior.",
+            "observed_current_pressure": "Long-context reasoning and agent tasks are expanding while API versions and efficiency techniques change quickly.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Show how the TPU mesh, polyglot boundaries, and proof compiler address heterogeneous frontier deployment.",
+            "company_id": "google_deepmind",
+            "display_name": "Google / DeepMind",
+            "inferred_bottleneck": "Turning research breakthroughs into low-latency, dependable products across models, chips, devices, and geographic surfaces.",
+            "inferred_brick_wall": "Maintaining quality, responsibility, latency, and cost while routing enormous heterogeneous workloads through rapidly changing model and hardware stacks.",
+            "leverage": {
+                "expected_impact": "Improves research-to-product translation and reduces routing, context, and verification debt.",
+                "glaciereq_systems": [
+                    "deepmind-tpu-mesh-optimizer",
+                    "Tower of Babel",
+                    "Job-App Helix",
+                    "Token Saver"
+                ],
+                "impact_class": "HIGH",
+                "mechanism": "Apply polyglot responsibility boundaries, topology-aware routing, compact context, and evidence-backed promotion gates."
+            },
+            "next_deep_dive": "Map current DeepMind infrastructure, agent, and multimodal roles to public demonstrations and benchmark gaps.",
+            "observed_current_pressure": "Frontier multimodal research is being converted into global developer products, agents, and heterogeneous hardware deployments.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Agent Infrastructure Engineer",
+                "Evaluation / Reliability Engineer"
+            ]
+        },
+        {
+            "application_move": "Add Groq to a provider-neutral latency, cost, and quality convergence benchmark.",
+            "company_id": "groq",
+            "display_name": "Groq",
+            "inferred_bottleneck": "Capacity, model coverage, reliability, and economics for globally low-latency inference.",
+            "inferred_brick_wall": "Maintaining deterministic low latency and availability as traffic, models, and regions scale.",
+            "leverage": {
+                "expected_impact": "Improves inference economics and makes routing decisions auditable.",
+                "glaciereq_systems": [
+                    "Token Saver",
+                    "Pro-DOCTOR-STRANGE",
+                    "Colossus Gateway",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Route by measured latency and cost, compress repeated context, and retain provider receipts for every result."
+            },
+            "next_deep_dive": "Run real provider tests when credentials are available; do not substitute synthetic latency.",
+            "observed_current_pressure": "Inference demand is expanding geographically and by token volume, with latency central to user experience.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Create an agent-ready portfolio index modeled on compact Hub metadata.",
+            "company_id": "hugging_face",
+            "display_name": "Hugging Face",
+            "inferred_bottleneck": "Efficient, predictable, safe discovery and use of open AI artifacts.",
+            "inferred_brick_wall": "Controlling token overhead, provenance, compatibility, and security while ecosystem content changes continuously.",
+            "leverage": {
+                "expected_impact": "Reduces discovery context and lowers open-ecosystem integration risk.",
+                "glaciereq_systems": [
+                    "Token Saver",
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Tower of Babel"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use compact artifact descriptors, provenance hashes, compatibility metadata, and safe execution boundaries."
+            },
+            "next_deep_dive": "Measure token savings and provenance accuracy against raw repository descriptions.",
+            "observed_current_pressure": "Humans and agents must navigate an enormous, fast-changing open ecosystem of models, datasets, spaces, and tools.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Present the 48-track Atlas as a concrete agent-estate governance demonstration.",
+            "company_id": "ibm",
+            "display_name": "IBM",
+            "inferred_bottleneck": "Near-real-time governance, observability, policy, and lifecycle control across agent estates.",
+            "inferred_brick_wall": "Preventing agent sprawl, inconsistent controls, and untraceable actions across vendors and business units.",
+            "leverage": {
+                "expected_impact": "Makes a mixed agent estate visible and governable without forcing one runtime.",
+                "glaciereq_systems": [
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Pro-DOCTOR-STRANGE"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Provide cross-provider inventories, typed authority, normalized receipts, and risk and status propagation."
+            },
+            "next_deep_dive": "Add policy evaluation and drift detection to the Atlas memory plane.",
+            "observed_current_pressure": "Enterprises are accumulating large heterogeneous estates of agents, models, and automation tools.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Build a vendor-neutral inference topology exhibit with measurable workload boundaries.",
+            "company_id": "intel",
+            "display_name": "Intel",
+            "inferred_bottleneck": "Software and systems integration across compute, memory, networking, and accelerator ecosystems.",
+            "inferred_brick_wall": "Delivering competitive utilization and developer usability while hardware and model workloads diversify.",
+            "leverage": {
+                "expected_impact": "Improves portability and makes heterogeneous infrastructure tradeoffs explicit.",
+                "glaciereq_systems": [
+                    "Tower of Babel",
+                    "Colossus Gateway",
+                    "Token Saver",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use polyglot adapters, topology models, compact context, and workload-specific proof."
+            },
+            "next_deep_dive": "Benchmark one open stack across CPU and accelerator paths and document bottlenecks.",
+            "observed_current_pressure": "AI infrastructure must support open, disaggregated, rack-scale training and inference across heterogeneous accelerators.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Turn the existing Kimi package into a measured multi-agent long-context demonstration.",
+            "company_id": "kimi",
+            "display_name": "Moonshot AI / Kimi",
+            "inferred_bottleneck": "Coordinating many tool calls and subagents while preserving context quality and affordable throughput.",
+            "inferred_brick_wall": "Avoiding quality collapse, state divergence, duplicated reasoning, and runaway cost across million-token workflows.",
+            "leverage": {
+                "expected_impact": "Increases depth per token while limiting repeated context and subagent drift.",
+                "glaciereq_systems": [
+                    "Kimi Mooncake KV Stream",
+                    "Make-It-Heavy",
+                    "Token Saver",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Apply diamond decomposition, compact shared memory, contradiction retention, and bounded wave execution."
+            },
+            "next_deep_dive": "Run a provider-backed benchmark when access is available and compare single-agent versus diamond topology.",
+            "observed_current_pressure": "Long-context models are moving toward swarm-style and long-horizon agent execution.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate a prompt-to-app workflow with architecture, security, and test reviewers operating as a diamond.",
+            "company_id": "lovable",
+            "display_name": "Lovable",
+            "inferred_bottleneck": "Producing secure, maintainable, executable code while preserving project context and user intent.",
+            "inferred_brick_wall": "Preventing autonomous code generation from creating hidden security, architecture, and integration debt at scale.",
+            "leverage": {
+                "expected_impact": "Improves maintainability and reduces silent code-generation debt.",
+                "glaciereq_systems": [
+                    "lovable-design-app-synth",
+                    "Make-It-Heavy",
+                    "Job-App Helix",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Add specialized review agents, security gates, architecture memory, and commit-bound proof."
+            },
+            "next_deep_dive": "Run a small app build and compare the result before and after Helix gates.",
+            "observed_current_pressure": "Natural-language app building is moving toward subagents, MCP integrations, and production deployment.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Offer Helix as the missing completion-and-receipt layer for general agents.",
+            "company_id": "manus",
+            "display_name": "Manus",
+            "inferred_bottleneck": "Reliable end-to-end task completion across heterogeneous tools and long horizons.",
+            "inferred_brick_wall": "Avoiding brittle plans, hidden failures, excessive credits, and false completion when environments change.",
+            "leverage": {
+                "expected_impact": "Raises completion confidence and exposes the cost and evidence behind autonomous work.",
+                "glaciereq_systems": [
+                    "Make-It-Heavy",
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Pro-DOCTOR-STRANGE"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use independent planning lanes, fail-closed completion tests, compact recovery state, and cross-reader verification."
+            },
+            "next_deep_dive": "Benchmark a fixed multi-step task and record tool failures, retries, cost, and completion evidence.",
+            "observed_current_pressure": "General agents are expected to plan, use tools, and complete complex outcomes with minimal supervision.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Position the portfolio around adaptable inference systems rather than a single model or accelerator claim.",
+            "company_id": "meta",
+            "display_name": "Meta",
+            "inferred_bottleneck": "Maintaining efficient serving and hardware flexibility as model behavior changes faster than accelerator design cycles.",
+            "inferred_brick_wall": "Balancing model quality, global latency, power, utilization, safety, and hardware longevity at extreme scale.",
+            "leverage": {
+                "expected_impact": "Improves efficiency and adaptability across changing model families.",
+                "glaciereq_systems": [
+                    "meta-llama-collective-sentinel",
+                    "Token Saver",
+                    "Colossus Gateway",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use workload classification, context compression, phase-aware routing, and contradiction-preserving evaluation."
+            },
+            "next_deep_dive": "Map Meta infrastructure roles to workload scheduling, inference optimization, safety evaluation, and open-model ecosystem evidence.",
+            "observed_current_pressure": "AI must serve billions of users across rapidly evolving recommendation, generative, multimodal, and agent workloads.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Frame GlacierEQ as a federation and governance builder, not another model wrapper.",
+            "company_id": "microsoft",
+            "display_name": "Microsoft",
+            "inferred_bottleneck": "Governed coordination across heterogeneous models, tools, tenants, data estates, and human approval chains.",
+            "inferred_brick_wall": "Allowing agents to act across the enterprise without context fragmentation, privilege drift, audit gaps, or inconsistent completion.",
+            "leverage": {
+                "expected_impact": "Reduces enterprise agent sprawl and makes cross-system action attributable and reversible.",
+                "glaciereq_systems": [
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Tower of Babel"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Federate independent systems through typed authority, portable context, and evidence-bearing handoffs."
+            },
+            "next_deep_dive": "Map Microsoft AI platform and agent roles to federation, identity, observability, and multi-tenant proof gaps.",
+            "observed_current_pressure": "Enterprise AI is shifting from individual copilots to coordinated agents operating across identity, policy, data, and business systems.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public Microsoft role/team and inspect the exact recruiter-admitted Microsoft-aligned repositories before promoting beyond general systems alignment.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate a provider-swappable enterprise research agent with identical receipts.",
+            "company_id": "mistral",
+            "display_name": "Mistral AI",
+            "inferred_bottleneck": "Grounding and operating models on proprietary context across cloud and on-prem environments.",
+            "inferred_brick_wall": "Preserving reliable long-horizon behavior, privacy, control, and cost efficiency across heterogeneous deployments.",
+            "leverage": {
+                "expected_impact": "Reduces vendor lock-in and improves private-context reliability.",
+                "glaciereq_systems": [
+                    "Tower of Babel",
+                    "Unified Memory MCP",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use provider-neutral adapters, private source-hashed memory, bounded task graphs, and deployable evidence contracts."
+            },
+            "next_deep_dive": "Test Mistral access when available and compare on-prem-like constraints with cloud providers.",
+            "observed_current_pressure": "Enterprises want sovereign, customizable models and long-running coding and agent workflows under their own control.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Map Helix evidence ladders to NASA-style technology readiness and verification.",
+            "company_id": "nasa",
+            "display_name": "NASA",
+            "inferred_bottleneck": "Verification, validation, explainability, integration, and technology-readiness progression.",
+            "inferred_brick_wall": "Certifying autonomy for radiation, delay, limited compute, uncertain sensing, and no immediate human intervention.",
+            "leverage": {
+                "expected_impact": "Improves credibility by separating concept, simulation, test, integration, and deployment evidence.",
+                "glaciereq_systems": [
+                    "Robotics VLA Sentinel",
+                    "Job-App Helix",
+                    "Make-It-Heavy",
+                    "Tower of Babel"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use technology-readiness gates, invariant checks, simulation evidence, and explicit mission-environment boundaries."
+            },
+            "next_deep_dive": "Produce a TRL-style assessment for one autonomy repository.",
+            "observed_current_pressure": "AI and autonomy must transition from research into mission-certified systems operating under extreme constraints.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate a Notion-native research-to-application memory loop with provenance and deduplication.",
+            "company_id": "notion",
+            "display_name": "Notion",
+            "inferred_bottleneck": "Maintaining current, permission-safe, attributable context across documents, databases, connectors, and agents.",
+            "inferred_brick_wall": "Letting agents remember and act without stale context, permission leakage, duplicated work, or unverifiable edits.",
+            "leverage": {
+                "expected_impact": "Raises trust and reuse of agent work across persistent team knowledge.",
+                "glaciereq_systems": [
+                    "notion-workflow-intelligence",
+                    "notion-workspace-optimizer",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Store compact source-linked memory, preserve change history, and require action receipts and authority checks."
+            },
+            "next_deep_dive": "Audit existing Notion repos and build a permission-aware connector demonstration.",
+            "observed_current_pressure": "The workspace is becoming an agent operating environment connected to enterprise knowledge and actions.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public Notion role/team and inspect the exact recruiter-admitted Notion-aligned repositories before promoting beyond general platform alignment.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Present GPU health, reasoning, and token compression as one inference-efficiency and observability package.",
+            "company_id": "nvidia",
+            "display_name": "NVIDIA",
+            "inferred_bottleneck": "Integrating data movement, memory hierarchy, interconnect, compute, and software as one efficient platform.",
+            "inferred_brick_wall": "Meeting power, latency, utilization, reliability, and security targets while model architectures evolve faster than infrastructure generations.",
+            "leverage": {
+                "expected_impact": "Improves utilization and reliability while reducing memory and context pressure.",
+                "glaciereq_systems": [
+                    "nvidia-deep-reasoning",
+                    "nvidia-gpu-health",
+                    "Token Saver",
+                    "Colossus Gateway"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Pair health telemetry and topology-aware routing with compressed context and phase-specific workload policies."
+            },
+            "next_deep_dive": "Benchmark Token Saver honestly and connect it to concrete GPU memory, KV-cache, and networking measurements.",
+            "observed_current_pressure": "AI systems now span compute, networking, storage, context memory, security, and rapidly changing training and inference phases.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public NVIDIA role/team, identify one externally supportable infrastructure problem, then inspect only the governed NVIDIA-aligned repositories that could materially address it.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Lead with evidence-bound agent execution: immutable receipts, context compaction, recovery state, and explicit tool authority.",
+            "company_id": "openai",
+            "display_name": "OpenAI",
+            "inferred_bottleneck": "Reliable orchestration, sandboxing, scheduling, state recovery, and observability for model-driven workloads.",
+            "inferred_brick_wall": "Scaling autonomous execution by orders of magnitude without shared-fate failures, privilege leakage, runaway cost, or unverifiable completion.",
+            "leverage": {
+                "expected_impact": "Reduces false completion, context waste, and debugging ambiguity in long-running agent infrastructure.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Pro-DOCTOR-STRANGE",
+                    "Token Saver",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "HIGH",
+                "mechanism": "Bring fail-closed receipts, provider convergence, compact context packets, and bounded execution into one inspectable agent-control plane."
+            },
+            "next_deep_dive": "Inspect current Agent Infrastructure and Evals role requirements, then map each requirement to a commit-bound GlacierEQ proof.",
+            "observed_current_pressure": "Agent products are expanding from short requests into isolated, long-running execution environments at extreme scale.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public OpenAI role/team and inspect the exact admitted KV-sentinel implementation before connecting it to any company-specific engineering problem.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Agent Infrastructure Engineer",
+                "Evaluation / Reliability Engineer"
+            ]
+        },
+        {
+            "application_move": "Position the GlacierEQ gateway work as a policy and state-integrity layer around OpenClaw-class systems.",
+            "company_id": "openclaw",
+            "display_name": "OpenClaw",
+            "inferred_bottleneck": "Secure routing and persistent state across a very large integration surface.",
+            "inferred_brick_wall": "Maintaining session isolation, credential boundaries, plugin safety, and recoverability across channels and providers.",
+            "leverage": {
+                "expected_impact": "Reduces integration risk and improves recoverability in personal agent gateways.",
+                "glaciereq_systems": [
+                    "openclaw",
+                    "Colossus Gateway",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Introduce typed provider and tool permissions, session-scoped memory, audit receipts, and upgrade compatibility tests."
+            },
+            "next_deep_dive": "Audit the owned OpenClaw repository against current upstream security and session behavior.",
+            "observed_current_pressure": "A local and multichannel agent gateway must coordinate providers, sessions, plugins, devices, and user tools.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate a reversible browser workflow with explicit permission and state capture.",
+            "company_id": "opera",
+            "display_name": "Opera",
+            "inferred_bottleneck": "Safe, local, reversible action over real browser state and user identity.",
+            "inferred_brick_wall": "Preventing permission abuse, session leakage, brittle automation, and unrecoverable actions across the open web.",
+            "leverage": {
+                "expected_impact": "Improves reliability and user trust in browser agents.",
+                "glaciereq_systems": [
+                    "Pro-comet-agent",
+                    "unified-browser-automation",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Add per-action authority, browser-state receipts, rollback checkpoints, and compact session memory."
+            },
+            "next_deep_dive": "Build a live browser proof using available automation tools and record every action and recovery step.",
+            "observed_current_pressure": "Browsers are turning authenticated sessions and live page context into agent-accessible operating surfaces.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate database-grounded application intelligence with immutable source and decision hashes.",
+            "company_id": "oracle",
+            "display_name": "Oracle",
+            "inferred_bottleneck": "Unified semantics, transactions, security, retrieval, and agent memory directly over enterprise data.",
+            "inferred_brick_wall": "Allowing real-time agent action without breaking data consistency, access controls, or cross-cloud portability.",
+            "leverage": {
+                "expected_impact": "Reduces data movement and improves action traceability.",
+                "glaciereq_systems": [
+                    "Unified Memory MCP",
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Token Saver"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Attach transactional source identity, permission, freshness, and compact context to every decision."
+            },
+            "next_deep_dive": "Prototype against an accessible SQL system and test concurrency and stale-context behavior.",
+            "observed_current_pressure": "Enterprise agents are moving closer to transactional databases and mixed data types to avoid data movement.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Map the estate graph to an ontology-style application intelligence system with traceable actions.",
+            "company_id": "palantir",
+            "display_name": "Palantir",
+            "inferred_bottleneck": "Allowing models to discover and use tools while preserving ontology, permissions, lineage, and operational semantics.",
+            "inferred_brick_wall": "Enabling rapid agent creation without bypassing enterprise security, audit, and data governance.",
+            "leverage": {
+                "expected_impact": "Improves governed tool discovery and reduces context overhead in operational agents.",
+                "glaciereq_systems": [
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Token Saver",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use typed system boundaries, compact tool catalogs, evidence-linked actions, and authority-aware memory."
+            },
+            "next_deep_dive": "Build a small ontology-backed application workflow and quantify tool-search token savings.",
+            "observed_current_pressure": "Enterprise agents are being embedded directly into governed operational data and ontology layers.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate an application dossier whose claims trace to current sources and subsequent actions.",
+            "company_id": "perplexity",
+            "display_name": "Perplexity",
+            "inferred_bottleneck": "Turning fresh cited context into reliable, permission-aware action.",
+            "inferred_brick_wall": "Maintaining source freshness, attribution, connector trust, and workflow continuity across long enterprise tasks.",
+            "leverage": {
+                "expected_impact": "Reduces citation drift and makes research-to-action chains inspectable.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Unified Memory MCP",
+                    "Pro-comet-agent",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Attach source hashes and freshness to every decision, preserve provenance through action, and require permission receipts."
+            },
+            "next_deep_dive": "Run the same company research through Perplexity and compare citation completeness and freshness.",
+            "observed_current_pressure": "Answer engines are becoming enterprise action systems with connectors, memory, citations, and computer-use capability.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Create a measured edge-agent context budget demonstration.",
+            "company_id": "qualcomm",
+            "display_name": "Qualcomm",
+            "inferred_bottleneck": "Memory bandwidth, energy efficiency, model portability, and on-device agent context.",
+            "inferred_brick_wall": "Delivering useful local agents without exhausting memory, battery, thermals, or software compatibility.",
+            "leverage": {
+                "expected_impact": "Extends useful on-device context within energy and memory limits.",
+                "glaciereq_systems": [
+                    "Token Saver",
+                    "apple-ane-kv-quantizer",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use compact memory packets, quantized state, device-tier routing, and privacy-aware cloud fallback."
+            },
+            "next_deep_dive": "Run on available mobile hardware or emulator and clearly label the hardware boundary.",
+            "observed_current_pressure": "Inference is spreading from phones and PCs to edge devices and data centers under strict performance-per-watt constraints.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Build a cross-runtime Qwen routing exhibit with explicit tool and language boundaries.",
+            "company_id": "qwen",
+            "display_name": "Alibaba / Qwen",
+            "inferred_bottleneck": "Consistent tool use, retrieval, multimodal grounding, and deployment portability across languages and context sizes.",
+            "inferred_brick_wall": "Preserving reliable behavior across open weights, varied runtimes, long contexts, and heterogeneous user environments.",
+            "leverage": {
+                "expected_impact": "Improves portability and reliability across open-model deployments.",
+                "glaciereq_systems": [
+                    "qwen-vl-flash-router",
+                    "Tower of Babel",
+                    "Token Saver",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use language-specific adapters, tool contracts, routing receipts, and compact multimodal context."
+            },
+            "next_deep_dive": "Test current Qwen models on the same agent task and report capability, latency, and cost differences.",
+            "observed_current_pressure": "Open multilingual and multimodal models are becoming general agent foundations across highly diverse deployment environments.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Present a verification-first embodied AI architecture rather than a generic robotics demo.",
+            "company_id": "robotics",
+            "display_name": "Robotics / Embodied AI",
+            "inferred_bottleneck": "Verifiable perception, planning, coordination, and recovery in physical environments.",
+            "inferred_brick_wall": "Guaranteeing bounded risk when observations are incomplete and actions are irreversible.",
+            "leverage": {
+                "expected_impact": "Improves safety-case quality and prevents simulation evidence from being overstated.",
+                "glaciereq_systems": [
+                    "robotics-vla-torque-sentinel",
+                    "Tesla FSD Stream",
+                    "Make-It-Heavy",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use scenario decomposition, invariant checks, counterexample agents, and physical-validation gates."
+            },
+            "next_deep_dive": "Select one simulation, define invariants, and produce repeatable failure and recovery evidence.",
+            "observed_current_pressure": "Autonomous systems must plan and act under uncertain sensing, communication, terrain, and power constraints.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Build a flight-software release and simulation evidence case study.",
+            "company_id": "rocket_lab",
+            "display_name": "Rocket Lab",
+            "inferred_bottleneck": "Maintaining one reliable software lifecycle across vehicles, spacecraft, test, simulation, and operations.",
+            "inferred_brick_wall": "Versioning and validating mission-critical software as products and missions diversify.",
+            "leverage": {
+                "expected_impact": "Shows complete software-lifecycle thinking for aerospace systems.",
+                "glaciereq_systems": [
+                    "Aerospace mission-control suite",
+                    "Job-App Helix",
+                    "Tower of Babel",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use versioned interfaces, simulation receipts, release manifests, and mission-specific acceptance gates."
+            },
+            "next_deep_dive": "Choose one mission thread and validate every interface and test boundary.",
+            "observed_current_pressure": "Launch and spacecraft products require integrated flight software, simulation, ground systems, and rapid mission cadence.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Model the application campaign itself as a CRM agent workflow with no-send default and approval gates.",
+            "company_id": "salesforce",
+            "display_name": "Salesforce",
+            "inferred_bottleneck": "Trusted autonomous action over CRM context and enterprise integration layers.",
+            "inferred_brick_wall": "Preventing incorrect or irreversible actions while maintaining identity, consent, observability, and business semantics.",
+            "leverage": {
+                "expected_impact": "Improves trust and auditability for business agents.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Sigma Federation",
+                    "Unified Memory MCP",
+                    "Pro-DOCTOR-STRANGE"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use action policies, identity-aware memory, approval thresholds, and post-action receipts."
+            },
+            "next_deep_dive": "Implement a sandbox campaign flow and verify no external message is sent without authority.",
+            "observed_current_pressure": "CRM agents are expected to reason and act across customer data, workflows, integrations, and business permissions.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Offer Helix evidence ladders as an evaluation control plane for repository and agent behavior.",
+            "company_id": "scale_ai",
+            "display_name": "Scale AI",
+            "inferred_bottleneck": "Creating representative, contamination-resistant, non-gameable evaluations for agents and models.",
+            "inferred_brick_wall": "Measuring real capability and risk without overfitting, leaking benchmarks, or mistaking narrow scores for deployment readiness.",
+            "leverage": {
+                "expected_impact": "Improves evaluation validity and prevents single-score overclaiming.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Pro-DOCTOR-STRANGE",
+                    "Make-It-Heavy",
+                    "anthropic-safety-monitor"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use proof ladders, independent readers, contradiction preservation, and scenario-specific completion tests."
+            },
+            "next_deep_dive": "Create a benchmark-contamination threat model and multi-reader evaluation suite.",
+            "observed_current_pressure": "Agent evaluation must move beyond static benchmarks into open-ended product behavior and safety.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Demonstrate a governed company-intelligence update stream with freshness and lineage.",
+            "company_id": "snowflake",
+            "display_name": "Snowflake",
+            "inferred_bottleneck": "Converting heterogeneous governed data into fresh, low-latency, permission-correct agent context.",
+            "inferred_brick_wall": "Preserving identity, lineage, semantics, freshness, and cost controls across data, models, and actions.",
+            "leverage": {
+                "expected_impact": "Improves context quality while reducing data movement and prompt overhead.",
+                "glaciereq_systems": [
+                    "Unified Memory MCP",
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Token Saver"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use semantic memory packets with lineage, freshness, permissions, and compact retrieval."
+            },
+            "next_deep_dive": "Implement incremental refresh and stale-source detection for the atlas.",
+            "observed_current_pressure": "Enterprise data platforms are becoming context and action layers for governed agents.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Consolidate the SpaceX repositories into mission-control, launch, network, propulsion, and reliability subsystems with explicit interfaces.",
+            "company_id": "spacex",
+            "display_name": "SpaceX",
+            "inferred_bottleneck": "Low-latency coordination and observability across software, hardware, facilities, orbital dynamics, and distributed operations.",
+            "inferred_brick_wall": "Achieving physical-system determinism and fault tolerance under tight timing, safety, network, and environmental constraints.",
+            "leverage": {
+                "expected_impact": "Creates a credible systems-integration narrative across software and physical operations.",
+                "glaciereq_systems": [
+                    "SpaceX mission-control suite",
+                    "Job-App Helix",
+                    "Tower of Babel",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Represent launch and satellite work as dependency-bound systems with fault domains, simulation evidence, and operational receipts."
+            },
+            "next_deep_dive": "Audit the SpaceX family for executable simulations, remove speculative claims, and select one end-to-end mission thread.",
+            "observed_current_pressure": "Launch, spacecraft, satellite, ground, manufacturing, and network systems must operate at increasing cadence.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public SpaceX role/team and operating problem, then reconcile it against the governed SpaceX repository family and existing README Mesh before any implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Show Tasklet as a governed micro-agent system with team-safe memory and cost controls.",
+            "company_id": "tasklet",
+            "display_name": "Tasklet",
+            "inferred_bottleneck": "Reliable delegation and shared context across many integrations and team members.",
+            "inferred_brick_wall": "Controlling credentials, cost, concurrency, and state drift as personal agents become organizational infrastructure.",
+            "leverage": {
+                "expected_impact": "Makes delegation auditable and reduces duplicate automation work.",
+                "glaciereq_systems": [
+                    "Tasklet Micro-Agent Engine",
+                    "Make-It-Heavy",
+                    "Unified Memory MCP",
+                    "Job-App Helix"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use bounded worker roles, shared source-hashed memory, queue receipts, and budget limits."
+            },
+            "next_deep_dive": "Compare the repository runtime to current Tasklet features and close missing integration proofs.",
+            "observed_current_pressure": "Personal automations are expanding into shared team infrastructure with subagents, integrations, and persistent sessions.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Agent Platform Engineer",
+                "Applied AI Engineer",
+                "AI Product Infrastructure Engineer"
+            ]
+        },
+        {
+            "application_move": "Lead with a perception-to-decision evidence chain and an explicit physical-validation boundary.",
+            "company_id": "tesla",
+            "display_name": "Tesla",
+            "inferred_bottleneck": "Closing the data-to-model-to-fleet loop for safe, efficient embodied autonomy.",
+            "inferred_brick_wall": "Generalizing through rare edge cases while meeting hard real-time, energy, safety, and regulatory constraints.",
+            "leverage": {
+                "expected_impact": "Improves edge-case visibility and separates simulated evidence from real-world validation.",
+                "glaciereq_systems": [
+                    "tesla-fsd-occupancy-stream",
+                    "Robotics VLA Sentinel",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Combine streaming perception, bounded scenario analysis, counterexample discovery, and evidence-labeled safety gates."
+            },
+            "next_deep_dive": "Create scenario benchmarks and failure taxonomies without claiming vehicle deployment.",
+            "observed_current_pressure": "Autonomy, robotics, training, inference, data engines, and vehicle systems must improve continuously in the physical world.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Distributed Systems Engineer",
+                "Forward-Deployed Systems Engineer"
+            ]
+        },
+        {
+            "application_move": "Deploy the Helix intelligence UI as a concrete Vercel production-agent case study.",
+            "company_id": "vercel",
+            "display_name": "Vercel",
+            "inferred_bottleneck": "Durable workflows, safe code execution, least-privilege tool access, and full-stack observability.",
+            "inferred_brick_wall": "Turning fast prototypes into recoverable, secure production agents without provider lock-in or hidden runtime state.",
+            "leverage": {
+                "expected_impact": "Shortens prototype-to-production while retaining evidence and security boundaries.",
+                "glaciereq_systems": [
+                    "Job-App Helix",
+                    "Colossus Gateway",
+                    "Pro-DOCTOR-STRANGE",
+                    "Unified Memory MCP"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Add provider-neutral convergence, exact deployment receipts, scoped credential exchange, and recoverable state."
+            },
+            "next_deep_dive": "Finish preview deployment and record commit-to-deployment parity.",
+            "observed_current_pressure": "Developers need a complete production stack for AI applications: models, workflows, sandboxes, auth, observability, and deployment.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Present a neutral autonomy-evaluation framework rather than claiming vehicle competence.",
+            "company_id": "waymo",
+            "display_name": "Waymo",
+            "inferred_bottleneck": "Maintaining consistent safety and operational quality across new environments and long-tail scenarios.",
+            "inferred_brick_wall": "Proving safe generalization while scaling fleet operations, maps, remote assistance, and public trust.",
+            "leverage": {
+                "expected_impact": "Improves safety-case presentation and focuses work on long-tail uncertainty.",
+                "glaciereq_systems": [
+                    "Tesla FSD Stream",
+                    "Robotics VLA Sentinel",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Use scenario taxonomies, counterexample generation, evidence ladders, and transparent boundary reporting."
+            },
+            "next_deep_dive": "Build a scenario corpus and compare how evidence changes across geographies.",
+            "observed_current_pressure": "Driverless service is expanding to more geographies while public and regulatory scrutiny remains intense.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        },
+        {
+            "application_move": "Pitch a Colossus systems suite—not isolated cooling repos—with explicit topology, failure domains, and verification gates.",
+            "company_id": "xai",
+            "display_name": "xAI",
+            "inferred_bottleneck": "Coordinating compute, networking, cooling, power, servers, security, and model operations as one reliable system.",
+            "inferred_brick_wall": "Preserving reliability, safety, and debuggability while scaling infrastructure and shipping at extreme speed.",
+            "leverage": {
+                "expected_impact": "Turns dozens of disconnected infrastructure experiments into a coherent reliability and operations story.",
+                "glaciereq_systems": [
+                    "xai-colossus suite",
+                    "Colossus Gateway",
+                    "Pro-DOCTOR-STRANGE",
+                    "Job-App Helix"
+                ],
+                "impact_class": "HIGH",
+                "mechanism": "Collapse fragmented variants into one governed infrastructure suite with dependency graphs, incident receipts, and bounded convergence."
+            },
+            "next_deep_dive": "Audit each xAI/Colossus repository for runnable proof and select one flagship plus bounded supporting systems.",
+            "observed_current_pressure": "Rapid model iteration is coupled to a massive training and inference fabric, physical data-center systems, and high-velocity product deployment.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public xAI role/team, select one bounded infrastructure problem, then reconcile successor/unique-value status across the Colossus repository family before any company-specific claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Agent Infrastructure Engineer",
+                "Evaluation / Reliability Engineer"
+            ]
+        },
+        {
+            "application_move": "Create a redundancy and mission-control architecture exhibit using non-vehicle simulations.",
+            "company_id": "zoox",
+            "display_name": "Zoox",
+            "inferred_bottleneck": "Integrating vehicle safety architecture, autonomy, mission control, manufacturing, and market operations.",
+            "inferred_brick_wall": "Preserving no-single-point-failure safety and reliable remote and operational support across diverse environments.",
+            "leverage": {
+                "expected_impact": "Demonstrates systems integration and fault-domain reasoning.",
+                "glaciereq_systems": [
+                    "Robotics VLA Sentinel",
+                    "Sigma Federation",
+                    "Job-App Helix",
+                    "Make-It-Heavy"
+                ],
+                "impact_class": "MEDIUM_HIGH",
+                "mechanism": "Map independent safety channels, operational escalation, and physical-system receipts."
+            },
+            "next_deep_dive": "Define a no-single-point-failure model and test representative failure paths.",
+            "observed_current_pressure": "A purpose-built robotaxi must scale from engineering validation into public service and manufacturing.",
+            "second_depth": {
+                "blockers": [
+                    "current_role_not_verified",
+                    "company_problem_not_bounded",
+                    "repository_code_not_inspected",
+                    "proof_not_reproduced"
+                ],
+                "claim_ceiling": "company_alignment_only",
+                "next_gate": "Verify a current public role or operating context before making any company-specific problem or implementation claim.",
+                "stage": "MAPPED_ONLY"
+            },
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed Engineer",
+                "AI Infrastructure / Governance Engineer"
+            ]
+        }
+    ],
+    "schema": "glaciereq.resume-application-intelligence.v1",
+    "source": {
+        "external_freshness_state": "HISTORICAL_SOURCE_SNAPSHOT_REQUIRES_REFRESH_BEFORE_LIVE_APPLICATION",
+        "external_research_as_of": "2026-08-05",
+        "root_ref": "99c84ffc0d4b3232dd2761490f9d006134d1d808",
+        "root_version": "1.1.0",
+        "source_digest": "d9aad0909fc331667086056041d062c81fa93f1e92bd0fe95a7cbf99eaff7fa9",
+        "source_hashes": {
+            "manifests/application_intelligence/atlas_shards/frontier_ai.json": "8241aba9f9d4b7351c24a1aa947da664bbbc3345f72ce41be66137c776b0b1ae",
+            "manifests/application_intelligence/atlas_shards/model_agent_product.json": "b17b860ccc5507efa63e7b3460324a4ff62d623b2b5651f2c9b6061eb9055d6b",
+            "manifests/application_intelligence/atlas_shards/platform_infrastructure.json": "75d9de238f9f5fdf033315202164d89c6d69c4dc330a4d7c7478bac5a5c8246e",
+            "manifests/application_intelligence/atlas_shards/strategic_target_part_1.json": "72ddeb92c63cb485432fbfb48f7e0cd0d405111bac8f65b743ce7b18500f680c",
+            "manifests/application_intelligence/atlas_shards/strategic_target_part_2.json": "3fbb41cb426cf240c098a8342ffa3803cc960aebca82cda9329b83722dda97f3",
+            "manifests/application_intelligence/atlas_shards/strategic_target_part_3.json": "3245f2a5ec610bb94d0dbfaba7cd677f6dd5ba52395dadba8d53a99ec86f4b4b",
+            "manifests/application_intelligence/company_bottleneck_atlas.external.json": "2d93f4e0c736426dcf6904be6d0139075a48c78f3051278becf05703ee67f654",
+            "manifests/company_second_depth.json": "6df29f45139a99c22d1530c9c09db8e323f0bed7e68b1205be36cbfd6d715d58",
+            "manifests/estate_compiler.json": "49568243988d3efc999c1eea589b5a7cda8980ebc1e184e36a4c04036bc47ec6",
+            "manifests/estate_projection_policy.json": "36f2cb441356917a4e9c56936d1acf8aeca1d7a9242374e5fbb16bdbcfda916f",
+            "manifests/portfolio_root_truth.json": "bea3453910b9595c378c15fa2f748f976dd5f59b5f197adb86cfc0aaf5be0462"
+        }
+    }
+}

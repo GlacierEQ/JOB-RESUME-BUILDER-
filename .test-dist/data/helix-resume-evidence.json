@@ -1,0 +1,3147 @@
+{
+    "companies": [
+        {
+            "applicable_flagships": [],
+            "company_id": "openai",
+            "display_name": "OpenAI",
+            "gap_or_next_gate": "KV sentinel is admitted; Codex/MCP candidates need provenance/runtime audit; upstream SDK/framework repos are excluded.",
+            "non_affiliation": "Independent GlacierEQ work; no OpenAI affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/openai-reasoning-kv-sentinel"
+                }
+            ],
+            "recruiter_thesis": "Evidence-bound agents, tool authority, evaluation, context integrity, and inspectable provider convergence.",
+            "target_roles": [
+                "Applied AI Engineer",
+                "Agents Infrastructure Engineer",
+                "Solutions Architect"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "anthropic",
+            "display_name": "Anthropic",
+            "gap_or_next_gate": "Five direct Anthropic-named repos exist; three private candidates were omitted from the old public count.",
+            "non_affiliation": "Independent GlacierEQ work; no Anthropic affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L4",
+                    "promotion_state": "PROMOTED",
+                    "repository": "GlacierEQ/anthropic-agent-coordinator"
+                },
+                {
+                    "level": "L4",
+                    "promotion_state": "PROMOTED",
+                    "repository": "GlacierEQ/anthropic-safety-monitor"
+                }
+            ],
+            "recruiter_thesis": "Deterministic coordination, fail-closed safety, human escalation, and honest limitations.",
+            "target_roles": [
+                "Agent Infrastructure Engineer",
+                "Safety Systems Engineer",
+                "Applied AI Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "google_deepmind",
+            "display_name": "Google / DeepMind",
+            "gap_or_next_gate": "Six direct DeepMind-named repos exist; one public prototype and five private candidates.",
+            "non_affiliation": "Independent GlacierEQ work; no Google / DeepMind affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/deepmind-tpu-mesh-optimizer"
+                }
+            ],
+            "recruiter_thesis": "ML systems, TPU/mesh optimization, temporal routing, predictive handoff, and governed polyglot execution.",
+            "target_roles": [
+                "ML Systems Engineer",
+                "Applied AI Engineer",
+                "Infrastructure Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "xai",
+            "display_name": "xAI",
+            "gap_or_next_gate": "Collapse variants into one suite, one bounded flagship, supporting systems, experiments, public references, private references, and quarantined exclusions; xai-colossal-cooling is public but remains outside admission until successor/unique-value analysis is complete.",
+            "non_affiliation": "Independent GlacierEQ work; no xAI affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossus-energy"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossus-2"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossus-nanosphere"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossus-security"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossus-servers"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/grokodile"
+                },
+                {
+                    "level": "L2",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/xai-colossal-cooling"
+                }
+            ],
+            "recruiter_thesis": "Frontier infrastructure reasoning across cooling, energy, servers, security, facilities, and Grok-adjacent orchestration.",
+            "target_roles": [
+                "Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Applied AI Systems Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "microsoft",
+            "display_name": "Microsoft",
+            "gap_or_next_gate": "Two admitted prototypes; document/operator candidates need provenance/security audit.",
+            "non_affiliation": "Independent GlacierEQ work; no Microsoft affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/microsoft-azure-ops"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/microsoft-identity-zero-trust"
+                }
+            ],
+            "recruiter_thesis": "Enterprise AI operations, identity, zero-trust, document/operator workflows, and auditable platform control.",
+            "target_roles": [
+                "AI Platform Engineer",
+                "Cloud Solutions Architect",
+                "Identity/Security Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "aws",
+            "display_name": "AWS",
+            "gap_or_next_gate": "Trainium exhibit is thin; products API and private education evidence need originality/privacy/deployment review.",
+            "non_affiliation": "Independent GlacierEQ work; no AWS affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/aws-trainium-neuron-sentinel"
+                }
+            ],
+            "recruiter_thesis": "Cloud and accelerator systems, Trainium/Neuron observability, and evidence-bound deployment operations.",
+            "target_roles": [
+                "Cloud AI Engineer",
+                "Solutions Architect",
+                "AI Infrastructure Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "spacex",
+            "display_name": "SpaceX",
+            "gap_or_next_gate": "Estate count is 14 direct-named repos; public suite remains 12 until two private candidates earn admission.",
+            "non_affiliation": "Independent GlacierEQ work; no SpaceX affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-autonomy"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-conjunction-sentinel"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-cryogenics"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-ground-network"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-launch-sequencer"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-mission-control"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-orbital-mechanics"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-pad-weather-gate"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-propulsion-monitor"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-satellite-mesh"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-telemetry"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spacex-thermal-protection"
+                }
+            ],
+            "recruiter_thesis": "Mission systems across telemetry, propulsion, sequencing, ground, autonomy, orbital, conjunction, cryogenics, weather, mesh, control, and thermal protection.",
+            "target_roles": [
+                "Software Engineer, Avionics",
+                "Mission Systems Engineer",
+                "Infrastructure/Automation Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "nvidia",
+            "display_name": "NVIDIA",
+            "gap_or_next_gate": "Five direct NVIDIA-named repos exist; all need CUDA/hardware correctness and benchmark receipts.",
+            "non_affiliation": "Independent GlacierEQ work; no NVIDIA affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/nvidia-deep-reasoning"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/nvidia-gpu-health"
+                }
+            ],
+            "recruiter_thesis": "GPU reliability, health, gradient protection, circuit breaking, deep reasoning, and agent consensus.",
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "GPU Reliability Engineer",
+                "Applied Deep Learning Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "apple",
+            "display_name": "Apple",
+            "gap_or_next_gate": "Public ANE prototype plus private Apple MCP/iOS doctrine; device-level verification required.",
+            "non_affiliation": "Independent GlacierEQ work; no Apple affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/apple-ane-kv-quantizer"
+                }
+            ],
+            "recruiter_thesis": "On-device AI, ANE/Metal/Swift performance, Apple automation, and privacy-aware local intelligence.",
+            "target_roles": [
+                "Machine Learning Engineer",
+                "AI/ML Platform Engineer",
+                "Software Engineer, Apple Platforms"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "meta",
+            "display_name": "Meta",
+            "gap_or_next_gate": "Public exhibit needs distributed-behavior proof; metaagent originality requires audit.",
+            "non_affiliation": "Independent GlacierEQ work; no Meta affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/meta-llama-collective-sentinel"
+                }
+            ],
+            "recruiter_thesis": "Llama collective reliability and multi-agent coordination under bounded evidence.",
+            "target_roles": [
+                "AI Systems Engineer",
+                "Applied AI Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "tesla",
+            "display_name": "Tesla",
+            "gap_or_next_gate": "Requires stream correctness, latency, backpressure, fault, and replay receipts.",
+            "non_affiliation": "Independent GlacierEQ work; no Tesla affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/tesla-fsd-occupancy-stream"
+                }
+            ],
+            "recruiter_thesis": "Streaming occupancy and perception-system reliability with explicit latency/failure boundaries.",
+            "target_roles": [
+                "AI Infrastructure Engineer",
+                "Autonomy Software Engineer",
+                "Data/Platform Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "deepseek",
+            "display_name": "DeepSeek",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no DeepSeek affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/deepseek-mla-moe-sentinel"
+                }
+            ],
+            "recruiter_thesis": "MLA/MoE reliability and model-serving observability.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "kimi",
+            "display_name": "Moonshot AI / Kimi",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no Moonshot AI / Kimi affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/kimi-mooncake-kv-stream"
+                }
+            ],
+            "recruiter_thesis": "KV streaming, long-context serving, and bounded memory transport.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "qwen",
+            "display_name": "Alibaba / Qwen",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no Alibaba / Qwen affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/qwen-vl-flash-router"
+                }
+            ],
+            "recruiter_thesis": "Vision-language routing and low-latency multimodal orchestration.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "notion",
+            "display_name": "Notion",
+            "gap_or_next_gate": "Three admitted prototypes; upstream delta and archive excluded.",
+            "non_affiliation": "Independent GlacierEQ work; no Notion affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/notion-mcp-empowerment-engine"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/notion-workflow-intelligence"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/notion-workspace-optimizer"
+                }
+            ],
+            "recruiter_thesis": "Workspace intelligence, MCP empowerment, and governed workflow optimization.",
+            "target_roles": [
+                "AI Product Engineer",
+                "Applied AI Engineer",
+                "Solutions Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "opera",
+            "display_name": "Opera",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no Opera affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/opera-neon-spatial-workspace"
+                }
+            ],
+            "recruiter_thesis": "Agentic/spatial browser workspace design and operator flow.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "perplexity",
+            "display_name": "Perplexity",
+            "gap_or_next_gate": "Public bridge plus public doctrine; both remain reference-only until browser safety, recovery, originality, and end-to-end evidence are current.",
+            "non_affiliation": "Independent GlacierEQ work; no Perplexity affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/comet-browser-agent-bridge"
+                },
+                {
+                    "level": "L2",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/Pro-comet-agent"
+                }
+            ],
+            "recruiter_thesis": "Browser-agent integration and operator-safe research workflows.",
+            "target_roles": [
+                "Product Engineer",
+                "Applied AI Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "manus",
+            "display_name": "Manus",
+            "gap_or_next_gate": "Prototype until live browser safety, recovery, and task receipts pass.",
+            "non_affiliation": "Independent GlacierEQ work; no Manus affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/manus-autonomous-web-agent"
+                }
+            ],
+            "recruiter_thesis": "Autonomous web-agent planning with bounded permissions and inspectable completion.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "lovable",
+            "display_name": "Lovable",
+            "gap_or_next_gate": "Prototype until build correctness, UI quality, and provenance receipts pass.",
+            "non_affiliation": "Independent GlacierEQ work; no Lovable affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/lovable-design-app-synth"
+                }
+            ],
+            "recruiter_thesis": "Design-to-application synthesis with bounded generation and verifiable output.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "openclaw",
+            "display_name": "OpenClaw",
+            "gap_or_next_gate": "Requires identity/provenance and current executable evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no OpenClaw affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/openclaw"
+                }
+            ],
+            "recruiter_thesis": "Tool-using agent runtime and controlled automation.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "tasklet",
+            "display_name": "Tasklet",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no Tasklet affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/tasklet-micro-agent-engine"
+                }
+            ],
+            "recruiter_thesis": "Typed, bounded micro-agent execution.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "robotics",
+            "display_name": "Robotics / Embodied AI",
+            "gap_or_next_gate": "Focused prototype; current positive-count tests, realistic fixtures, and failure receipts required.",
+            "non_affiliation": "Independent GlacierEQ work; no Robotics / Embodied AI affiliation, endorsement, employment, proprietary access, or production deployment is claimed.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/robotics-vla-torque-sentinel"
+                }
+            ],
+            "recruiter_thesis": "VLA torque-safety monitoring and embodied-system boundaries.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "palantir",
+            "display_name": "Palantir",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "anduril",
+            "display_name": "Anduril",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "scale_ai",
+            "display_name": "Scale AI",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "mistral",
+            "display_name": "Mistral AI",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "cohere",
+            "display_name": "Cohere",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "databricks",
+            "display_name": "Databricks",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "snowflake",
+            "display_name": "Snowflake",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "ibm",
+            "display_name": "IBM",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "intel",
+            "display_name": "Intel",
+            "gap_or_next_gate": "Keep both repositories below recruiter admission. Isolate candidate Casey-side SDPA robustness changes into a clean patch against the archived Intel base, remove generated/history/node_modules noise and unsupported QA claims, then require deterministic tests and a provenance receipt before considering capability-donor promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "The private NPU repository is a converted, diverged continuation of Intel's upstream library, not an original GlacierEQ system. Casey-side history contains some direct robustness and test edits, but those deltas must be isolated from Intel-authored code, imported feature branches, generated artifacts, and maintenance-only changes before any donor credit is assigned.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "amd",
+            "display_name": "AMD",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "qualcomm",
+            "display_name": "Qualcomm",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "oracle",
+            "display_name": "Oracle",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "salesforce",
+            "display_name": "Salesforce",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "adobe",
+            "display_name": "Adobe",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "cloudflare",
+            "display_name": "Cloudflare",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "vercel",
+            "display_name": "Vercel",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "hugging_face",
+            "display_name": "Hugging Face",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "groq",
+            "display_name": "Groq",
+            "gap_or_next_gate": "groqchat explicitly derives from an external FreeGenius implementation; claude-code-kimi-groq is inspired by an external proxy. Preserve both as provenance-audit references until original delta, tests, and security boundaries are measured.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "cerebras",
+            "display_name": "Cerebras",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "coreweave",
+            "display_name": "CoreWeave",
+            "gap_or_next_gate": "Promote only through the experiment ladder: prove unique value, add deterministic tests and runtime receipts, integrate surviving mechanisms into a reference system, then require capability proof and the promotion-score gate. Current source audit found unverified claims and concrete implementation defects, so all five remain private experiments.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Five private CoreWeave-named prototypes form one reliability R&D family, not five independent accomplishments. None is recruiter proof until claims are bounded and positive verification receipts exist.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "waymo",
+            "display_name": "Waymo",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "zoox",
+            "display_name": "Zoox",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "blue_origin",
+            "display_name": "Blue Origin",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "rocket_lab",
+            "display_name": "Rocket Lab",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "lockheed_martin",
+            "display_name": "Lockheed Martin",
+            "gap_or_next_gate": "No Lockheed Martin-named repository or recruiter-admitted company-specific proof was found in the connected GlacierEQ estate. Verify a current public role and team, bound one externally supportable problem, then inspect only genuinely relevant GlacierEQ implementations before raising the claim ceiling.",
+            "non_affiliation": "Independent GlacierEQ work; no Lockheed Martin affiliation, endorsement, employment, proprietary access, contract relationship, clearance, or production deployment is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Mission-critical software, governed automation, evidence-bound engineering, recovery-oriented architecture, and cross-domain systems reasoning are candidate alignment themes only; no Lockheed-specific implementation claim is made without direct evidence.",
+            "target_roles": [
+                "AI / ML Systems Engineer",
+                "Mission Systems Software Engineer",
+                "Systems Architect"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "nasa",
+            "display_name": "NASA",
+            "gap_or_next_gate": "No direct company-specific repository was verified in the exact-name and Helix-governed inventory. Build a dossier only from genuine role-aligned evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "No company-named proof is invented; applicable personal flagships are mapped separately.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Forward-Deployed Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "cursor",
+            "display_name": "Cursor / Anysphere",
+            "gap_or_next_gate": "Exclude verified upstream forks from authorship proof. Compare GlacierEQ/awesome-cursorrules against PatrickJS/awesome-cursorrules at commit/tree level, isolate any unique GlacierEQ delta, and require current tests or bounded artifact proof before capability-donor admission.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Direct-name estate repositories exist, but the two strongest name matches are verified upstream forks and the remaining private corpus requires provenance isolation before any Casey-side capability can be credited.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "glean",
+            "display_name": "Glean",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "replit",
+            "display_name": "Replit",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "cognition",
+            "display_name": "Cognition",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "github",
+            "display_name": "GitHub",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no GitHub affiliation, endorsement, employment, proprietary access, adoption, or production deployment is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "supabase",
+            "display_name": "Supabase",
+            "gap_or_next_gate": "Compile the admitted public semantic donor relationships and their exact-head proof into Supabase role projections. Expand the public claim surface only when additional public donor mechanisms satisfy the same provenance and verification gates.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Public non-fork GlacierEQ systems provide independently evidenced, transferable Supabase mechanisms: server-side least-privilege Edge Function brokerage, idempotent state/audit persistence, and connector health-state classification. Recruiter projection is capability- and proof-led rather than repository-name-led.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "mongodb",
+            "display_name": "MongoDB",
+            "gap_or_next_gate": "Keep all direct-name forks excluded from authorship. Search reference GlacierEQ systems for original MongoDB-relevant capabilities—governed MCP/database access, persistent agent state, connector security, observability, and database-grounded workflows—and admit only provenance-verified implementations with current proof.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Three direct-name estate repositories exist, but GitHub metadata proves all three are upstream forks. They are useful reference and integration-context evidence, not Casey-authored MongoDB proof.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "gitlab",
+            "display_name": "GitLab",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "atlassian",
+            "display_name": "Atlassian",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "lambda",
+            "display_name": "Lambda",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "nebius",
+            "display_name": "Nebius",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "crusoe",
+            "display_name": "Crusoe",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "together_ai",
+            "display_name": "Together AI",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "modal",
+            "display_name": "Modal",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "baseten",
+            "display_name": "Baseten",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "fireworks_ai",
+            "display_name": "Fireworks AI",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "replicate",
+            "display_name": "Replicate",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "runpod",
+            "display_name": "Runpod",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "sourcegraph",
+            "display_name": "Sourcegraph",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "windsurf",
+            "display_name": "Windsurf",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "linear",
+            "display_name": "Linear",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "elastic",
+            "display_name": "Elastic",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "redis",
+            "display_name": "Redis",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "pinecone",
+            "display_name": "Pinecone",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "weaviate",
+            "display_name": "Weaviate",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "qdrant",
+            "display_name": "Qdrant",
+            "gap_or_next_gate": "Run exact-name plus semantic estate discovery, verify provenance and unique value, map current public company pressures from official sources, then admit only repositories with bounded evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "High-fit strategic target identified from estate capability alignment. No company-specific accomplishment is claimed without direct repository and proof admission.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [
+                "job_app_helix",
+                "akos",
+                "doctor_strange",
+                "tower_of_babel",
+                "job_application"
+            ],
+            "company_id": "motherduck",
+            "display_name": "MotherDuck",
+            "gap_or_next_gate": "Compile the public gateway donor's bounded MotherDuck capabilities and exact-head proof into role projections. Promote additional generic analytics mechanisms only after they exist in a neutral recruiter-eligible donor with independently verified evidence.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "A public non-fork reference gateway donor provides two transferable MotherDuck mechanisms: a bounded query facade and structured connector health telemetry. Recruiter projection stays capability-led and makes no production deployment or affiliation claim.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "apptronik",
+            "display_name": "Apptronik",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "arm",
+            "display_name": "Arm",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "astera_labs",
+            "display_name": "Astera Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "braintrust",
+            "display_name": "Braintrust",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "clickhouse",
+            "display_name": "ClickHouse",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "etched",
+            "display_name": "Etched",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "figure_ai",
+            "display_name": "Figure AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "langchain",
+            "display_name": "LangChain",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "obsidian_security",
+            "display_name": "Obsidian Security",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "safe_superintelligence_ssi",
+            "display_name": "Safe Superintelligence (SSI)",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "shield_ai",
+            "display_name": "Shield AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "skild_ai",
+            "display_name": "Skild AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "tsmc",
+            "display_name": "TSMC",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "temporal",
+            "display_name": "Temporal",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "thinking_machines_lab",
+            "display_name": "Thinking Machines Lab",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "world_labs",
+            "display_name": "World Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "1x",
+            "display_name": "1X",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "asml",
+            "display_name": "ASML",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "agility_robotics",
+            "display_name": "Agility Robotics",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "arista_networks",
+            "display_name": "Arista Networks",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "ayar_labs",
+            "display_name": "Ayar Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "boston_dynamics",
+            "display_name": "Boston Dynamics",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "broadcom",
+            "display_name": "Broadcom",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "calypsoai",
+            "display_name": "CalypsoAI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "celestial_ai",
+            "display_name": "Celestial AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "cisco",
+            "display_name": "Cisco",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "crowdstrike",
+            "display_name": "CrowdStrike",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "dell_technologies",
+            "display_name": "Dell Technologies",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "digital_realty",
+            "display_name": "Digital Realty",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "eaton",
+            "display_name": "Eaton",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "equinix",
+            "display_name": "Equinix",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "ge_vernova",
+            "display_name": "GE Vernova",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "genesis_ai",
+            "display_name": "Genesis AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "hewlett_packard_enterprise",
+            "display_name": "Hewlett Packard Enterprise",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "hiddenlayer",
+            "display_name": "HiddenLayer",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "lightmatter",
+            "display_name": "Lightmatter",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "marvell",
+            "display_name": "Marvell",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "micron",
+            "display_name": "Micron",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "noma_security",
+            "display_name": "Noma Security",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "oklo",
+            "display_name": "Oklo",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "operant_ai",
+            "display_name": "Operant AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "palo_alto_networks",
+            "display_name": "Palo Alto Networks",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "physical_intelligence",
+            "display_name": "Physical Intelligence",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "rhoda_ai",
+            "display_name": "Rhoda AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "sk_hynix",
+            "display_name": "SK hynix",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "samsung_electronics",
+            "display_name": "Samsung Electronics",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "sanctuary_ai",
+            "display_name": "Sanctuary AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "schneider_electric",
+            "display_name": "Schneider Electric",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "supermicro",
+            "display_name": "Supermicro",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "tenstorrent",
+            "display_name": "Tenstorrent",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "unitree_robotics",
+            "display_name": "Unitree Robotics",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "vertiv",
+            "display_name": "Vertiv",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "zenity",
+            "display_name": "Zenity",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "d_matrix",
+            "display_name": "d-Matrix",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "anyscale",
+            "display_name": "Anyscale",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "applied_intuition",
+            "display_name": "Applied Intuition",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "arize_ai",
+            "display_name": "Arize AI",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "aurora_innovation",
+            "display_name": "Aurora Innovation",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "browserbase",
+            "display_name": "Browserbase",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "cockroach_labs",
+            "display_name": "Cockroach Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "confluent",
+            "display_name": "Confluent",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "docker",
+            "display_name": "Docker",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "e2b",
+            "display_name": "E2B",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "gecko_robotics",
+            "display_name": "Gecko Robotics",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "hadrian",
+            "display_name": "Hadrian",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "helicone",
+            "display_name": "Helicone",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "helsing",
+            "display_name": "Helsing",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "inngest",
+            "display_name": "Inngest",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "pydantic",
+            "display_name": "Pydantic",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "restate",
+            "display_name": "Restate",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "saronic",
+            "display_name": "Saronic",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "skydio",
+            "display_name": "Skydio",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "zilliz_milvus",
+            "display_name": "Zilliz / Milvus",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "ai21_labs",
+            "display_name": "AI21 Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "baidu",
+            "display_name": "Baidu",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "bytedance_seed",
+            "display_name": "ByteDance / Seed",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "datadog",
+            "display_name": "Datadog",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "decagon",
+            "display_name": "Decagon",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "grafana_labs",
+            "display_name": "Grafana Labs",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "harvey",
+            "display_name": "Harvey",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "hebbia",
+            "display_name": "Hebbia",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "huawei",
+            "display_name": "Huawei",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "mercor",
+            "display_name": "Mercor",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "minimax",
+            "display_name": "MiniMax",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "sap",
+            "display_name": "SAP",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "sentry",
+            "display_name": "Sentry",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "servicenow",
+            "display_name": "ServiceNow",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "sierra",
+            "display_name": "Sierra",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "tencent",
+            "display_name": "Tencent",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "zhipu_ai_z_ai",
+            "display_name": "Zhipu AI / Z.ai",
+            "gap_or_next_gate": "Validate current official/public signals, map provenance-verified GlacierEQ capability donors, then build a bounded prototype and measure its proof gates before promotion.",
+            "non_affiliation": "Independent GlacierEQ work; no affiliation, endorsement, employment, proprietary access, or production deployment with the named target is claimed.",
+            "public_repositories": [],
+            "recruiter_thesis": "Strategic innovation-expansion target. A testable GlacierEQ bottleneck hypothesis exists, but no company-specific accomplishment, affiliation, proprietary access, or employer-confirmed internal condition is claimed.",
+            "target_roles": [
+                "Applied AI Systems Engineer",
+                "Agent Infrastructure Engineer",
+                "Forward-Deployed Engineer",
+                "Platform / Reliability Engineer"
+            ]
+        },
+        {
+            "applicable_flagships": [],
+            "company_id": "glaciereq_core",
+            "display_name": "GlacierEQ Core",
+            "gap_or_next_gate": "Cross-company personal systems; ECHO is admitted but remains BLOCKED from promotion pending current-head public-release evidence, while Sigma Glue is admitted as REFERENCE_ONLY until its executable Definition of Done closes.",
+            "non_affiliation": "Independent GlacierEQ work; no employer affiliation is implied by this internal cross-company authority track.",
+            "public_repositories": [
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/AEON-777"
+                },
+                {
+                    "level": "L5",
+                    "promotion_state": "PROMOTED",
+                    "repository": "GlacierEQ/AKOS"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/GlacierEQ_Swarm"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/apex-cli"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/apex-control-plane"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/colossus-gateway"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/colossus-training-flux"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/glaciereq-mcp-stack"
+                },
+                {
+                    "level": "L4",
+                    "promotion_state": "PROMOTED",
+                    "repository": "GlacierEQ/job-application"
+                },
+                {
+                    "level": "L4",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/pro-code"
+                },
+                {
+                    "level": "L4",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/sigma-glue"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/spiral-engine"
+                },
+                {
+                    "level": "L4",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/the-tower-of-babel"
+                },
+                {
+                    "level": "L3",
+                    "promotion_state": "REFERENCE_ONLY",
+                    "repository": "GlacierEQ/token_saver"
+                }
+            ],
+            "recruiter_thesis": "Reusable personal flagships and supporting systems carrying proof across employer applications.",
+            "target_roles": [
+                "Applied AI Systems Architect",
+                "Forward-Deployed AI Engineer",
+                "Agent Infrastructure Engineer"
+            ]
+        }
+    ],
+    "invariants": [
+        "The source résumé remains authoritative for employers, titles, dates, metrics, and personal history.",
+        "Helix may supply current portfolio systems, evidence states, company alignment, and promotion gates.",
+        "A tailoring model may prioritize supported claims but may not invent or promote unsupported experience.",
+        "Private repository names and operational metadata never enter public or user-exported résumé evidence.",
+        "Every generated evidence snapshot is bound to an immutable Helix commit, source hashes, and a deterministic digest."
+    ],
+    "live_evidence_reference": {
+        "boundary": "Repository-native current-SHA receipts remain authoritative; this projection does not promote unfiltered evidence rows into résumé claims.",
+        "content_sha256": "6e64fb3753ab18dc57a12bb7873c423105ee466c3569129ce22bbe958e6e2d99",
+        "schema": "glaciereq.live-repository-evidence-registry.v1",
+        "source_path": "manifests/live_repository_evidence.json"
+    },
+    "policy": {
+        "allowed_public_states": [
+            "PROMOTED",
+            "REFERENCE_ONLY"
+        ],
+        "blocked_states_are_context_only": true,
+        "helix_may_rank_but_not_invent": true,
+        "private_repository_names_allowed": false,
+        "source_resume_remains_authoritative": true
+    },
+    "schema": "glaciereq.resume-evidence-projection.v1",
+    "source": {
+        "authority": {
+            "branch": "main",
+            "path": "manifests/portfolio_root_truth.json",
+            "raw_url": "https://raw.githubusercontent.com/GlacierEQ/job-app-helix/main/manifests/portfolio_root_truth.json",
+            "repository": "GlacierEQ/job-app-helix"
+        },
+        "root_ref": "99c84ffc0d4b3232dd2761490f9d006134d1d808",
+        "root_version": "1.1.0",
+        "source_digest": "331a6cc43cecf4abd4b05cfec10f22e2e2ac48a3869b25a2b5a93155e87e8df3",
+        "source_hashes": {
+            "manifests/company_dossiers.json": "ba686d5f26d77098ae64c8df33ac9ec397a68169ec9a026ddecd0a07fe5d3ac1",
+            "manifests/company_dossiers/additional_targets.json": "e38877d353ab2a752e149507e4a811906bfc2a1ce9055f7a47894d38beb7a063",
+            "manifests/company_dossiers/expansion_targets.json": "5c6022ba97839460d6ef481a0b479bdb27a6f9b3905fc63766d8828dc584f750",
+            "manifests/company_dossiers/frontier_ai.json": "f72e7b9ba2defc3dcfd9c3d56e7f20994ee4117a09d4d218c13baf070a7afb4c",
+            "manifests/company_dossiers/glaciereq_core.json": "07c9cb10c98702fa409ad60ab725cdb085423a58c4ec292612a686c3f4b7bdae",
+            "manifests/company_dossiers/innovation_expansion_2026_08_09.json": "2c7cc61cbc85c2a59456d738b01fb14e4ba1e602fab662a43ed45dda5ccd2d63",
+            "manifests/company_dossiers/model_product_companies.json": "5fab1848b36de973fda5ca8cb46ecc342540a95036be9b83e1d9fdbd92e6db27",
+            "manifests/company_dossiers/platform_infrastructure.json": "93a864ed5fae0ef9c78f026b4cd0b050be239f9b454a6545fc5b1d5efc756a5d",
+            "manifests/flagship_registry.json": "769dbc595f08ff145f349e02f677f38fcfb28b9384932de7da5f3abc4fa748f4",
+            "manifests/language_fit.json": "ecd1e164a8ffbbaae203a570dfc5e698521a8b8f9f7e6fa0f001f16775b4fba3",
+            "manifests/live_repository_evidence.json": "6e64fb3753ab18dc57a12bb7873c423105ee466c3569129ce22bbe958e6e2d99",
+            "manifests/portfolio_root_truth.json": "bea3453910b9595c378c15fa2f748f976dd5f59b5f197adb86cfc0aaf5be0462"
+        }
+    },
+    "systems": [
+        {
+            "evidence": "Diligence records 118/118 per interpreter, 10/10 Forge, 4/4 PSYSOC-X.",
+            "level": "L5",
+            "next_gate": "Current connector/artifact lifecycle receipts; isolate case-specific paths.",
+            "repository": "GlacierEQ/AKOS",
+            "resume_use": "PRIMARY_EVIDENCE",
+            "role": "Authority/evidence/tool-state/closure runtime",
+            "state": "PROMOTED",
+            "system_id": "akos"
+        },
+        {
+            "evidence": "A- verified-with-hardening; external production references separate from local proof.",
+            "level": "L4",
+            "next_gate": "Close Issue #26 and regenerate derived surfaces.",
+            "repository": "GlacierEQ/the-tower-of-babel",
+            "resume_use": "SUPPORTING_EVIDENCE_WITH_BOUNDARY",
+            "role": "Governed polyglot architecture",
+            "state": "REFERENCE_ONLY",
+            "system_id": "tower_of_babel"
+        },
+        {
+            "evidence": "Source-bound 4a1ca8e5: 140/140 Node 22 tests; live GitHub Contents canary performed 2 writes/5 reads, recovered a deliberately lost success response to confirmed_applied, preserved restart-readable recovery evidence, and blocked replay before a third write.",
+            "level": "L4",
+            "next_gate": "Add a second real provider contract and multi-host coordination before any distributed or provider-transactional exactly-once claim.",
+            "repository": "GlacierEQ/sigma-glue",
+            "resume_use": "PRIMARY_EVIDENCE",
+            "role": "Reversible approval-bound orchestration with provider ambiguity recovery",
+            "state": "PROMOTED",
+            "system_id": "sigma_glue"
+        },
+        {
+            "evidence": "Python/TypeScript planes passed; Rust/Haskell blocked.",
+            "level": "L4",
+            "next_gate": "Pinned all-language CI and root license.",
+            "repository": "GlacierEQ/pro-code",
+            "resume_use": "SUPPORTING_EVIDENCE_WITH_BOUNDARY",
+            "role": "Polyglot runtime implementation",
+            "state": "REFERENCE_ONLY",
+            "system_id": "pro_code_runtime"
+        },
+        {
+            "evidence": "Strong public/private contract and release-candidate website checks.",
+            "level": "L4",
+            "next_gate": "Bind production bytes to reference Git SHA.",
+            "repository": "GlacierEQ/job-application",
+            "resume_use": "PRIMARY_EVIDENCE",
+            "role": "Source-bound recruiter/runtime source",
+            "state": "PROMOTED",
+            "system_id": "job_application"
+        }
+    ]
+}

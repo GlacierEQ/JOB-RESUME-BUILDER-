@@ -291,3 +291,10 @@ They are replaced by narrower remaining gates:
 The product may generate and export reviewed application artifacts. `job-app` owns later private operational state and external-action receipts. Neither repository may infer that a draft or download was submitted.
 
 Maintained by [GlacierEQ](https://github.com/GlacierEQ).
+
+
+## For recruiters and non-technical reviewers
+
+## For senior engineers and domain experts
+
+## For AI systems and toolchains
