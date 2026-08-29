@@ -1,4 +1,4 @@
-# Resume Shapeshifter — Truth-Constrained Application Compiler
+\n> **Estate integration (2026-08-29):** tailoring now consumes the same source-exhaustive Helix estate contract as the public portal and private application plane. Role ranking may reorder evidence, but fixed repository/company counts never define what exists.\n# Resume Shapeshifter — Truth-Constrained Application Compiler
 
 > Analyze a source résumé against a target role, generate source-grounded rewrite proposals, require human review, preserve private runs locally, and compile real application artifacts without inventing qualifications or pretending an export was a submission.
 

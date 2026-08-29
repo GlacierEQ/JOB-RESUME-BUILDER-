@@ -17,7 +17,8 @@
     "prelint": "npm run prepare:helix",
     "lint": "eslint",
     "pretest": "npm run prepare:helix",
-    "test": "(node scripts/validate-capability-manifest.mjs && rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js) && echo \"1 passed\""
+    "test": "(node scripts/validate-capability-manifest.mjs && node scripts/validate-helix-estate-source.mjs && rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js) && echo \"1 passed\"",
+    "validate:helix:estate": "node scripts/validate-helix-estate-source.mjs"
   },
   "dependencies": {
     "groq-sdk": "^1.2.0",
@@ -34,4 +35,4 @@
     "eslint-config-next": "16.2.6",
     "typescript": "^5"
   }
-}
+}\n
