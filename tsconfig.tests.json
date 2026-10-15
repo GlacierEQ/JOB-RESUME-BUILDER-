@@ -7,7 +7,9 @@
     "noEmit": false,
     "outDir": ".test-dist",
     "rootDir": ".",
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "isolatedModules": false,
     "incremental": false,
     "declaration": false,
@@ -28,7 +30,23 @@
     "tests/helix-evidence.test.ts",
     "tests/request-guards.test.ts",
     "tests/run-store.test.ts",
-    "tests/truthfulness.test.ts"
+    "tests/truthfulness.test.ts",
+    "lib/jd-keywords.ts",
+    "lib/keyword-align.ts",
+    "lib/bullet-strength.ts",
+    "lib/summary-composer.ts",
+    "lib/dynamic-compiler.ts",
+    "services/dynamic-generator.ts",
+    "tests/jd-keywords.test.ts",
+    "tests/keyword-align.test.ts",
+    "tests/bullet-strength.test.ts",
+    "tests/summary-composer.test.ts",
+    "tests/dynamic-generator.test.ts",
+    "tests/dynamic-compiler.test.ts"
   ],
-  "exclude": ["node_modules", ".next", ".test-dist"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".test-dist"
+  ]
 }

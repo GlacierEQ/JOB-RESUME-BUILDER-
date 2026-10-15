@@ -154,7 +154,7 @@ function buildSourceCorpus(source: ResumeProfile): string {
   );
 }
 
-function extractNumericClaims(text: string): Set<string> {
+export function extractNumericClaims(text: string): Set<string> {
   const matches = text.match(/(?:[$€£]\s*)?\b\d+(?:[.,]\d+)*(?:\s?(?:%|x|k|m|b|hours?|years?|months?|days?))?/gi) ?? [];
   return new Set(matches.map((claim) => claim.toLowerCase().replace(/[\s,]/g, "")));
 }

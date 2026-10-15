@@ -73,6 +73,35 @@ After human review, the compiler emits three real files:
 
 The product does **not** claim it has generated a PDF when it has generated printable HTML. It does **not** mark an artifact download as an application submission.
 
+### Dynamic generation (deterministic, no model key required)
+
+A second, fully deterministic path generates a tailored resume straight from
+a JD — no `GROQ_API_KEY`, no UI round-trip:
+
+```bash
+npm run generate:resume -- \
+  --jd path/to/jd.txt \
+  --resume-profile path/to/resume-profile.json \
+  --out ./out
+```
+
+`services/dynamic-generator.ts` orchestrates: deterministic JD keyword
+extraction (`lib/jd-keywords.ts`) → keyword coverage scoring and JD-priority
+skill ordering (`lib/keyword-align.ts`) → deterministic XYZ bullet
+restructuring (`lib/bullet-strength.ts`: weak-lead replacement, outcome
+front-loading, filler stripping, conservative JD term mirroring) →
+evidence-composed professional summary (`lib/summary-composer.ts`) → the
+same `TailoredResume` schema the model path emits → the unchanged
+truthfulness guard and Helix boundary guard → `lib/dynamic-compiler.ts`,
+which keeps the base ATS/JSON/printable-HTML artifacts byte-identical and
+appends a top-third-optimized impressive HTML render and a dynamic manifest.
+
+`tools/generate_docx.py` (stdlib only) produces a clean single-column DOCX
+from the manifest. Every run writes `REVIEW_REQUIRED.txt`: artifacts are
+drafts for human review and are never submitted anywhere. Missing JD terms
+are reported, never invented. Research basis: `docs/resume-research-2026.md`;
+engine contract: `docs/dynamic-generation.md`; operator skill: `SKILL.md`.
+
 ## Where the Model Meets the Guardrail
 
 *Master layer · architecture, trust boundaries, failure semantics*

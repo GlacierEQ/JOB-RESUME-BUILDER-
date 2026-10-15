@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TruthfulnessViolationError = void 0;
 exports.inspectTailoredResume = inspectTailoredResume;
 exports.assertTruthfulTailoring = assertTruthfulTailoring;
+exports.extractNumericClaims = extractNumericClaims;
 class TruthfulnessViolationError extends Error {
     violations;
     constructor(violations) {

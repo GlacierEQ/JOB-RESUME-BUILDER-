@@ -1,8 +1,8 @@
 {
   "company_count": 47,
-  "output_sha256": "bd88085bbd9b16202d3a1b581f296c5db7babbcfbe345f260cbd338005162e5f",
+  "output_sha256": "762b9b81c70150a0fdfa1d3ad38b879abeba9aee3919e3820671c67a0b1df41d",
   "schema": "glaciereq.resume-application-intelligence-receipt.v1",
-  "source_commit": "99c84ffc0d4b3232dd2761490f9d006134d1d808",
-  "source_digest": "d9aad0909fc331667086056041d062c81fa93f1e92bd0fe95a7cbf99eaff7fa9",
+  "source_commit": "f464a2531182171de2816151d928f339a414b3eb",
+  "source_digest": "5c06cb95c3aca3c87a149c7e967ea688626a406e5de68d5f5b93863d9641cb6a",
   "status": "PASS"
 }

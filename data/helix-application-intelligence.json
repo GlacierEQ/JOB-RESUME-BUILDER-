@@ -115,11 +115,11 @@
       ]
     },
     {
-      "application_move": "Present the coordinator and safety monitor as bounded systems, with counter-analysis and explicit non-claims.",
+      "application_move": "Lead with the living GlacierEQ estate as forward-deployed proof: cross-system diagnosis, model/tool/data integration, agent/MCP runtime construction, evidence-bound execution, verification/readback, recovery, and reusable patterns. Use Anthropic-oriented coordinator, safety, eval, containment, and agent-skills systems as concrete capability donors—not as affiliation claims.",
       "company_id": "anthropic",
       "display_name": "Anthropic",
-      "inferred_bottleneck": "Increasing useful autonomy while retaining honest uncertainty, safety boundaries, and measurable behavior.",
-      "inferred_brick_wall": "Preventing higher-capability agents from becoming opaque, reward-hacking, unsafe, or operationally unreliable in open-ended environments.",
+      "inferred_bottleneck": "Turning frontier-model capability into reliable, safe, repeatable production outcomes inside heterogeneous customer systems while feeding deployment learning back into product and engineering.",
+      "inferred_brick_wall": "Scaling high-touch forward deployment without losing source context, authority boundaries, evaluation rigor, recoverability, or the ability to distinguish a one-off customer solution from a reusable deployment pattern.",
       "leverage": {
         "expected_impact": "Improves safety-case clarity and makes agent limitations visible before deployment.",
         "glaciereq_systems": [
@@ -131,8 +131,8 @@
         "impact_class": "HIGH",
         "mechanism": "Combine deterministic coordination, contradiction-preserving review, escalation gates, and proof-weighted evaluation."
       },
-      "next_deep_dive": "Deep-read current safety, evals, and agent-infrastructure postings and produce requirement-level evidence matrices.",
-      "observed_current_pressure": "Capability, inference performance, safeguards, evaluations, interpretability, and computer-use reliability are advancing simultaneously.",
+      "next_deep_dive": "Implement and reproduce one Anthropic-specific Forward Deployed Engineer / Applied AI Architect proof that maps the current role responsibilities to a working customer-system integration and reusable deployment artifact.",
+      "observed_current_pressure": "Anthropic’s Applied AI organization is actively hiring Forward Deployed Engineers, Applied AI Architects, and Applied AI Engineers to move Claude from technical discovery and evaluation into customer production environments.",
       "second_depth": {
         "blockers": [
           "company_specific_remedy_not_bounded",
@@ -141,13 +141,13 @@
           "claim_not_promoted"
         ],
         "claim_ceiling": "inspected_implementation_alignment",
-        "next_gate": "Bound one company-specific reliability remedy against the verified Staff Software Engineer, AI Reliability problem using the inspected coordinator and safety-monitor mechanisms; preserve the non-deployment and non-semantic-safety boundaries before any IMPLEMENTED or reproduced-proof claim.",
+        "next_gate": "Bound and implement one current Anthropic Applied AI remedy that directly demonstrates the live Forward Deployed Engineer / Applied AI Architect requirements: customer-system integration, Claude/agent deployment architecture, MCP or agent-skill delivery, evaluation, reliability, reusable deployment patterns, and explicit safety boundaries. Preserve the historical AI Reliability evidence as lineage rather than treating it as the current role target.",
         "stage": "CODE_INSPECTED"
       },
       "target_roles": [
-        "Applied AI Systems Architect",
-        "Agent Infrastructure Engineer",
-        "Evaluation / Reliability Engineer"
+        "Forward Deployed Engineer",
+        "Applied AI Architect",
+        "Applied AI Engineer"
       ]
     },
     {
@@ -383,7 +383,7 @@
         "impact_class": "MEDIUM_HIGH",
         "mechanism": "Use health-driven scheduling, dependency graphs, checkpoint receipts, and failure-injection review."
       },
-      "next_deep_dive": "Create a simulated cluster failure benchmark with clearly bounded claims.",
+      "next_deep_dive": "Create a simulated cluster failure benchmark with clearly evidence-scoped claims.",
       "observed_current_pressure": "AI clouds must operate mega-clusters across training, inference, observability, and rapidly expanding data-center capacity.",
       "second_depth": {
         "blockers": [
@@ -825,7 +825,7 @@
           "proof_not_reproduced"
         ],
         "claim_ceiling": "company_alignment_only",
-        "next_gate": "Verify a current public Microsoft role/team and inspect the exact recruiter-admitted Microsoft-aligned repositories before promoting beyond general systems alignment.",
+        "next_gate": "Verify a current public Microsoft role/team and inspect relevant source-admitted Microsoft-aligned records before promoting beyond general systems alignment.",
         "stage": "MAPPED_ONLY"
       },
       "target_roles": [
@@ -933,7 +933,7 @@
           "proof_not_reproduced"
         ],
         "claim_ceiling": "company_alignment_only",
-        "next_gate": "Verify a current public Notion role/team and inspect the exact recruiter-admitted Notion-aligned repositories before promoting beyond general platform alignment.",
+        "next_gate": "Verify a current public Notion role/team and inspect relevant source-admitted Notion-aligned records before promoting beyond general platform alignment.",
         "stage": "MAPPED_ONLY"
       },
       "target_roles": [
@@ -969,7 +969,7 @@
           "proof_not_reproduced"
         ],
         "claim_ceiling": "company_alignment_only",
-        "next_gate": "Verify a current public NVIDIA role/team, identify one externally supportable infrastructure problem, then inspect only the governed NVIDIA-aligned repositories that could materially address it.",
+        "next_gate": "Verify a current public NVIDIA role/team, identify one externally supportable infrastructure problem, then inspect the relevant source-bound NVIDIA-aligned records that could materially address it.",
         "stage": "MAPPED_ONLY"
       },
       "target_roles": [
@@ -1005,7 +1005,7 @@
           "proof_not_reproduced"
         ],
         "claim_ceiling": "company_alignment_only",
-        "next_gate": "Verify a current public OpenAI role/team and inspect the exact admitted KV-sentinel implementation before connecting it to any company-specific engineering problem.",
+        "next_gate": "Verify a current public OpenAI role/team and inspect the source-admitted KV-sentinel implementation before connecting it to any company-specific engineering problem.",
         "stage": "MAPPED_ONLY"
       },
       "target_roles": [
@@ -1703,21 +1703,21 @@
   "source": {
     "external_freshness_state": "HISTORICAL_SOURCE_SNAPSHOT_REQUIRES_REFRESH_BEFORE_LIVE_APPLICATION",
     "external_research_as_of": "2026-08-05",
-    "root_ref": "99c84ffc0d4b3232dd2761490f9d006134d1d808",
-    "root_version": "1.1.0",
-    "source_digest": "d9aad0909fc331667086056041d062c81fa93f1e92bd0fe95a7cbf99eaff7fa9",
+    "root_ref": "f464a2531182171de2816151d928f339a414b3eb",
+    "root_version": "1.2.0",
+    "source_digest": "5c06cb95c3aca3c87a149c7e967ea688626a406e5de68d5f5b93863d9641cb6a",
     "source_hashes": {
-      "manifests/application_intelligence/atlas_shards/frontier_ai.json": "8241aba9f9d4b7351c24a1aa947da664bbbc3345f72ce41be66137c776b0b1ae",
+      "manifests/application_intelligence/atlas_shards/frontier_ai.json": "c2b50487f4201914163584f8f581d0200f9a56c218843e7fbae401451863ba1b",
       "manifests/application_intelligence/atlas_shards/model_agent_product.json": "b17b860ccc5507efa63e7b3460324a4ff62d623b2b5651f2c9b6061eb9055d6b",
       "manifests/application_intelligence/atlas_shards/platform_infrastructure.json": "75d9de238f9f5fdf033315202164d89c6d69c4dc330a4d7c7478bac5a5c8246e",
       "manifests/application_intelligence/atlas_shards/strategic_target_part_1.json": "72ddeb92c63cb485432fbfb48f7e0cd0d405111bac8f65b743ce7b18500f680c",
       "manifests/application_intelligence/atlas_shards/strategic_target_part_2.json": "3fbb41cb426cf240c098a8342ffa3803cc960aebca82cda9329b83722dda97f3",
-      "manifests/application_intelligence/atlas_shards/strategic_target_part_3.json": "3245f2a5ec610bb94d0dbfaba7cd677f6dd5ba52395dadba8d53a99ec86f4b4b",
-      "manifests/application_intelligence/company_bottleneck_atlas.external.json": "2d93f4e0c736426dcf6904be6d0139075a48c78f3051278becf05703ee67f654",
-      "manifests/company_second_depth.json": "6df29f45139a99c22d1530c9c09db8e323f0bed7e68b1205be36cbfd6d715d58",
-      "manifests/estate_compiler.json": "49568243988d3efc999c1eea589b5a7cda8980ebc1e184e36a4c04036bc47ec6",
-      "manifests/estate_projection_policy.json": "36f2cb441356917a4e9c56936d1acf8aeca1d7a9242374e5fbb16bdbcfda916f",
-      "manifests/portfolio_root_truth.json": "bea3453910b9595c378c15fa2f748f976dd5f59b5f197adb86cfc0aaf5be0462"
+      "manifests/application_intelligence/atlas_shards/strategic_target_part_3.json": "9361287824be72dab635cd3cd007201523f973f23087aee4d28297c34c04df36",
+      "manifests/application_intelligence/company_bottleneck_atlas.external.json": "c63e52a7f993ae7e4a2d93cc88164ac66abbaf788021a1557f79a8451f77a93d",
+      "manifests/company_second_depth.json": "47e6b7e9dcc61691fbe28bde9deea048fc75e2e026ca3bb69589757432fa25d7",
+      "manifests/estate_compiler.json": "6016e149058388a30f10824e497ea2fb1f7b8d555a23097c6ea83d9f8c291f09",
+      "manifests/estate_projection_policy.json": "515dbd39e35f25a8c5eea414d94fd99a92b01adbb9df03ba09036de2d868ce8c",
+      "manifests/portfolio_root_truth.json": "928a4c25a24750109633fff02e81128b2ab41cf24e9d18b1b72909181b013002"
     }
   }
 }
