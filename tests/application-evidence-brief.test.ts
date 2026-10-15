@@ -9,7 +9,7 @@ const resume: ResumeProfile = {
     email: "casey@example.com",
     phone: "",
     location: "Honolulu, HI",
-    website: "https://example.com",
+    website: "https://example.com", linkedin: "",
   },
   summary: "Principal systems architect building reliable agentic AI platforms.",
   skills: ["Python", "TypeScript", "PostgreSQL", "Agent Systems"],

@@ -8,7 +8,7 @@ const node_test_1 = require("node:test");
 const summary_composer_1 = require("../lib/summary-composer");
 const truthfulness_1 = require("../lib/truthfulness");
 const resume = {
-    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
     summary: "Automation engineer.",
     skills: ["n8n", "PostgreSQL", "Python"],
     experience: [

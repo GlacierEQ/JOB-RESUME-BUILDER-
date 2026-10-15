@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Casey Barton — Senior Business Process Automation Expert (AI Training Project)</title><style>
+/* ---- Visual identity: his spec ----
+   EMERALD #0E6B4A = accents with meaning (rules, proof marks, dividers).
+   BLACK #111111 = primary text. WHITE = ground. Never green body text.
+   ALGERIAN = nameplate only. Stack degrades gracefully where Algerian is
+   absent: Windows ("Algerian","Algerian Regular") -> macOS display faces
+   ("Engravers MT","Copperplate Gothic Bold") -> classical serif fallbacks. */
+:root{--emerald:#0E6B4A;--emerald-deep:#0A4F37;--emerald-tint:#D8EBE1;--ink:#111111;--muted:#3f3f3f;--paper:#FFFFFF}
+@page{margin:.65in}
+body{font:11pt/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;max-width:8in;margin:auto;color:var(--ink);background:var(--paper)}
+header.hero{border-bottom:3px solid var(--emerald);padding-bottom:10px;margin-bottom:0;text-align:center}
+h1.nameplate{font-family:"Algerian","Algerian Regular","Engravers MT","Copperplate Gothic Bold","Palatino Linotype","Book Antiqua",Georgia,serif;font-size:30pt;font-weight:400;margin:0;letter-spacing:1px;color:var(--ink)}
+p.headline{font-size:12.5pt;font-weight:600;color:var(--ink);margin:6px 0 2px}
+.meta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin:8px 0 4px;padding:7px 4px;border-top:1px solid var(--emerald-tint);border-bottom:1px solid var(--emerald-tint);font-size:9.5pt;color:var(--muted)}
+.meta .item{padding:0 12px;white-space:nowrap}
+.meta .sep{color:var(--emerald);font-size:8pt}
+section.block{margin-top:14px}
+section.block h2{font-size:11pt;text-transform:uppercase;letter-spacing:1.5px;color:var(--emerald-deep);border-bottom:2px solid var(--emerald);padding-bottom:3px;margin:0 0 8px}
+p.summary{font-size:10.5pt;margin:0}
+p.skills{font-size:10pt;margin:0}
+article.entry{margin-bottom:10px}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.entry-head h3{font-size:11pt;margin:8px 0 2px}
+.entry-head h3 .at{color:var(--emerald)}
+p.dates{font-size:9.5pt;color:var(--muted);white-space:nowrap;margin:8px 0 2px}
+ul{margin:4px 0 6px;padding-left:20px}
+li{margin-bottom:3px}
+li.proven::marker{color:var(--emerald)}
+strong.metric{color:var(--ink)}
+p.tech{font-size:9.5pt;color:var(--muted)}
+p.desc{font-size:10pt;margin:2px 0}
+ul.certs{list-style:none;padding-left:0}
+ul.certs li{margin-bottom:2px}
+</style></head><body>
+<header class="hero"><h1 class="nameplate">Casey Barton</h1><p class="headline">Senior Business Process Automation Expert (AI Training Project)</p><div class="meta" role="presentation"><span class="item">glacier.equilibrium@gmail.com</span><span class="sep" aria-hidden="true">◆</span><span class="item">(808) 936-5654</span><span class="sep" aria-hidden="true">◆</span><span class="item">Honolulu, HI — remote US</span><span class="sep" aria-hidden="true">◆</span><span class="item">linkedin.com/in/caseybartonai</span><span class="sep" aria-hidden="true">◆</span><span class="item">casey-barton-glaciereq.vercel.app</span></div></header>
+<section class="block"><h2>Summary</h2><p class="summary">Senior Business Process Automation Expert (AI Training Project) with a track record in Automation specializing in Make, n8n, Zapier. Migrated 1404 files with zero failures using a ledger-based resume worker. Built n8n failure labs modeling quote-to-cash, lead routing, and AP workflows: 28 adversarial test cases per suite with end-state asserti... Core stack includes Make, n8n, Zapier.</p></section>
+<section class="block"><h2>Skills</h2><p class="skills">n8n · Zapier · Make · Python · TypeScript · Bash · MCP · REST APIs · PostgreSQL · JSONL ledgers · cron scheduling · idempotency design · failure-mode analysis</p></section>
+<section class="block"><h2>Experience</h2><article class="entry"><div class="entry-head"><h3>Automation Engineer <span class="at">·</span> Independent Automation Practice</h3><p class="dates">2024 – Present</p></div><ul><li class="proven">Built n<strong class="metric">8</strong>n failure labs modeling quote-to-cash, lead routing, and AP workflows: <strong class="metric">28 </strong>adversarial test cases per suite with end-state assertions proving no invoice issued, no payment attempted, and no customer messaged on any failure path.</li><li class="proven">Ran RED-to-GREEN failure analysis in n<strong class="metric">8</strong>n: retained a real failed execution (email regex escaping bug), fixed the root cause, and re-ran the suite green with independent readback checks.</li><li class="proven">Migrated <strong class="metric">1404 </strong>files with zero failures using a ledger-based resume worker; classified <strong class="metric">1299 </strong>unrecoverable files by root cause into quarantine with bounded retry instead of infinite retry loops.</li><li>Operate a scheduled watcher fleet on cron with silent-when-healthy contracts, idempotent checks, and streak tracking — near-zero alert noise across hourly and daily runs.</li><li class="proven">Built and operated a <strong class="metric">28</strong>-connector MCP automation estate over production surfaces (file storage, messaging, calendars) with explicit proposed/executed/verified state transitions on every consequential write.</li></ul></article></section>
+<section class="block"><h2>Projects</h2><article class="entry"><div class="entry-head"><h3>Automation Failure Index</h3></div><p class="desc">Live catalog of business-process automation failure modes, each with detection signal, recovery pattern, and proof.</p><ul><li class="proven">Catalogued recurring failure modes from ~<strong class="metric">3000 </strong>development cycles: lost context at handoffs, wrong-record routing, duplicate actions after ambiguous timeouts, and silent partial failures from rate limits and truncated downloads.</li><li>Each mode ships with a runnable RED case, the GREEN fix, and assertions that guard the end state.</li></ul><p class="tech">n8n · TypeScript · Python</p></article></section>
+<section class="block"><h2>Education</h2><article class="entry"><div class="entry-head"><h3>University of Hawaii at Manoa</h3><p class="dates">2016</p></div><p>B.S.</p></article></section>
+
+</body></html>

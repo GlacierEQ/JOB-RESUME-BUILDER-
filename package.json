@@ -20,7 +20,8 @@
     "test": "(node scripts/validate-capability-manifest.mjs && node scripts/validate-helix-estate-source.mjs && rm -rf .test-dist && tsc -p tsconfig.tests.json && node --test .test-dist/tests/*.test.js) && echo \"1 passed\"",
     "validate:helix:estate": "node scripts/validate-helix-estate-source.mjs",
     "build:cli": "tsc -p tsconfig.cli.json",
-    "generate:resume": "npm run build:cli && node .cli-dist/tools/generate-resume.js"
+    "generate:resume": "npm run build:cli && node .cli-dist/tools/generate-resume.js",
+    "sample:impressive": "npm run build:cli && node .cli-dist/tools/render-sample.js"
   },
   "dependencies": {
     "groq-sdk": "^1.2.0",

@@ -22,7 +22,7 @@ Responsibilities:
 - Build n8n automation workflows for invoice processing and lead routing
 `;
 const resume = {
-    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
     summary: "Automation engineer building workflow systems.",
     skills: ["Excel", "n8n", "PostgreSQL", "Python"],
     experience: [

@@ -63,7 +63,7 @@ const sourceResume: ResumeProfile = {
     email: "casey@example.test",
     phone: "",
     location: "Honolulu, HI",
-    website: "",
+    website: "", linkedin: "",
   },
   summary: "Systems architect building governed agent runtimes.",
   skills: ["TypeScript", "Python"],

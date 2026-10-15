@@ -6,7 +6,7 @@ import type { ResumeProfile } from "../lib/schemas";
 import { extractNumericClaims } from "../lib/truthfulness";
 
 const resume: ResumeProfile = {
-  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
   summary: "Automation engineer.",
   skills: ["n8n", "PostgreSQL", "Python"],
   experience: [

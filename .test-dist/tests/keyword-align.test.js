@@ -7,7 +7,7 @@ const strict_1 = __importDefault(require("node:assert/strict"));
 const node_test_1 = require("node:test");
 const keyword_align_1 = require("../lib/keyword-align");
 const resume = {
-    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+    contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
     summary: "Automation engineer building n8n workflows for invoice processing.",
     skills: ["Excel", "n8n", "PostgreSQL", "Python", "Word"],
     experience: [

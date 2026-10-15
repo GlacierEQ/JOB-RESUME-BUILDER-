@@ -7,7 +7,7 @@ const strict_1 = __importDefault(require("node:assert/strict"));
 const node_test_1 = __importDefault(require("node:test"));
 const run_store_1 = require("../lib/run-store");
 const resume = {
-    contact: { name: "Casey", email: "casey@example.com", phone: "", location: "", website: "" },
+    contact: { name: "Casey", email: "casey@example.com", phone: "", location: "", website: "", linkedin: "" },
     summary: "Systems architect",
     skills: ["Python"],
     experience: [],

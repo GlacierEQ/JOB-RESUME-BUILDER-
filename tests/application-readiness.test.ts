@@ -16,7 +16,7 @@ const source: ResumeProfile = {
     email: "casey@example.com",
     phone: "",
     location: "Honolulu, HI",
-    website: "",
+    website: "", linkedin: "",
   },
   summary: "Builds reliable systems.",
   skills: ["Python", "TypeScript"],

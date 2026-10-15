@@ -1,0 +1,66 @@
+{
+  "_note": "SAMPLE FIXTURE \u2014 not the canonical profile. Built from the Operator's own stated facts (Oct 2026) to demonstrate the impressive render. Replace with the real resume-profile.json for production use.",
+  "certifications": [],
+  "contact": {
+    "email": "glacier.equilibrium@gmail.com",
+    "linkedin": "linkedin.com/in/caseybartonai",
+    "location": "Honolulu, HI \u2014 remote US",
+    "name": "Casey Barton",
+    "phone": "(808) 936-5654",
+    "website": "casey-barton-glaciereq.vercel.app"
+  },
+  "education": [
+    {
+      "degree": "B.S.",
+      "fieldOfStudy": "",
+      "graduationDate": "2016",
+      "institution": "University of Hawaii at Manoa"
+    }
+  ],
+  "experience": [
+    {
+      "bullets": [
+        "Built n8n failure labs modeling quote-to-cash, lead routing, and AP workflows: 28 adversarial test cases per suite with end-state assertions proving no invoice issued, no payment attempted, and no customer messaged on any failure path.",
+        "Ran RED-to-GREEN failure analysis in n8n: retained a real failed execution (email regex escaping bug), fixed the root cause, and re-ran the suite green with independent readback checks.",
+        "Migrated 1404 files with zero failures using a ledger-based resume worker; classified 1299 unrecoverable files by root cause into quarantine with bounded retry instead of infinite retry loops.",
+        "Operate a scheduled watcher fleet on cron with silent-when-healthy contracts, idempotent checks, and streak tracking \u2014 near-zero alert noise across hourly and daily runs.",
+        "Built and operated a 28-connector MCP automation estate over production surfaces (file storage, messaging, calendars) with explicit proposed/executed/verified state transitions on every consequential write."
+      ],
+      "company": "Independent Automation Practice",
+      "endDate": "Present",
+      "startDate": "2024",
+      "title": "Automation Engineer"
+    }
+  ],
+  "projects": [
+    {
+      "bullets": [
+        "Catalogued recurring failure modes from ~3000 development cycles: lost context at handoffs, wrong-record routing, duplicate actions after ambiguous timeouts, and silent partial failures from rate limits and truncated downloads.",
+        "Each mode ships with a runnable RED case, the GREEN fix, and assertions that guard the end state."
+      ],
+      "description": "Live catalog of business-process automation failure modes, each with detection signal, recovery pattern, and proof.",
+      "name": "Automation Failure Index",
+      "technologies": [
+        "n8n",
+        "TypeScript",
+        "Python"
+      ]
+    }
+  ],
+  "skills": [
+    "n8n",
+    "Python",
+    "TypeScript",
+    "Bash",
+    "MCP",
+    "Zapier",
+    "Make",
+    "REST APIs",
+    "PostgreSQL",
+    "JSONL ledgers",
+    "cron scheduling",
+    "idempotency design",
+    "failure-mode analysis"
+  ],
+  "summary": "Automation engineer who builds production workflow systems and the failure science around them. I operate a live n8n estate and a 28-connector MCP automation plane on cron, with a standing discipline: proposed, executed, verified \u2014 every consequential action independently checked before any completion claim."
+}

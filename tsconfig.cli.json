@@ -1,1 +1,43 @@
-{"compilerOptions":{"declaration":false,"incremental":false,"isolatedModules":false,"jsx":"react-jsx","module":"CommonJS","moduleResolution":"Node","noEmit":false,"outDir":".cli-dist","resolveJsonModule":true,"rootDir":".","sourceMap":false,"target":"ES2022","types":["node"]},"exclude":["node_modules",".next",".test-dist",".cli-dist"],"extends":"./tsconfig.json","include":["data/helix-resume-evidence.json","data/helix-application-intelligence.json","lib/jd-keywords.ts","lib/keyword-align.ts","lib/bullet-strength.ts","lib/summary-composer.ts","lib/dynamic-compiler.ts","lib/application-compiler.ts","lib/truthfulness.ts","lib/helix-boundaries.ts","lib/helix-evidence.ts","lib/schemas.ts","services/dynamic-generator.ts","tools/generate-resume.ts"]}
+{
+  "compilerOptions": {
+    "declaration": false,
+    "incremental": false,
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "outDir": ".cli-dist",
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    "sourceMap": false,
+    "target": "ES2022",
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".next",
+    ".test-dist",
+    ".cli-dist"
+  ],
+  "extends": "./tsconfig.json",
+  "include": [
+    "data/helix-resume-evidence.json",
+    "data/helix-application-intelligence.json",
+    "lib/jd-keywords.ts",
+    "lib/keyword-align.ts",
+    "lib/bullet-strength.ts",
+    "lib/summary-composer.ts",
+    "lib/dynamic-compiler.ts",
+    "lib/application-compiler.ts",
+    "lib/truthfulness.ts",
+    "lib/helix-boundaries.ts",
+    "lib/helix-evidence.ts",
+    "lib/schemas.ts",
+    "services/dynamic-generator.ts",
+    "tools/generate-resume.ts",
+    "tools/render-sample.ts"
+  ]
+}

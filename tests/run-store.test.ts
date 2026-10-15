@@ -9,7 +9,7 @@ import type {
 } from "../lib/schemas";
 
 const resume: ResumeProfile = {
-  contact: { name: "Casey", email: "casey@example.com", phone: "", location: "", website: "" },
+  contact: { name: "Casey", email: "casey@example.com", phone: "", location: "", website: "", linkedin: "" },
   summary: "Systems architect",
   skills: ["Python"],
   experience: [],

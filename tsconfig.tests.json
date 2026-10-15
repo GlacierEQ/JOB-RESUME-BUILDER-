@@ -42,7 +42,8 @@
     "tests/bullet-strength.test.ts",
     "tests/summary-composer.test.ts",
     "tests/dynamic-generator.test.ts",
-    "tests/dynamic-compiler.test.ts"
+    "tests/dynamic-compiler.test.ts",
+    "tests/visual-identity.test.ts"
   ],
   "exclude": [
     "node_modules",

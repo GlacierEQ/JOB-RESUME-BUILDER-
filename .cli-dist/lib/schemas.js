@@ -9,6 +9,7 @@ exports.ContactInfoSchema = zod_1.z.object({
     phone: zod_1.z.string().optional().default(""),
     location: zod_1.z.string().optional().default(""),
     website: zod_1.z.string().optional().default(""),
+    linkedin: zod_1.z.string().optional().default(""),
 });
 exports.ExperienceEntrySchema = zod_1.z.object({
     company: zod_1.z.string().default(""),

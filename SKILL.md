@@ -42,7 +42,7 @@ Output in `--out`:
 |---|---|
 | `*-resume.txt` | ATS text — the parse-safe linear resume |
 | `*-resume.html` | Printable HTML (existing base render) |
-| `*-resume-impressive.html` | Top-third optimized render: JD headline, value-led summary, metric-emphasized bullets, subtle accent — still single-column, ATS-safe |
+| `*-resume-impressive.html` | His visual identity: Algerian nameplate masthead, symmetrical emerald-framed contact row (email · phone · location · LinkedIn · portfolio), emerald section rules and proof marks (green = proven), black-on-white body — still single-column, ATS-safe |
 | `*-resume.docx` | Clean single-column DOCX (stdlib-generated) |
 | `*-resume-dynamic.json` | Auditable manifest: source, compiled resume, changes, generation report, truth boundaries |
 | `*-dynamic-report.json` | Keyword coverage %, band, rules applied, missing required terms |

@@ -7,10 +7,25 @@
  * presentation-grade artifacts.
  *
  * - renderImpressiveHtml: top-third optimized render. Role-aligned headline,
- *   value-led summary, JD-ordered skills, metric-emphasized bullets, subtle
- *   accent color. Still single-column, standard headings, no tables, no
- *   graphics: ATS-safe by construction (research: 75% of resumes die in the
- *   ATS; visual polish must never break the parser).
+ *   value-led summary, JD-ordered skills, metric-emphasized bullets.
+ *
+ * VISUAL IDENTITY (his spec, implemented faithfully):
+ * - MASTHEAD: candidate name in Algerian — and ONLY the nameplate. Never body
+ *   text, never section headings (readability + taste). Font stack degrades
+ *   gracefully on systems without Algerian installed:
+ *     "Algerian","Algerian Regular" (Windows)
+ *     -> "Engravers MT","Copperplate Gothic Bold" (macOS display faces)
+ *     -> "Palatino Linotype","Book Antiqua",Georgia,serif
+ * - PALETTE: emerald #0E6B4A accent, black #111111 primary text, white ground.
+ *   Emerald is reserved for accents with meaning: section rules, proof marks
+ *   (green = proven — his proposed/executed/verified brand language), contact
+ *   dividers. Never green body text (contrast/accessibility).
+ * - SYMMETRICAL METADATA HEADER: contact metadata (email, phone, location,
+ *   LinkedIn, portfolio) in a balanced centered row under the masthead,
+ *   framed by subtle emerald rules, items divided by emerald diamonds.
+ * - PARSER-SAFETY: this is the visual layer only. ATS text / JSON / base HTML
+ *   are untouched and parser-clean; tests assert the ATS export carries zero
+ *   font/color/decoration artifacts.
  * - compileDynamicApplication: base compilation + impressive HTML + the
  *   dynamic generation report embedded in the manifest. DOCX is produced by
  *   the CLI stage (tools/generate_docx.py, stdlib only) from the manifest.
@@ -50,12 +65,20 @@ function normalize(value: string): string {
   return value.trim().replace(/\s+/g, " ");
 }
 
+const METRIC_PATTERN =
+  /(\$?\d[\d,]*(?:\.\d+)?\s?(?:%|x|\+)?|\b\d+\+?\s?(?:years?|yrs?|months?|days?|hours?)\b|\b\d+(?:\.\d+)?\s?\/\s?5\b)/gi;
+
+/** True when a bullet carries a quantified claim — those get the proof mark. */
+function hasMetric(text: string): boolean {
+  METRIC_PATTERN.lastIndex = 0;
+  return METRIC_PATTERN.test(text);
+}
+
 /** Emphasize numeric claims so quantified outcomes survive the 6-second scan. */
 function emphasizeMetrics(text: string): string {
-  const pattern =
-    /(\$?\d[\d,]*(?:\.\d+)?\s?(?:%|x|\+)?|\b\d+\+?\s?(?:years?|yrs?|months?|days?|hours?)\b|\b\d+(?:\.\d+)?\s?\/\s?5\b)/gi;
+  METRIC_PATTERN.lastIndex = 0;
   return escapeHtml(text).replace(
-    pattern,
+    METRIC_PATTERN,
     (match) => `<strong class="metric">${match}</strong>`,
   );
 }
@@ -70,23 +93,43 @@ function safeFilename(value: string): string {
 }
 
 /**
- * Presentation-grade HTML render of a tailored resume.
- * Design decisions from the 2026 research pass:
- * - Name + role-aligned headline + contact dominate the top third.
+ * Presentation-grade HTML render of a tailored resume — his visual identity.
+ * - Masthead: name in Algerian (nameplate only), role headline, symmetrical
+ *   contact metadata framed by emerald rules with emerald diamond dividers.
+ * - Palette: emerald #0E6B4A accents, black #111111 text, white ground.
+ * - Proof marks: quantified bullets get emerald markers (green = proven).
  * - Summary (3-4 lines, value-led) before skills; skills JD-ordered.
- * - Experience bullets with metric emphasis (<strong class="metric">).
- * - Subtle deep-teal accent; generous whitespace; single column.
- * - Standard section headings; no tables/text boxes/columns (ATS-safe).
+ * - Single column, standard headings, no tables/text boxes (ATS-safe).
  */
 export function renderImpressiveHtml(
   resume: ResumeProfile,
   jd: JobDescriptionProfile,
 ): string {
   const headline = jd.jobTitle ? normalize(jd.jobTitle) : normalize(resume.experience[0]?.title ?? "");
-  const contactLine = [resume.contact.email, resume.contact.phone, resume.contact.location, resume.contact.website]
-    .map((value) => normalize(value || ""))
+
+  /** Prettify a contact value for the symmetrical metadata row (strip protocol). */
+  const displayContact = (value: string): string =>
+    normalize(value).replace(/^https?:\/\/(www\.)?/i, "");
+
+  const metaItems = [
+    resume.contact.email,
+    resume.contact.phone,
+    resume.contact.location,
+    resume.contact.linkedin,
+    resume.contact.website,
+  ]
+    .map((value) => displayContact(value || ""))
     .filter(Boolean)
-    .join(" · ");
+    .map((value) => `<span class="item">${escapeHtml(value)}</span>`)
+    .join(`<span class="sep" aria-hidden="true">◆</span>`);
+  const metaBlock = metaItems
+    ? `<div class="meta" role="presentation">${metaItems}</div>`
+    : "";
+
+  const bullet = (text: string): string =>
+    hasMetric(text)
+      ? `<li class="proven">${emphasizeMetrics(text)}</li>`
+      : `<li>${emphasizeMetrics(text)}</li>`;
 
   const section = (title: string, body: string) =>
     body ? `<section class="block"><h2>${escapeHtml(title)}</h2>${body}</section>` : "";
@@ -100,7 +143,7 @@ export function renderImpressiveHtml(
       return `<article class="entry"><div class="entry-head"><h3>${escapeHtml(entry.title)} <span class="at">·</span> ${escapeHtml(entry.company)}</h3>${
         dates ? `<p class="dates">${escapeHtml(dates)}</p>` : ""
       }</div><ul>${entry.bullets
-        .map((bullet) => `<li>${emphasizeMetrics(bullet)}</li>`)
+        .map((b) => bullet(b))
         .join("")}</ul></article>`;
     })
     .join("");
@@ -113,7 +156,7 @@ export function renderImpressiveHtml(
       return `<article class="entry"><div class="entry-head"><h3>${escapeHtml(entry.name)}</h3></div>${
         entry.description ? `<p class="desc">${escapeHtml(entry.description)}</p>` : ""
       }<ul>${entry.bullets
-        .map((bullet) => `<li>${emphasizeMetrics(bullet)}</li>`)
+        .map((b) => bullet(b))
         .join("")}</ul>${technologies}</article>`;
     })
     .join("");
@@ -142,33 +185,42 @@ export function renderImpressiveHtml(
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(
     resume.contact.name || "Tailored Resume",
   )}${headline ? ` — ${escapeHtml(headline)}` : ""}</title><style>
-:root{--accent:#0f766e;--ink:#14201f;--muted:#5b6b6a}
+/* ---- Visual identity: his spec ----
+   EMERALD #0E6B4A = accents with meaning (rules, proof marks, dividers).
+   BLACK #111111 = primary text. WHITE = ground. Never green body text.
+   ALGERIAN = nameplate only. Stack degrades gracefully where Algerian is
+   absent: Windows ("Algerian","Algerian Regular") -> macOS display faces
+   ("Engravers MT","Copperplate Gothic Bold") -> classical serif fallbacks. */
+:root{--emerald:#0E6B4A;--emerald-deep:#0A4F37;--emerald-tint:#D8EBE1;--ink:#111111;--muted:#3f3f3f;--paper:#FFFFFF}
 @page{margin:.65in}
-body{font:11pt/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;max-width:8in;margin:auto;color:var(--ink);background:#fff}
-header.hero{border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:6px}
-header.hero h1{font-size:24pt;margin:0;letter-spacing:.5px}
-p.headline{font-size:12.5pt;font-weight:600;color:var(--accent);margin:4px 0}
-p.contact{font-size:9.5pt;color:var(--muted);margin:2px 0}
+body{font:11pt/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;max-width:8in;margin:auto;color:var(--ink);background:var(--paper)}
+header.hero{border-bottom:3px solid var(--emerald);padding-bottom:10px;margin-bottom:0;text-align:center}
+h1.nameplate{font-family:"Algerian","Algerian Regular","Engravers MT","Copperplate Gothic Bold","Palatino Linotype","Book Antiqua",Georgia,serif;font-size:30pt;font-weight:400;margin:0;letter-spacing:1px;color:var(--ink)}
+p.headline{font-size:12.5pt;font-weight:600;color:var(--ink);margin:6px 0 2px}
+.meta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin:8px 0 4px;padding:7px 4px;border-top:1px solid var(--emerald-tint);border-bottom:1px solid var(--emerald-tint);font-size:9.5pt;color:var(--muted)}
+.meta .item{padding:0 12px;white-space:nowrap}
+.meta .sep{color:var(--emerald);font-size:8pt}
 section.block{margin-top:14px}
-section.block h2{font-size:11pt;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);border-bottom:1px solid #d7e3e2;padding-bottom:3px;margin:0 0 8px}
+section.block h2{font-size:11pt;text-transform:uppercase;letter-spacing:1.5px;color:var(--emerald-deep);border-bottom:2px solid var(--emerald);padding-bottom:3px;margin:0 0 8px}
 p.summary{font-size:10.5pt;margin:0}
 p.skills{font-size:10pt;margin:0}
 article.entry{margin-bottom:10px}
 .entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .entry-head h3{font-size:11pt;margin:8px 0 2px}
-.entry-head h3 .at{color:var(--accent)}
+.entry-head h3 .at{color:var(--emerald)}
 p.dates{font-size:9.5pt;color:var(--muted);white-space:nowrap;margin:8px 0 2px}
 ul{margin:4px 0 6px;padding-left:20px}
 li{margin-bottom:3px}
+li.proven::marker{color:var(--emerald)}
 strong.metric{color:var(--ink)}
 p.tech{font-size:9.5pt;color:var(--muted)}
 p.desc{font-size:10pt;margin:2px 0}
 ul.certs{list-style:none;padding-left:0}
 ul.certs li{margin-bottom:2px}
 </style></head><body>
-<header class="hero"><h1>${escapeHtml(resume.contact.name)}</h1>${
+<header class="hero"><h1 class="nameplate">${escapeHtml(resume.contact.name)}</h1>${
     headline ? `<p class="headline">${escapeHtml(headline)}</p>` : ""
-  }<p class="contact">${escapeHtml(contactLine)}</p></header>
+  }${metaBlock}</header>
 ${section("Summary", resume.summary ? `<p class="summary">${escapeHtml(resume.summary)}</p>` : "")}
 ${section("Skills", resume.skills.length ? `<p class="skills">${resume.skills.map(escapeHtml).join(" · ")}</p>` : "")}
 ${section("Experience", experience)}

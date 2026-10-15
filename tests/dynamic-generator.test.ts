@@ -20,7 +20,7 @@ Responsibilities:
 `;
 
 const resume: ResumeProfile = {
-  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
   summary: "Automation engineer building workflow systems.",
   skills: ["Excel", "n8n", "PostgreSQL", "Python"],
   experience: [

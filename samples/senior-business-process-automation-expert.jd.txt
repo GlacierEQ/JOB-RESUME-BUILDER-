@@ -1,0 +1,31 @@
+Senior Business Process Automation Expert (AI Training Project)
+
+Compensation: $300/hr, W-2 Contract
+Hours: 10-20 hrs/week to start (up to 35)
+Duration: 6 months, start immediately
+Location: Remote (US) — must be authorized to work in the United States without sponsorship
+
+The work:
+Build n8n automation workflows for real business processes — invoice/AP
+processing, lead routing, ticket triage, claims and document intake — for a
+frontier AI lab. Each workflow is run against 10+ invented test cases including
+edge cases and stop-and-hand-to-a-person paths. The second half is collaborating
+with a researcher: dissecting AI attempts at these workflows, defining what
+excellent automation looks like, and reviewing workflows and test cases from
+other experts.
+
+Deliverables per workflow: workflow file, run logs, a one-page plain-language
+process write-up, and 5-10 end-state assertions per case.
+
+Requirements:
+- Personally built the same kind of workflow dozens to 100+ times (invoice/AP,
+  lead routing, ticket triage, claims, document intake)
+- Production experience on platforms such as Zapier, Make, n8n, Workato, UiPath,
+  Power Automate — n8n experience a plus, willingness to build in it is enough
+- Specific hard-earned opinions on tool failure modes: rate limits,
+  non-idempotent webhook retries, silent field-mapping failures, selector drift
+- Knowledge of where AI models and agent workflows fail in business processes,
+  and how to design human review around those failures
+- Hands-on builder background: actual delivered automation work, not just
+  strategy or team leadership
+- Can write a process down plainly; commit 10-20 hrs/week for 6 months

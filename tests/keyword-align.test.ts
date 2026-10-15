@@ -5,7 +5,7 @@ import type { JdKeyword } from "../lib/jd-keywords";
 import type { ResumeProfile } from "../lib/schemas";
 
 const resume: ResumeProfile = {
-  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "" },
+  contact: { name: "Casey Barton", email: "casey@example.test", phone: "", location: "Honolulu, HI", website: "", linkedin: "" },
   summary: "Automation engineer building n8n workflows for invoice processing.",
   skills: ["Excel", "n8n", "PostgreSQL", "Python", "Word"],
   experience: [

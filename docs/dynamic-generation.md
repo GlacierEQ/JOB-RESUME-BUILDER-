@@ -44,7 +44,7 @@ lib/helix-boundaries.ts     assertHelixBoundaries (unchanged)
         ▼
 lib/dynamic-compiler.ts     compileDynamicApplication
   base artifacts byte-identical (ATS text, auditable JSON, printable HTML)
-  + impressive HTML (top-third optimized, metric-emphasized, ATS-safe)
+  + impressive HTML (his visual identity — see below; ATS-safe by construction)
   + dynamic manifest JSON (embeds the generation report)
         │
         ▼
@@ -54,6 +54,31 @@ tools/generate_docx.py      stdlib-only DOCX from the manifest
         ▼
 HUMAN REVIEW (REVIEW_REQUIRED.txt) — drafts only, never submitted
 ```
+
+## Visual identity (his spec — the face of the impressive render)
+
+The impressive HTML is the visual layer only. ATS text / JSON / base HTML are
+untouched and parser-clean.
+
+- **Masthead**: candidate name in **Algerian** — and only the nameplate. Never
+  body text, never section headings. Graceful fallback stack:
+  `"Algerian","Algerian Regular"` (Windows) → `"Engravers MT",
+  "Copperplate Gothic Bold"` (macOS display faces) → `"Palatino Linotype",
+  "Book Antiqua", Georgia, serif`.
+- **Palette**: emerald `#0E6B4A` accent, black `#111111` primary text, white
+  ground. Emerald is reserved for accents with meaning: section rules, proof
+  marks (green = proven — his proposed/executed/verified brand), contact
+  dividers. Never green body text.
+- **Symmetrical metadata header**: email, phone, location, LinkedIn, portfolio
+  in a balanced centered row under the masthead, framed by subtle emerald
+  rules, divided by emerald diamonds (◆).
+- **Proof marks**: quantified bullets carry emerald markers (`li.proven`).
+- **Parser-safety**: tests assert the ATS export contains zero font, color, or
+  decoration artifacts.
+- **Sample**: `npm run sample:impressive` renders the SAMPLE profile against
+  the SAMPLE Senior Business Process Automation Expert JD into `samples/out/`;
+  the committed face-of-it render is
+  `samples/senior-business-process-automation-expert.impressive.SAMPLE.html`.
 
 ## CLI
 
