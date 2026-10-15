@@ -53,6 +53,9 @@ jobs:
       - name: Run deterministic truthfulness and evidence tests
         run: npm test
 
+      - name: Verify source-pinned DOCX inheritance regression gate
+        run: python3 -m unittest discover -s tests -p 'test_docx_inheritance.py' -v
+
       - name: Lint
         run: npm run lint
 
